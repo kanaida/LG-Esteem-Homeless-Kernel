@@ -1,0 +1,10 @@
+LG Esteem - Homeless Kernel
+By: Kanaida
+
+ChangeLog:
+
+Ver 1.0
+-Adjusted low power states for hardware
+-Installed Deadline I/O Scheduler, set as default
+-Installed Interative CPU Governor, Doesn't stick yet.
+
