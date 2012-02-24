@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>android.content Details | Android Developers</title>
+<link href="../../../assets/android-developer-docs.css" rel="stylesheet" type="text/css" />
+<script src="../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../");
+</script>
+<script src="../../../assets/android-developer-reference.js" type="text/javascript"></script>
+<script src="../../../navtree_data.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="1">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../index.html" tabindex="-1"><img
+              src="../../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="reference">
+    
+	<li id="home-link"><a href="../../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+		<span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+		<span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li id="resources-link"><a href="../../../resources/index.html" onClick="return loadLast('resources')">
+	
+		<span class="en">Resources</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    		<span style="display:none" class="ja"></span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+
+
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../')"
+                      onkeyup="return search_changed(event, false, '../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+    			  <div id="api-level-toggle">
+    			    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    			    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    			    <select id="apiLevelSelector">
+    			      <!-- option elements added by buildApiLevelSelector() -->
+    			    </select>
+    			  </div>
+    	 	    <script>
+              var SINCE_DATA = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ];
+              buildApiLevelSelector();
+            </script>
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links"><nobr>
+                <a href="../../../reference/packages.html"  >Package Index</a> | 
+                <a href="../../../reference/classes.html" >Class Index</a></nobr>
+              </div>
+              <ul>
+              	
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/package-summary.html">android</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/accessibilityservice/package-summary.html">android.accessibilityservice</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/accounts/package-summary.html">android.accounts</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/app/package-summary.html">android.app</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/android/app/admin/package-summary.html">android.app.admin</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/android/app/backup/package-summary.html">android.app.backup</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/appwidget/package-summary.html">android.appwidget</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/bluetooth/package-summary.html">android.bluetooth</a></li>
+    <li class="selected api apilevel-1">
+  <a href="../../../reference/android/content/package-summary.html">android.content</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/content/pm/package-summary.html">android.content.pm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/content/res/package-summary.html">android.content.res</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/database/package-summary.html">android.database</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/database/sqlite/package-summary.html">android.database.sqlite</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/gesture/package-summary.html">android.gesture</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/package-summary.html">android.graphics</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/drawable/package-summary.html">android.graphics.drawable</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/drawable/shapes/package-summary.html">android.graphics.drawable.shapes</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/hardware/package-summary.html">android.hardware</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/inputmethodservice/package-summary.html">android.inputmethodservice</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/location/package-summary.html">android.location</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/media/package-summary.html">android.media</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/media/audiofx/package-summary.html">android.media.audiofx</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/package-summary.html">android.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/http/package-summary.html">android.net.http</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/net/sip/package-summary.html">android.net.sip</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/wifi/package-summary.html">android.net.wifi</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/nfc/package-summary.html">android.nfc</a></li>
+    <li class="api apilevel-10">
+  <a href="../../../reference/android/nfc/tech/package-summary.html">android.nfc.tech</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/opengl/package-summary.html">android.opengl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/os/package-summary.html">android.os</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/os/storage/package-summary.html">android.os.storage</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/preference/package-summary.html">android.preference</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/provider/package-summary.html">android.provider</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/sax/package-summary.html">android.sax</a></li>
+    <li class="api apilevel-7">
+  <a href="../../../reference/android/service/wallpaper/package-summary.html">android.service.wallpaper</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/speech/package-summary.html">android.speech</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/speech/tts/package-summary.html">android.speech.tts</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/telephony/package-summary.html">android.telephony</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/telephony/cdma/package-summary.html">android.telephony.cdma</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/telephony/gsm/package-summary.html">android.telephony.gsm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/package-summary.html">android.test</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/mock/package-summary.html">android.test.mock</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/suitebuilder/package-summary.html">android.test.suitebuilder</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/package-summary.html">android.text</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/text/format/package-summary.html">android.text.format</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/method/package-summary.html">android.text.method</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/style/package-summary.html">android.text.style</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/util/package-summary.html">android.text.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/util/package-summary.html">android.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/view/package-summary.html">android.view</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/view/accessibility/package-summary.html">android.view.accessibility</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/view/animation/package-summary.html">android.view.animation</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/view/inputmethod/package-summary.html">android.view.inputmethod</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/webkit/package-summary.html">android.webkit</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/widget/package-summary.html">android.widget</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/dalvik/bytecode/package-summary.html">dalvik.bytecode</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/dalvik/system/package-summary.html">dalvik.system</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/awt/font/package-summary.html">java.awt.font</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/java/beans/package-summary.html">java.beans</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/io/package-summary.html">java.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/package-summary.html">java.lang</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/annotation/package-summary.html">java.lang.annotation</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/ref/package-summary.html">java.lang.ref</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/reflect/package-summary.html">java.lang.reflect</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/math/package-summary.html">java.math</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/net/package-summary.html">java.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/package-summary.html">java.nio</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/channels/package-summary.html">java.nio.channels</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/channels/spi/package-summary.html">java.nio.channels.spi</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/charset/package-summary.html">java.nio.charset</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/charset/spi/package-summary.html">java.nio.charset.spi</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/package-summary.html">java.security</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/acl/package-summary.html">java.security.acl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/cert/package-summary.html">java.security.cert</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/interfaces/package-summary.html">java.security.interfaces</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/spec/package-summary.html">java.security.spec</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/sql/package-summary.html">java.sql</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/text/package-summary.html">java.text</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/package-summary.html">java.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/package-summary.html">java.util.concurrent</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/atomic/package-summary.html">java.util.concurrent.atomic</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/jar/package-summary.html">java.util.jar</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/logging/package-summary.html">java.util.logging</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/prefs/package-summary.html">java.util.prefs</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/regex/package-summary.html">java.util.regex</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/zip/package-summary.html">java.util.zip</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/package-summary.html">javax.crypto</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/interfaces/package-summary.html">javax.crypto.interfaces</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/spec/package-summary.html">javax.crypto.spec</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/microedition/khronos/egl/package-summary.html">javax.microedition.khronos.egl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/microedition/khronos/opengles/package-summary.html">javax.microedition.khronos.opengles</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/net/package-summary.html">javax.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/net/ssl/package-summary.html">javax.net.ssl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/package-summary.html">javax.security.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/callback/package-summary.html">javax.security.auth.callback</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/login/package-summary.html">javax.security.auth.login</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/x500/package-summary.html">javax.security.auth.x500</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/cert/package-summary.html">javax.security.cert</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/sql/package-summary.html">javax.sql</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/xml/package-summary.html">javax.xml</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/datatype/package-summary.html">javax.xml.datatype</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/namespace/package-summary.html">javax.xml.namespace</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/xml/parsers/package-summary.html">javax.xml.parsers</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/package-summary.html">javax.xml.transform</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/dom/package-summary.html">javax.xml.transform.dom</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/sax/package-summary.html">javax.xml.transform.sax</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/stream/package-summary.html">javax.xml.transform.stream</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/validation/package-summary.html">javax.xml.validation</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/xpath/package-summary.html">javax.xml.xpath</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/junit/framework/package-summary.html">junit.framework</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/junit/runner/package-summary.html">junit.runner</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/package-summary.html">org.apache.http</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/auth/package-summary.html">org.apache.http.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/auth/params/package-summary.html">org.apache.http.auth.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/package-summary.html">org.apache.http.client</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/entity/package-summary.html">org.apache.http.client.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/methods/package-summary.html">org.apache.http.client.methods</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/params/package-summary.html">org.apache.http.client.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/protocol/package-summary.html">org.apache.http.client.protocol</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/utils/package-summary.html">org.apache.http.client.utils</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/package-summary.html">org.apache.http.conn</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/params/package-summary.html">org.apache.http.conn.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/routing/package-summary.html">org.apache.http.conn.routing</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/scheme/package-summary.html">org.apache.http.conn.scheme</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/ssl/package-summary.html">org.apache.http.conn.ssl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/util/package-summary.html">org.apache.http.conn.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/cookie/package-summary.html">org.apache.http.cookie</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/cookie/params/package-summary.html">org.apache.http.cookie.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/entity/package-summary.html">org.apache.http.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/package-summary.html">org.apache.http.impl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/auth/package-summary.html">org.apache.http.impl.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/client/package-summary.html">org.apache.http.impl.client</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/conn/package-summary.html">org.apache.http.impl.conn</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/conn/tsccm/package-summary.html">org.apache.http.impl.conn.tsccm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/cookie/package-summary.html">org.apache.http.impl.cookie</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/entity/package-summary.html">org.apache.http.impl.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/io/package-summary.html">org.apache.http.impl.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/io/package-summary.html">org.apache.http.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/message/package-summary.html">org.apache.http.message</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/params/package-summary.html">org.apache.http.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/protocol/package-summary.html">org.apache.http.protocol</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/util/package-summary.html">org.apache.http.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/json/package-summary.html">org.json</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/w3c/dom/package-summary.html">org.w3c.dom</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/org/w3c/dom/ls/package-summary.html">org.w3c.dom.ls</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/package-summary.html">org.xml.sax</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/ext/package-summary.html">org.xml.sax.ext</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/helpers/package-summary.html">org.xml.sax.helpers</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xmlpull/v1/package-summary.html">org.xmlpull.v1</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xmlpull/v1/sax2/package-summary.html">org.xmlpull.v1.sax2</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ComponentCallbacks.html">ComponentCallbacks</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.html">DialogInterface</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.OnCancelListener.html">DialogInterface.OnCancelListener</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.OnClickListener.html">DialogInterface.OnClickListener</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.OnDismissListener.html">DialogInterface.OnDismissListener</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.OnKeyListener.html">DialogInterface.OnKeyListener</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/DialogInterface.OnMultiChoiceClickListener.html">DialogInterface.OnMultiChoiceClickListener</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/DialogInterface.OnShowListener.html">DialogInterface.OnShowListener</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/EntityIterator.html">EntityIterator</a></li>
+        <li class="api apilevel-4"><a href="../../../reference/android/content/IntentSender.OnFinished.html">IntentSender.OnFinished</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ServiceConnection.html">ServiceConnection</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/SharedPreferences.html">SharedPreferences</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/SharedPreferences.Editor.html">SharedPreferences.Editor</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/SharedPreferences.OnSharedPreferenceChangeListener.html">SharedPreferences.OnSharedPreferenceChangeListener</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/SyncStatusObserver.html">SyncStatusObserver</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/AbstractThreadedSyncAdapter.html">AbstractThreadedSyncAdapter</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/AsyncQueryHandler.html">AsyncQueryHandler</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/AsyncQueryHandler.WorkerArgs.html">AsyncQueryHandler.WorkerArgs</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/AsyncQueryHandler.WorkerHandler.html">AsyncQueryHandler.WorkerHandler</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ComponentName.html">ComponentName</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContentProvider.html">ContentProvider</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/ContentProviderClient.html">ContentProviderClient</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/ContentProviderOperation.html">ContentProviderOperation</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/ContentProviderOperation.Builder.html">ContentProviderOperation.Builder</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/ContentProviderResult.html">ContentProviderResult</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContentQueryMap.html">ContentQueryMap</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContentUris.html">ContentUris</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContentValues.html">ContentValues</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/Context.html">Context</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ContextWrapper.html">ContextWrapper</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/Entity.html">Entity</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/Entity.NamedContentValues.html">Entity.NamedContentValues</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/Intent.html">Intent</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/Intent.FilterComparison.html">Intent.FilterComparison</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/Intent.ShortcutIconResource.html">Intent.ShortcutIconResource</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/IntentFilter.html">IntentFilter</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/IntentFilter.AuthorityEntry.html">IntentFilter.AuthorityEntry</a></li>
+        <li class="api apilevel-4"><a href="../../../reference/android/content/IntentSender.html">IntentSender</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/MutableContextWrapper.html">MutableContextWrapper</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/PeriodicSync.html">PeriodicSync</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/SearchRecentSuggestionsProvider.html">SearchRecentSuggestionsProvider</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/SyncAdapterType.html">SyncAdapterType</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/SyncContext.html">SyncContext</a></li>
+        <li class="api apilevel-8"><a href="../../../reference/android/content/SyncInfo.html">SyncInfo</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/SyncResult.html">SyncResult</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/SyncStats.html">SyncStats</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/UriMatcher.html">UriMatcher</a></li>
+      </ul>
+    </li>
+              
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ActivityNotFoundException.html">ActivityNotFoundException</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/IntentFilter.MalformedMimeTypeException.html">IntentFilter.MalformedMimeTypeException</a></li>
+        <li class="api apilevel-4"><a href="../../../reference/android/content/IntentSender.SendIntentException.html">IntentSender.SendIntentException</a></li>
+        <li class="api apilevel-5"><a href="../../../reference/android/content/OperationApplicationException.html">OperationApplicationException</a></li>
+        <li class="api apilevel-1"><a href="../../../reference/android/content/ReceiverCallNotAllowedException.html">ReceiverCallNotAllowedException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links"><nobr>
+            <a href="../../../reference/packages.html"  >Package Index</a> | 
+            <a href="../../../reference/classes.html" >Class Index</a></nobr>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+<div class="api-level">
+  
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+</div>
+</div>
+
+<div id="jd-header">
+  package
+  <h1>android.content</b></h1>
+  <div class="jd-nav">
+      <a class="jd-navlink" href="package-summary.html">Classes</a> | Description
+  </div>
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-1">
+<div class="jd-descr">
+<p><p>Contains classes for accessing and publishing data
+on the device.  It includes three main categories of APIs:
+the <code><a href="../../../reference/android/content/res/Resources.html">Resources</a></code> for
+retrieving resource data associated with an application;
+<code><a href="../../../reference/android/content/ContentProvider.html">Content Providers</a></code> and
+<code><a href="../../../reference/android/content/ContentResolver.html">ContentResolver</a></code> for managing and
+publishing persistent data associated with an application; and
+the <code><a href="../../../reference/android/content/pm/PackageManager.html">Package Manager</a></code>
+for finding out information about the application packages installed
+on the device.</p>
+
+<p>In addition, the <code><a href="../../../reference/android/content/Context.html">Context</a></code> abstract class
+is a base API for pulling these pieces together, allowing you to access
+an application's resources and transfer data between applications.</p>
+
+<p>This package builds on top of the lower-level Android packages
+<code><a href="../../../reference/android/database/package-summary.html">android.database</a></code>, <code><a href="../../../reference/android/text/package-summary.html">android.text</a></code>,
+<code><a href="../../../reference/android/graphics/drawable/package-summary.html">android.graphics.drawable</a></code>, <code><a href="../../../reference/android/graphics/package-summary.html">android.graphics</a></code>,
+<code><a href="../../../reference/android/os/package-summary.html">android.os</a></code>, and <code><a href="../../../reference/android/util/package-summary.html">android.util</a></code>.</p>
+
+<ol>
+	<li> <a href="#Resources">Resources</a>
+		<ol>
+			<li> <a href="#ResourcesTerminology">Terminology</a>
+			<li> <a href="#ResourcesQuickStart">Examples</a>
+				<ol>
+					<li> <a href="#UsingSystemResources">Using System Resources</a>
+					<li> <a href="#StringResources">String Resources</a>
+					<li> <a href="#ColorResources">Color Resources</a>
+					<li> <a href="#DrawableResources">Drawable Resources</a>
+					<li> <a href="#LayoutResources">Layout Resources</a>
+					<li> <a href="#ReferencesToResources">References to Resources</a>
+					<li> <a href="#ReferencesToThemeAttributes">References to Theme Attributes</a>
+					<li> <a href="#StyleResources">Style Resources</a>
+					<li> <a href="#StylesInLayoutResources">Styles in Layout Resources</a>                    
+				</ol>
+		</ol>
+</ol>
+
+<a name="Resources"></a>
+<h2>Resources</h2>
+
+<p>This topic includes a terminology list associated with resources, and a series
+    of examples of using resources in code. For a complete guide on creating and
+    using resources, see the document on <a href="../../../guide/topics/resources/resources-i18n.html">Resources
+    and Internationalization</a>.  For a reference on the supported Android resource types,
+    see <a href="../../../guide/topics/resources/available-resources.html">Available Resource Types</a>.</p>
+<p>The Android resource system keeps track of all non-code
+    assets associated with an application.  You use the
+    <code><a href="../../../reference/android/content/res/Resources.html">Resources</a></code> class to access your
+    application's resources; the Resources instance associated with your
+    application can generally be found through
+    <code><a href="../../../reference/android/content/Context.html#getResources()">Context.getResources()</a></code>.</p>
+<p>An application's resources are compiled into the application
+binary at build time for you by the build system.  To use a resource,
+you must install it correctly in the source tree and build your
+application.  As part of the build process, Java symbols for each
+of the resources are generated that you can use in your source
+code -- this allows the compiler to verify that your application code matches
+up with the resources you defined.</p>
+
+<p>The rest of this section is organized as a tutorial on how to
+use resources in an application.</p>
+
+<a name="ResourcesTerminology"></a>
+<h3>Terminology</h3>
+
+<p>The resource system brings a number of different pieces together to
+form the final complete resource functionality.  To help understand the
+overall system, here are some brief definitions of the core concepts and
+components you will encounter in using it:</p>
+
+<p><b>Asset</b>: A single blob of data associated with an application.  This
+includes Java object files, graphics (such as PNG images), XML files, etc.
+These files are organized in a directory hierarchy that, during final packaging
+of the application, is bundled together into a single ZIP file.</p>
+
+<p><b>aapt</b>: The tool that generates the final ZIP file of application
+assets.  In addition to collecting raw assets together, it also parses
+resource definitions into binary asset data.</p>
+
+<p><b>Resource Table</b>: A special asset that aapt generates for you,
+describing all of the resources contained in an application/package.
+This file is accessed for you by the Resources class; it is not touched
+directly by applications.</p>
+
+<p><b>Resource</b>: An entry in the Resource Table describing a single
+named value.  Broadly, there are two types of resources: primitives and
+bags.</p>
+
+<p><b>Resource Identifier</b>: In the Resource Table all resources are
+identified by a unique integer number.  In source code (resource descriptions,
+XML files, Java code) you can use symbolic names that stand as constants for
+the actual resource identifier integer.</p>
+
+<p><b>Primitive Resource</b>: All primitive resources can be written as a
+simple string, using formatting to describe a variety of primitive types
+included in the resource system: integers, colors, strings, references to
+other resources, etc.  Complex resources, such as bitmaps and XML
+describes, are stored as a primitive string resource whose value is the path
+of the underlying Asset holding its actual data.</p>
+
+<p><b>Bag Resource</b>: A special kind of resource entry that, instead of a
+simple string, holds an arbitrary list of name/value pairs.  Each name is
+itself a resource identifier, and each value can hold
+the same kinds of string formatted data as a normal resource.  Bags also
+support inheritance: a bag can inherit the values from another bag, selectively
+replacing or extending them to generate its own contents.</p>
+
+<p><b>Kind</b>: The resource kind is a way to organize resource identifiers
+for various purposes.  For example, drawable resources are used to
+instantiate Drawable objects, so their data is a primitive resource containing
+either a color constant or string path to a bitmap or XML asset.  Other
+common resource kinds are string (localized string primitives), color
+(color primitives), layout (a string path to an XML asset describing a view
+layout), and style (a bag resource describing user interface attributes).
+There is also a standard "attr" resource kind, which defines the resource
+identifiers to be used for naming bag items and XML attributes</p>
+
+<p><b>Style</b>: The name of the resource kind containing bags that are used
+to supply a set of user interface attributes.  For example, a TextView class may
+be given a style resource that defines its text size, color, and alignment.
+In a layout XML file, you associate a style with a bag using the "style"
+attribute, whose value is the name of the style resource.</p>
+
+<p><b>Style Class</b>: Specifies a related set of attribute resources.
+This data is not placed in the resource table itself, but used to generate
+Java constants that make it easier for you to retrieve values out of
+a style resource and/or XML tag's attributes.  For example, the
+Android platform defines a "View" style class that
+contains all of the standard view attributes: padding, visibility,
+background, etc.; when View is inflated it uses this style class to
+retrieve those values from the XML file (at which point style and theme
+information is applied as approriate) and load them into its instance.</p>
+
+<p><b>Configuration</b>: For any particular resource identifier, there may be
+multiple different available values depending on the current configuration.
+The configuration includes the locale (language and country), screen
+orientation, screen density, etc.  The current configuration is used to
+select which resource values are in effect when the resource table is
+loaded.</p>
+
+<p><b>Theme</b>: A standard style resource that supplies global
+attribute values for a particular context.  For example, when writing a
+Activity the application developer can select a standard theme to use, such
+as the Theme.White or Theme.Black styles; this style supplies information
+such as the screen background image/color, default text color, button style,
+text editor style, text size, etc.  When inflating a layout resource, most
+values for widgets (the text color, selector, background) if not explicitly
+set will come from the current theme; style and attribute
+values supplied in the layout can also assign their value from explicitly
+named values in the theme attributes if desired.</p>
+
+<p><b>Overlay</b>: A resource table that does not define a new set of resources,
+but instead replaces the values of resources that are in another resource table.
+Like a configuration, this is applied at load time
+to the resource data; it can add new configuration values (for example
+strings in a new locale), replace existing values (for example change
+the standard white background image to a "Hello Kitty" background image),
+and modify resource bags (for example change the font size of the Theme.White
+style to have an 18 pt font size).  This is the facility that allows the
+user to select between different global appearances of their device, or
+download files with new appearances.</p>
+
+<a name="ResourcesQuickStart"></a>
+<h3>Examples</h3>
+
+<p>This section gives a few quick examples you can use to make your own resources.
+    For more details on how to define and use resources, see <a
+    href="../../../guide/topics/resources/resources-i18n.html">Resources and 
+    Internationalization</a>. </p>
+
+<a name="UsingSystemResources"></a>
+<h4>Using System Resources</h4>
+
+<p>Many resources included with the system are available to applications.
+All such resources are defined under the class "android.R".  For example,
+you can display the standard application icon in a screen with the following
+code:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        requestScreenFeatures(FEATURE_BADGE_IMAGE);
+
+        super.onStart();
+
+        setBadgeResource(android.R.drawable.sym_def_app_icon);
+    }
+}
+</pre>
+
+<p>In a similar way, this code will apply to your screen the standard
+"green background" visual treatment defined by the system:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+
+        setTheme(android.R.style.Theme_Black);
+    }
+}
+</pre>
+
+<a name="StringResources"></a>
+<h4>String Resources</h4>
+
+<p>String resources are defined using an XML resource description syntax.
+The file or multiple files containing these resources can be given any name
+(as long as it has a .xml suffix) and placed at an appropriate location in
+the source tree for the desired configuration (locale/orientation/density).
+
+<p>Here is a simple resource file describing a few strings:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;string id="mainLabel"&gt;Hello &lt;u&gt;th&lt;ignore&gt;e&lt;/ignore&gt;re&lt;/u&gt;, &lt;i&gt;you&lt;/i&gt; &lt;b&gt;Activity&lt;/b&gt;!&lt;/string&gt;
+    &lt;string id="back"&gt;Back&lt;/string&gt;
+    &lt;string id="clear"&gt;Clear&lt;/string&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>Typically this file will be called "strings.xml", and must be placed
+in the <code>values</code> directory:</p>
+
+<pre>
+MyApp/res/values/strings.xml
+</pre>
+
+<p>The strings can now be retrieved by your application through the
+symbol specified in the "id" attribute:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+
+        String back = getResources().getString(R.string.back).toString();
+        back = getString(R.string.back).toString();  // synonym
+    }
+}
+</pre>
+
+<p>Unlike system resources, the resource symbol (the R class) we are using 
+here comes from our own application's package, not android.R.</p>
+
+<p>Note that the "mainLabel" string is complex, including style information.
+To support this, the <code>getString()</code> method returns a
+<code>CharSequence</code> object that you can pass to a
+<code>TextView</code> to retain those style.  This is why code
+must call <code>toString()</code> on the returned resource if it wants
+a raw string.</p>
+
+<a name="ColorResources"></a>
+<h4>Color Resources</h4>
+
+<p>Color resources are created in a way very similar to string resources,
+but with the &lt;color&gt; resource tag.  The data for these resources
+must be a hex color constant of the form "#rgb", "#argb", "#rrggbb", or
+"#aarrggbb".  The alpha channel is 0xff (or 0xf) for opaque and 0
+for transparent.</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;color id="opaque_red"&gt;#ffff0000&lt;/color&gt;
+    &lt;color id="transparent_red"&gt;#80ff0000&lt;/color&gt;
+    &lt;color id="opaque_blue"&gt;#0000ff&lt;/color&gt;
+    &lt;color id="opaque_green"&gt;#0f0&lt;/color&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>While color definitions could be placed in the same resource file
+as the previously shown string data, usually you will place the colors in
+their own file:</p>
+
+<pre>
+MyApp/res/values/colors.xml
+</pre>
+
+<p>The colors can now be retrieved by your application through the
+symbol specified in the "id" attribute:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+
+        int red = getResources().getColor(R.color.opaque_red);
+    }
+}
+</pre>
+
+<a name="DrawableResources"></a>
+<h4>Drawable Resources</h4>
+
+<p>For simple drawable resources, all you need to do is place your
+image in a special resource sub-directory called "drawable".  Files here
+are things that can be handled by an implementation of the
+<code><a href="../../../reference/android/graphics/drawable/Drawable.html">Drawable</a></code> class, often bitmaps
+(such as PNG images) but also various kinds of XML descriptions
+for selectors, gradients, etc.</p>
+
+<p>The drawable files will be scanned by the
+resource tool, automatically generating a resource entry for each found.
+For example the file <code>res/drawable/&lt;myimage&gt;.&lt;ext&gt;</code>
+will result in a resource symbol named "myimage" (without the extension).  Note
+that these file names <em>must</em> be valid Java identifiers, and should
+have only lower-case letters.</p>
+
+<p>For example, to use your own custom image as a badge in a screen,
+you can place the image here:</p>
+
+<pre>
+MyApp/res/drawable/my_badge.png
+</pre>
+
+<p>The image can then be used in your code like this:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        requestScreenFeatures(FEATURE_BADGE_IMAGE);
+
+        super.onStart();
+
+        setBadgeResource(R.drawable.my_badge);
+    }
+}
+</pre>
+
+<p>For drawables that are a single solid color, you can also define them
+in a resource file very much like colors shown previously.  The only
+difference is that here we use the &lt;drawable&gt; tag to create a
+drawable resource.</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;drawable id="opaque_red"&gt;#ffff0000&lt;/drawable&gt;
+    &lt;drawable id="transparent_red"&gt;#80ff0000&lt;/drawable&gt;
+    &lt;drawable id="opaque_blue"&gt;#0000ff&lt;/drawable&gt;
+    &lt;drawable id="opaque_green"&gt;#0f0&lt;/drawable&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>These resource entries are often placed in the same resource file
+as color definitions:</p>
+
+<pre>
+MyApp/res/values/colors.xml
+</pre>
+
+<a name="LayoutResources"></a>
+<h4>Layout Resources</h4>
+
+<p>Layout resources describe a view hierarchy configuration that is
+generated at runtime.  These resources are XML files placed in the
+resource directory "layout", and are how you should create the content
+views inside of your screen (instead of creating them by hand) so that
+they can be themed, styled, configured, and overlayed.</p>
+
+<p>Here is a simple layout resource consisting of a single view, a text
+editor:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="fill-parent" android:layout_height="fill-parent"
+        android:text="Hello, World!" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>To use this layout, it can be placed in a file like this:</p>
+
+<pre>
+MyApp/res/layout/my_layout.xml
+</pre>
+
+<p>The layout can then be instantiated in your screen like this:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+        setContentView(R.layout.my_layout);
+    }
+}
+</pre>
+
+<p>Note that there are a number of visual attributes that can be supplied
+to TextView (including textSize, textColor, and textStyle) that we did
+not define in the previous example; in such a sitation, the default values for
+those attributes come from the theme.  If we want to customize them, we
+can supply them explicitly in the XML file:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        <b>android:textSize="18" android:textColor="#008"</b>
+        android:text="Hello, World!" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>However, usually these kinds of attributes (those being attributes that
+usually make sense to vary with theme or overlay) should be defined through
+the theme or separate style resource.  Later we will see how this is done.</p>
+
+<a name="ReferencesToResources"></a>
+<h4>References to Resources</h4>
+
+<p>A value supplied in an attribute (or resource) can also be a reference to
+a resource.  This is often used in layout files to supply strings (so they
+can be localized) and images (which exist in another file), though a reference
+can be do any resource type including colors and integers.</p>
+
+<p>For example, if we have the previously defined color resources, we can
+write a layout file that sets the text color size to be the value contained in
+one of those resources:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        <b>android:textColor="@color/opaque_red"</b>
+        android:text="Hello, World!" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>Note here the use of the '@' prefix to introduce a resource reference -- the
+text following that is the name of a resource in the form
+of <code>@[package:]type/name</code>.  In this case we didn't need to specify
+the package because we are referencing a resource in our own package.  To
+reference a system resource, you would need to write:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:textColor="@<b>android:</b>color/opaque_red"
+        android:text="Hello, World!" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>As another example, you should always use resource references when supplying
+strings in a layout file so that they can be localized:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:textColor="@android:color/opaque_red"
+        android:text="@string/hello_world" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>This facility can also be used to create references between resources.
+For example, we can create new drawable resources that are aliases for
+existing images:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;drawable id="my_background"&gt;@android:drawable/theme2_background&lt;/drawable&gt;
+&lt;/resources&gt;
+</pre>
+
+<a name="ReferencesToThemeAttributes"></a>
+<h4>References to Theme Attributes</h4>
+
+<p>Another kind of resource value allows you to reference the value of an
+attribute in the current theme.  This attribute reference can <em>only</em>
+be used in style resources and XML attributes; it allows you to customize the
+look of UI elements by changing them to standard variations supplied by the
+current theme, instead of supplying more concrete values.</p>
+
+<p>As an example, we can use this in our layout to set the text color to
+one of the standard colors defined in the base system theme:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        <b>android:textColor="?android:textDisabledColor"</b>
+        android:text="@string/hello_world" /&gt;
+&lt;/root&gt;
+</pre>
+
+<p>Note that this is very similar to a resource reference, except we are using
+an '?' prefix instead of '@'.  When you use this markup, you are supplying
+the name of an attribute resource that will be looked up in the theme --
+because the resource tool knows that an attribute resource is expected,
+you do not need to explicitly state the type (which would be
+<code>?android:attr/android:textDisabledColor</code>).</p>
+
+<p>Other than using this resource identifier to find the value in the
+theme instead of raw resources, the name syntax is identical to the '@' format:
+<code>?[package:]type/name</code> with the type here being optional.</p>
+
+<a name="StyleResources"></a>
+<h4>Style Resources</h4>
+
+<p>A style resource is a set of name/value pairs describing a group
+of related attributes.  There are two main uses for these resources:
+defining overall visual themes, and describing a set of visual attributes
+to apply to a class in a layout resource.  In this section we will look
+at their use to describe themes; later we will look at using them in
+conjunction with layouts.</p>
+
+<p>Like strings, styles are defined through a resource XML file.  In the
+situation where we want to define a new theme, we can create a custom theme
+style that inherits from one of the standard system themes:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;style id="Theme" parent="android:Theme.White"&gt;
+        &lt;item id="android:foregroundColor"&gt;#FFF8D96F&lt;/item&gt;
+        &lt;item id="android:textColor"&gt;@color/opaque_blue&lt;/item&gt;
+        &lt;item id="android:textSelectedColor"&gt;?android:textColor&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>Typically these resource definitions will be placed in a file
+called "styles.xml" , and must be placed in the <code>values</code>
+directory:</p>
+
+<pre>
+MyApp/res/values/styles.xml
+</pre>
+
+<p>Similar to how we previously used a system style for an Activity theme,
+you can apply this style to your Activity:</p>
+
+<pre class="prettyprint">
+public class MyActivity extends Activity
+{
+    public void onStart() 
+    {
+        super.onStart();
+
+        setTheme(R.style.Theme);
+    }
+}
+</pre>
+
+<p>In the style resource shown here, we used the <code>parent</code>
+attribute to specify another style resource from which it inherits
+its values -- in this case the <code>Theme.White</code> system resource:</p>
+
+<pre>
+    &lt;style id="Home" parent="android:Theme.White"&gt;
+        ...
+    &lt;/style&gt;
+</pre>
+
+<p>Note, when doing this, that you must use the "android" prefix in front
+to tell the compiler the namespace to look in for the resource --
+the resources you are specifying here are in your application's namespace,
+not the system.  This explicit namespace specification ensures that names
+the application uses will not accidentally conflict with those defined by
+the system.</p>
+
+<p>If you don't specify an explicit parent style, it will be inferred
+from the style name -- everything before the final '.' in the name of the
+style being defined is taken as the parent style name.  Thus, to make
+another style in your application that inherits from this base Theme style,
+you can write:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;style id="Theme.WhiteText"&gt;
+        &lt;item id="android:foregroundColor"&gt;#FFFFFFFF&lt;/item&gt;
+        &lt;item id="android:textColor"&gt;?android:foregroundColor&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>This results in the symbol <code>R.style.Theme_WhiteText</code> that
+can be used in Java just like we did with <code>R.style.Theme</code>
+above.</p>
+
+<a name="StylesInLayoutResources"></a>
+<h4>Styles in Layout Resources</h4>
+
+<p>Often you will have a number fo views in a layout that all use the same
+set of attributes, or want to allow resource overlays to modify the values of
+attributes.  Style resources can be used for both of these purposes, to put
+attribute definitions in a single place that can be references by multiple
+XML tags and modified by overlays.  To do this, you simply define a
+new style resource with the desired values:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;resources&gt;
+    &lt;style id="SpecialText"&gt;
+        &lt;item id="android:textSize"&gt;18&lt;/item&gt;
+        &lt;item id="android:textColor"&gt;#008&lt;/item&gt;
+    &lt;/style&gt;
+&lt;/resources&gt;
+</pre>
+
+<p>You can now apply this style to your TextView in the XML file:</p>
+
+<pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;root&gt;
+    &lt;EditText id="text1" <b>style="@style/SpecialText"</b>
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Hello, World!" /&gt;
+    &lt;EditText id="text2" <b>style="@style/SpecialText"</b>
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="I love you all." /&gt;
+&lt;/root&gt;</pre>
+<h4>&nbsp;</h4>
+
+</p>
+</div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a
+  href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.3&nbsp;r1 - 11 Feb 2012 19:35
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end jd-content -->
+</div> <!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

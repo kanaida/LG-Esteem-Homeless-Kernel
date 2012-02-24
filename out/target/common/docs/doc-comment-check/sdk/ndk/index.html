@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
+<title>Android NDK | Android Developers</title>
+<link href="../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css" />
+<script src="../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../");
+</script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+
+<body class="gc-documentation">
+<a name="top"></a>
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../index.html" tabindex="-1"><img
+              src="../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="sdk">
+    
+	<li id="home-link"><a href="../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+		<span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+		<span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li id="resources-link"><a href="../../resources/index.html" onClick="return loadLast('resources')">
+	
+		<span class="en">Resources</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    		<span style="display:none" class="ja"></span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+
+
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../')"
+                      onkeyup="return search_changed(event, false, '../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+  
+  <li>
+    <h2>
+      <span class="en">Downloadable SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/adding-components.html">
+      <span class="en">Adding SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+      <div><a href="../../sdk/android-2.3.3.html">
+      <span class="en">Android 2.3.3 Platform</span></a>  <span class="new">new!</span></div>
+        <ul>
+          <li><a href="../../sdk/api_diff/10/changes.html">API Differences Report &raquo;</a></li> 
+        </ul>
+      </li>
+      <li class="toggle-list">
+      <div><a href="../../sdk/android-2.3.html">
+      <span class="en">Android 2.3 Platform</span></a></div>
+        <ul>
+          <li><a href="../../sdk/android-2.3-highlights.html">Platform Highlights</a></li> 
+          <li><a href="../../sdk/api_diff/9/changes.html">API Differences Report &raquo;</a></li> 
+        </ul>
+      </li>
+      <li><a href="../../sdk/android-2.2.html">Android 2.2 Platform</a></li>
+      <li><a href="../../sdk/android-2.1.html">Android 2.1 Platform</a></li>
+      <li><a href="../../sdk/android-1.6.html">Android 1.6 Platform</a></li>
+      <li><a href="../../sdk/android-1.5.html">Android 1.5 Platform</a></li>
+      <li class="toggle-list">
+        <div><a href="#" onclick="toggle(this.parentNode.parentNode,true); return false;">Older Platforms</a></div>
+        <ul>
+          <li><a href="../../sdk/android-2.0.1.html">Android 2.0.1 Platform</a></li>
+          <li><a href="../../sdk/android-2.0.html">Android 2.0 Platform</a></li>
+          <li><a href="../../sdk/android-1.1.html">Android 1.1 Platform</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../../sdk/tools-notes.html">SDK Tools, r9</a> <span class="new">new!</span></li>
+      <li><a href="../../sdk/win-usb.html">Google USB Driver, r4</a></li>
+    </ul>
+  </li>
+  <li>
+      <h2>
+      <span class="en">ADT Plugin for Eclipse</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+      </h2>
+    <ul>
+      <li><a href="../../sdk/eclipse-adt.html">ADT 9.0.0
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      <span class="new">new!</span></li>
+    </ul>
+  </li>
+  <li>
+    <h2><span class="en">Native Development Tools</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/ndk/index.html">Android NDK, r5b</a>
+        <span class="new">new!</span></li>
+      <li><a href="../../sdk/ndk/overview.html">What is the NDK?</a></li>
+    </ul>
+  </li>
+
+  <li>
+    <h2>
+      <span class="en">More Information</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/oem-usb.html">
+        <span class="en">OEM USB Drivers</span>
+      </a></li>
+      <li><a href="../../sdk/requirements.html">SDK System Requirements</a></li>
+      <li><a href="../../sdk/older_releases.html">SDK Archives</a></li>
+
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+
+      </div>
+    </div> <!-- end side-nav -->
+
+
+
+
+
+<div class="g-unit" id="doc-content" >
+  <div id="jd-header" class="guide-header" >
+    <span class="crumb">&nbsp;</span>
+    <h1>Android NDK</h1>
+  </div>
+
+  <div id="jd-content">
+
+
+
+
+
+
+
+<p>The Android NDK is a companion tool to the Android SDK that lets you build
+performance-critical portions of your apps in native code. It provides headers and
+libraries that allow you to build activities, handle user input, use hardware sensors,
+access application resources, and more, when programming in C or C++. If you write
+native code, your applications are still packaged into an .apk file and they still run
+inside of a virtual machine on the device. The fundamental Android application model
+does not change.</p>
+
+<p>Using native code does not result in an automatic performance increase, 
+but always increases application complexity. If you have not run into any limitations
+using the Android framework APIs, you probably do not need the NDK. Read <a 
+href="../../sdk/ndk/overview.html">What is the NDK?</a> for more information about what
+the NDK offers and whether it will be useful to you.
+</p>
+<p>
+The NDK is designed for use <em>only</em> in conjunction with the
+Android SDK. If you have not already installed and setup the <a
+href="http://developer.android.com/sdk/index.html">Android SDK</a>, please
+do so before downloading the NDK. 
+</p>
+
+  <table class="download">
+    <tr>
+      <th>Platform</th>
+      <th>Package</th>
+      <th>Size</th>
+      <th>MD5 Checksum</th>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td>
+  <a href="http://dl.google.com/android/ndk/android-ndk-r5b-windows.zip">android-ndk-r5b-windows.zip</a>
+    </td>
+    <td>61299831 bytes</td>
+    <td>87745ada305ab639399161ab4faf684c</td>
+  </tr>
+  <tr class="alt-color">
+    <td>Mac OS X (intel)</td>
+    <td>
+  <a href="http://dl.google.com/android/ndk/android-ndk-r5b-darwin-x86.tar.bz2">android-ndk-r5b-darwin-x86.tar.bz2</a>
+    </td>
+    <td>50210863 bytes</td>
+    <td>019a14622a377b3727ec789af6707037</td>
+  </tr>
+  <tr>
+    <td>Linux 32/64-bit (x86)</td>
+    <td>
+  <a href="http://dl.google.com/android/ndk/android-ndk-r5b-linux-x86.tar.bz2">android-ndk-r5b-linux-x86.tar.bz2</a>
+    </td>
+    <td>44138539 bytes</td>
+    <td>4c0045ddc2bfd657be9d5177d0e0b7e7</td>
+  </tr>
+  </table>
+
+   
+
+ 
+
+<h2 id="notes">Revisions</h2>
+
+<p>The sections below provide information and notes about successive releases of
+the NDK, as denoted by revision number. </p>
+
+<script type="text/javascript">
+function toggleDiv(link) {
+  var toggleable = $(link).parent();
+  if (toggleable.hasClass("closed")) {
+    //$(".toggleme", toggleable).slideDown("fast");
+    toggleable.removeClass("closed");
+    toggleable.addClass("open");
+    $(".toggle-img", toggleable).attr("title", "hide").attr("src", "../../assets/images/triangle-opened.png");
+  } else {
+    //$(".toggleme", toggleable).slideUp("fast");
+    toggleable.removeClass("open");
+    toggleable.addClass("closed");
+    $(".toggle-img", toggleable).attr("title", "show").attr("src", "/assets/images/triangle-closed.png");
+  }
+  return false;
+}
+</script>
+<style>
+.toggleable {
+padding: .25em 1em;
+}
+.toggleme {
+  padding: 1em 1em 0 2em;
+  line-height:1em;
+}
+.toggleable a {
+  text-decoration:none;
+}
+.toggleme a {
+  text-decoration:underline;
+}
+.toggleable.closed .toggleme {
+  display:none;
+}
+#jd-content .toggle-img {
+  margin:0;
+}
+</style>
+
+
+<div class="toggleable open">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-opened.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 5b</a> <em>(January 2011)</em>
+
+    <div class="toggleme">
+      <p>This release of the NDK does not include any new features compared to r5. The r5b release addresses the
+      following problems in the r5 release:
+      </p>
+      <ul>
+    <li>The r5 binaries required glibc 2.11, but the r5b binaries are generated with a special
+    toolchain that targets glibc 2.7 or higher instead. The Linux toolchain binaries now run on Ubuntu 8.04 or higher. </li>
+    <li>Fixes a compiler bug in the arm-linux-androideabi-4.4.3 toolchain.
+    The previous binary generated invalid thumb instruction sequences when
+    dealing with signed chars.</li>
+    <li>Adds missing documentation for the
+    "gnustl_static" value for APP_STL, that allows you to link against
+    a static library version of GNU libstdc++. </li>
+    <li>The following <code>ndk-build</code> issues are fixed:
+      <ul>
+        <li>A bug that created inconsistent dependency files when a
+        compilation error occured on Windows. This prevented a proper build after
+        the error was fixed in the source code.</li>
+        <li>A Cygwin-specific bug where using very short paths for
+        the Android NDK installation or the project path led to the
+        generation of invalid dependency files. This made incremental builds
+        impossible.</li>
+        <li>A typo that prevented the cpufeatures library from working correctly
+        with the new NDK toolchain.</li>
+        <li>Builds in Cygwin are faster by avoiding calls to <code>cygpath -m</code>
+        from GNU Make for every source or object file, which caused problems
+        with very large source trees. In case this doesn't work properly, define <code>NDK_USE_CYGPATH=1</code> in your
+        environment to use <code>cygpath -m</code> again.</li>
+        <li>The Cygwin installation now notifies the user of invalid installation paths that contain spaces. Previously, an invalid path
+        would output an error that complained about an incorrect version of GNU Make, even if the right one was installed.
+      </ul>
+    </li>
+  <li>Fixed a typo that prevented the <code>NDK_MODULE_PATH</code> environment variable from working properly when
+  it contained multiple directories separated with a colon. </li>
+  <li>The <code>prebuilt-common.sh</code> script contains fixes to check the compiler for 64-bit
+  generated machine code, instead of relying on the host tag, which
+  allows the 32-bit toolchain to rebuild properly on Snow Leopard. The toolchain rebuild scripts now also support
+  using a 32-bit host toolchain.</li>
+  <li>A missing declaration for <code>INET_ADDRSTRLEN</code> was added to <code>&lt;netinet/in.h&gt;</code>.</li>
+  <li>Missing declarations for <code>IN6_IS_ADDR_MC_NODELOCAL</code> and <code>IN6_IS_ADDR_MC_GLOBAL</code> were added to <code>&lt;netinet/in6.h&gt;</code>.</li>
+  <li>'asm' was replaced with '__asm__' in <code>&lt;asm/byteorder.h&gt;</code> to allow compilation with <code>-std=c99</code>.</li>
+  </ul>
+  </div>
+  </div>
+
+<div class="toggleable closed">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-closed.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 5</a> <em>(December 2010)</em>
+
+    <div class="toggleme">
+      <p>This release of the NDK includes many new APIs, most of which are introduced to
+         support the development of games and similar applications that make extensive use
+         of native code. Using the APIs, developers have direct native access to events, audio,
+         graphics and window management, assets, and storage. Developers can also implement the
+         Android application lifecycle in native code with help from the new
+         <code><a href="../../reference/android/app/NativeActivity.html">NativeActivity</a></code> class. For detailed information describing the changes in this
+         release, read the <code>CHANGES.HTML</code> document included in the downloaded NDK package.
+      </p>
+      <dl>
+        <dt>General notes:</dt>
+        <dd>
+          <ul>
+            <li>Adds support for native activities, which allows you to implement the
+            Android application lifecycle in native code.</li>
+
+            <li>Adds native support for the following:
+
+              <ul>
+
+                <li>Input subsystem (such as the keyboard and touch screen)</li>
+
+                <li>Access to sensor data (accelerometer, compass, gyroscope, etc).</li>
+
+                <li>Event loop APIs to wait for things such as input and sensor events.</li>
+
+                <li>Window and surface subsystem</li>
+
+                <li>Audio APIs based on the OpenSL ES standard that support playback and recording
+                as well as control over platform audio effects</li>
+
+                <li>Access to assets packaged in an <code>.apk</code> file.</li>
+                
+              </ul>
+            </li>
+
+            <li>Includes a new toolchain (based on GCC 4.4.3), which generates better code, and can also now
+            be used as a standalone cross-compiler, for people who want to build their stuff with
+            <code>./configure &amp;&amp; make</code>. See
+            docs/STANDALONE-TOOLCHAIN.html for the details. The binaries for GCC 4.4.0 are still provided,
+            but the 4.2.1 binaries were removed.</li>
+
+            <li>Adds support for prebuilt static and shared libraries (docs/PREBUILTS.html) and module
+            exports and imports to make sharing and reuse of third-party modules much easier
+            (docs/IMPORT-MODULE.html explains why).</li>
+
+            <li>Provides a default C++ STL implementation (based on STLport) as a helper module. It can be used either
+            as a static or shared library (details and usage examples are in sources/android/stlport/README). Prebuilt
+            binaries for STLport (static or shared) and GNU libstdc++ (static only) are also provided if you choose to
+            compile against those libraries instead of the default C++ STL implementation. 
+            C++ Exceptions and RTTI are not supported in the default STL implementation. For more information, see
+            docs/CPLUSPLUS-SUPPORT.HTML.</li>
+
+            <li>Includes improvements to the <code>cpufeatures</code> helper library that improves reporting
+            of the CPU type (some devices previously reported ARMv7 CPU when the device really was an ARMv6). We
+            recommend developers that use this library to rebuild their applications then
+            upload to Market to benefit from the improvements.</li>
+
+            <li>Adds an EGL library that lets you create and manage OpenGL ES textures and
+              services.</li>
+                
+            <li>Adds new sample applications, <code>native-plasma</code> and <code>native-activity</code>, 
+            to demonstrate how to write a native activity.</li>
+
+            <li>Includes many bugfixes and other small improvements; see docs/CHANGES.html for a more
+              detailed list of changes.</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="toggleable closed">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-closed.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 4b</a> <em>(June 2010)</em>
+
+    <div class="toggleme">
+      <dl>
+        <dt>NDK r4b notes:</dt>
+
+        <dd>
+          <p>Includes fixes for several issues in the NDK build and debugging scripts &mdash; if
+          you are using NDK r4, we recommend downloading the NDK r4b build. For detailed
+          information describing the changes in this release, read the CHANGES.TXT document
+          included in the downloaded NDK package.</p>
+        </dd>
+      </dl>
+
+      <dl>
+        <dt>General notes:</dt>
+
+        <dd>
+          <ul>
+            <li>Provides a simplified build system through the new <code>ndk-build</code> build
+            command.</li>
+
+            <li>Adds support for easy native debugging of generated machine code on production
+            devices through the new <code>ndk-gdb</code> command.</li>
+
+            <li>Adds a new Android-specific ABI for ARM-based CPU architectures,
+            <code>armeabi-v7a</code>. The new ABI extends the existing <code>armeabi</code> ABI to
+            include these CPU instruction set extensions:
+
+              <ul>
+                <li>Thumb-2 instructions</li>
+
+                <li>VFP hardware FPU instructions (VFPv3-D16)</li>
+
+                <li>Optional support for ARM Advanced SIMD (NEON) GCC intrinsics and VFPv3-D32.
+                Supported by devices such as Verizon Droid by Motorola, Google Nexus One, and
+                others.</li>
+              </ul>
+            </li>
+
+            <li>Adds a new <code>cpufeatures</code> static library (with sources) that lets your
+            app detect the host device's CPU features at runtime. Specifically, applications can
+            check for ARMv7-A support, as well as VFPv3-D32 and NEON support, then provide separate
+            code paths as needed.</li>
+
+            <li>Adds a sample application, <code>hello-neon</code>, that illustrates how to use the
+            <code>cpufeatures</code> library to check CPU features and then provide an optimized
+            code path using NEON instrinsics, if supported by the CPU.</li>
+
+            <li>Lets you generate machine code for either or both of the instruction sets supported
+            by the NDK. For example, you can build for both ARMv5 and ARMv7-A architectures at the
+            same time and have everything stored to your application's final
+            <code>.apk</code>.</li>
+
+            <li>To ensure that your applications are available to users only if their devices are
+            capable of running them, Android Market now filters applications based on the
+            instruction set information included in your application &mdash; no action is needed on
+            your part to enable the filtering. Additionally, the Android system itself also checks
+            your application at install time and allows the installation to continue only if the
+            application provides a library that is compiled for the device's CPU architecture.</li>
+
+            <li>Adds support for Android 2.2, including a new stable API for accessing the pixel
+            buffers of <code><a href="../../reference/android/graphics/Bitmap.html">Bitmap</a></code> objects from native code.</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="toggleable closed">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-closed.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 3</a> <em>(March 2010)</em>
+
+    <div class="toggleme">
+      <dl>
+        <dt>General notes:</dt>
+
+        <dd>
+          <ul>
+            <li>Adds OpenGL ES 2.0 native library support.</li>
+
+            <li>Adds a sample application,<code>hello-gl2</code>, that illustrates the use of
+            OpenGL ES 2.0 vertex and fragment shaders.</li>
+
+            <li>The toolchain binaries have been refreshed for this release with GCC 4.4.0, which
+            should generate slightly more compact and efficient machine code than the previous one
+            (4.2.1). The NDK also still provides the 4.2.1 binaries, which you can optionally use
+            to build your machine code.</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="toggleable closed">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-closed.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 2</a> <em>(September 2009)</em>
+
+    <div class="toggleme">
+      <p>Originally released as "Android 1.6 NDK, Release 1".</p>
+
+      <dl>
+        <dt>General notes:</dt>
+
+        <dd>
+          <ul>
+            <li>Adds OpenGL ES 1.1 native library support.</li>
+
+            <li>Adds a sample application, <code>san-angeles</code>, that renders 3D graphics
+            through the native OpenGL ES APIs, while managing activity lifecycle with a <code><a href="../../reference/android/opengl/GLSurfaceView.html">GLSurfaceView</a></code> object.</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="toggleable closed">
+    <a href="#"
+         onclick="return toggleDiv(this)"><img src="../../assets/images/triangle-closed.png"
+         class="toggle-img"
+         height="9px"
+         width="9px" /> Android NDK, Revision 1</a> <em>(June 2009)</em>
+
+    <div class="toggleme">
+      <p>Originally released as "Android 1.5 NDK, Release 1".</p>
+
+      <dl>
+        <dt>General notes:</dt>
+
+        <dd>
+          <ul>
+            <li>Includes compiler support (GCC) for ARMv5TE instructions, including Thumb-1
+            instructions.</li>
+
+            <li>Includes system headers for stable native APIs, documentation, and sample
+            applications.</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+  
+  <h2 id="installing">Installing the NDK</h2>
+  <p>Installing the NDK on your development computer is straightforward and involves extracting the
+  NDK from its download package.</p>
+
+  <p>Before you get started make sure that you have downloaded the latest <a href=
+  "../../sdk/index.html">Android SDK</a> and upgraded your applications and environment as
+  needed. The NDK is compatible with older platform versions but not older versions of the SDK tools.
+  Also, take a moment to review the <a href="../../sdk/ndk/overview.html#reqs">System and
+Software Requirements</a>
+  for the NDK, if you haven't already.</p>
+
+  <p>To install the NDK, follow these steps:</p>
+
+  <ol>
+    <li>From the table at the top of this page, select the NDK package that is appropriate for your
+    development computer and download the package.</li>
+
+    <li>Uncompress the NDK download package using tools available on your computer. When
+    uncompressed, the NDK files are contained in a directory called
+    <code>android-ndk-&lt;version&gt;</code>. You can rename the NDK directory if necessary and you
+    can move it to any location on your computer. This documentation refers to the NDK directory as
+    <code>&lt;ndk&gt;</code>.</li>
+  </ol>
+
+  <p>You are now ready to start working with the NDK.</p>
+
+  <h2 id="gettingstarted">Getting Started with the NDK</h2>
+
+  <p>Once you've installed the NDK successfully, take a few minutes to read the documentation
+  included in the NDK. You can find the documentation in the <code>&lt;ndk&gt;/docs/</code>
+  directory. In particular, please read the OVERVIEW.HTML document completely, so that you
+  understand the intent of the NDK and how to use it.</p>
+
+  <p>If you used a previous version of the NDK, take a moment to review the list of NDK changes in
+  the CHANGES.HTML document.</p>
+
+  <p>Here's the general outline of how you work with the NDK tools:</p>
+
+  <ol>
+    <li>Place your native sources under <code>&lt;project&gt;/jni/...</code></li>
+
+    <li>Create <code>&lt;project&gt;/jni/Android.mk</code> to describe your native sources to the
+    NDK build system</li>
+
+    <li>Optional: Create <code>&lt;project&gt;/jni/Application.mk</code>.</li>
+
+    <li>Build your native code by running the 'ndk-build' script from your project's directory. It
+    is located in the top-level NDK directory:
+      <pre class="no-pretty-print">cd &lt;project&gt;
+&lt;ndk&gt;/ndk-build
+</pre>
+
+      <p>The build tools copy the stripped, shared libraries needed by your application to the
+      proper location in the application's project directory.</p>
+    </li>
+
+    <li>Finally, compile your application using the SDK tools in the usual way. The SDK build tools
+    will package the shared libraries in the application's deployable <code>.apk</code> file.</li>
+  </ol>
+
+  <p>For complete information on all of the steps listed above, please see the documentation
+  included with the NDK package.</p>
+
+  <h2 id="samples">Sample Applications</h2>
+
+  <p>The NDK includes sample Android applications that illustrate how to use native code in your
+  Android applications. For more information, see <a href=
+  "../../sdk/ndk/overview.html#samples">Sample Applications</a>.</p>
+
+  <h2 id="forum">Discussion Forum and Mailing List</h2>
+
+  <p>If you have questions about the NDK or would like to read or contribute to discussions about
+  it, please visit the <a href="http://groups.google.com/group/android-ndk">android-ndk</a> group
+  and mailing list.</p>
+
+
+</div><!-- end jd-content -->
+
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="../../license.html">Content 
+  License</a>.
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+
+
+</div><!-- end g-unit -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+
+

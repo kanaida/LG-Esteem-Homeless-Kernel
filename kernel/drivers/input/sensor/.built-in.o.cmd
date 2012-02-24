@@ -1,0 +1,1 @@
+cmd_drivers/input/sensor/built-in.o :=  /home/kanaida/android-ms910/android/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-ld -EL    -r -o drivers/input/sensor/built-in.o drivers/input/sensor/kr3dh.o drivers/input/sensor/akm8973.o drivers/input/sensor/apds9900.o 

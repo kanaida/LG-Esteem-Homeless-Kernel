@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
+<title>Application Fundamentals | Android Developers</title>
+<link href="../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css" />
+<script src="../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../");
+</script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../index.html" tabindex="-1"><img
+              src="../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="guide">
+    
+	<li id="home-link"><a href="../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+		<span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+		<span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li id="resources-link"><a href="../../resources/index.html" onClick="return loadLast('resources')">
+	
+		<span class="en">Resources</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    		<span style="display:none" class="ja"></span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+
+
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../')"
+                      onkeyup="return search_changed(event, false, '../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+
+  <li>
+    <h2><span class="en">Android Basics</span>
+        <span class="de" style="display:none">Einführung in Android</span>
+        <span class="es" style="display:none">Información básica sobre Android</span>
+        <span class="fr" style="display:none">Présentation d'Android</span>
+        <span class="it" style="display:none">Nozioni di base su Android</span>
+        <span class="ja" style="display:none">Android の基本</span>
+        <span class="zh-CN" style="display:none">Android 基础知识</span>
+        <span class="zh-TW" style="display:none">Android 簡介</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/basics/what-is-android.html">
+        <span class="en">What Is Android?</span>
+        <span class="de" style="display:none">Was ist Android?</span>
+        <span class="es" style="display:none">¿Qué es Android?</span>
+        <span class="fr" style="display:none">Qu'est-ce qu'Android&nbsp;?</span>
+        <span class="it" style="display:none">Che cos'è Android?</span>
+        <span class="ja" style="display:none">Android とは</span>
+        <span class="zh-CN" style="display:none">Android 是什么？</span>
+        <span class="zh-TW" style="display:none">什麼是 Android？</span>
+          </a></li>
+
+  <!--  <li><a style="color:gray;">The Android SDK</a></li> -->
+  <!--  <li><a style="color:gray;">Walkthrough for Developers</a></li> -->
+      <!-- quick overview of what it's like to develop on Android -->
+    </ul>
+  </li>
+
+  <li>
+    <h2>
+      <span class="en">Framework Topics</span>
+      <span class="de" style="display:none">Framework-Themen</span>
+      <span class="es" style="display:none">Temas sobre el framework</span>
+      <span class="fr" style="display:none">Thèmes relatifs au framework</span>
+      <span class="it" style="display:none">Argomenti relativi al framework</span>
+      <span class="ja" style="display:none">フレームワーク トピック</span>
+      <span class="zh-CN" style="display:none">框架主题</span>
+      <span class="zh-TW" style="display:none">架構主題</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/topics/fundamentals.html">
+            <span class="en">Application Fundamentals</span>
+            <span class="de" style="display:none">Anwendungsgrundlagen</span>
+            <span class="es" style="display:none">Fundamentos de las aplicaciones</span>
+            <span class="fr" style="display:none">Principes de base des applications</span>
+            <span class="it" style="display:none">Concetti fondamentali sulle applicazioni</span>
+            <span class="ja" style="display:none">開発の基礎</span>
+            <span class="zh-CN" style="display:none">应用程序基础</span>
+            <span class="zh-TW" style="display:none">應用程式基本原理</span>
+
+          </a></li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/ui/index.html">
+               <span class="en">User Interface</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/ui/declaring-layout.html">
+               <span class="en">Declaring Layout</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/menus.html">
+               <span class="en">Creating Menus</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/dialogs.html">
+                <span class="en">Creating Dialogs</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/ui-events.html">
+                <span class="en">Handling UI Events</span>
+              </a></li>
+          <li class="toggle-list">
+            <div><a href="../../guide/topics/ui/notifiers/index.html">
+                <span class="en">Notifying the User</span>
+            </a></div>
+            <ul>
+              <li><a href="../../guide/topics/ui/notifiers/toasts.html">
+                <span class="en">Creating Toast Notifications</span>
+              </a></li>
+              <li><a href="../../guide/topics/ui/notifiers/notifications.html">
+                <span class="en">Creating Status Bar Notifications</span>
+              </a></li>
+            </ul>
+          </li>
+          <li><a href="../../guide/topics/ui/themes.html">
+                <span class="en">Applying Styles and Themes</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/custom-components.html">
+                <span class="en">Building Custom Components</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/binding.html">
+                <span class="en">Binding to Data with AdapterView</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/layout-objects.html">
+                <span class="en">Common Layout Objects</span>
+              </a></li>
+          <li><a href="../../guide/topics/ui/how-android-draws.html">
+                <span class="en">How Android Draws Views</span>
+              </a></li>
+        </ul>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/resources/index.html">
+               <span class="en">Application Resources</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/resources/providing-resources.html">
+                <span class="en">Providing Resources</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/accessing-resources.html">
+                <span class="en">Accessing Resources</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/runtime-changes.html">
+                <span class="en">Handling Runtime Changes</span>
+              </a></li>
+          <li><a href="../../guide/topics/resources/localization.html">
+                <span class="en">Localization</span>
+              </a></li>
+          <li class="toggle-list">
+            <div><a href="../../guide/topics/resources/available-resources.html">
+              <span class="en">Resource Types</span>
+            </a></div>
+            <ul>
+              <li><a href="../../guide/topics/resources/animation-resource.html">Animation</a></li>
+              <li><a href="../../guide/topics/resources/color-list-resource.html">Color State List</a></li>
+              <li><a href="../../guide/topics/resources/drawable-resource.html">Drawable</a></li>
+              <li><a href="../../guide/topics/resources/layout-resource.html">Layout</a></li>
+              <li><a href="../../guide/topics/resources/menu-resource.html">Menu</a></li>
+              <li><a href="../../guide/topics/resources/string-resource.html">String</a></li>
+              <li><a href="../../guide/topics/resources/style-resource.html">Style</a></li>
+              <li><a href="../../guide/topics/resources/more-resources.html">More Types</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/intents/intents-filters.html">
+            <span class="en">Intents and Intent Filters</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/data/data-storage.html">
+            <span class="en">Data Storage</span>
+          </a></div>
+          <ul>
+            <li><a href="../../guide/topics/data/backup.html">
+                <span class="en">Data Backup</span>
+              </a>
+            </li>
+          </ul>
+      </li>
+      <li><a href="../../guide/topics/providers/content-providers.html">
+            <span class="en">Content Providers</span>
+          </a></li>
+      <li><a href="../../guide/topics/security/security.html">
+            <span class="en">Security and Permissions</span>
+          </a></li>
+  <!--  <li><a style="color:gray;">Processes and Threads</a></li> -->
+  <!--  <li><a style="color:gray;">Interprocess Communication</a></li> -->
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/manifest/manifest-intro.html">
+               <span class="en">The AndroidManifest.xml File</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/manifest/action-element.html">&lt;action&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/activity-alias-element.html">&lt;activity-alias&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/application-element.html">&lt;application&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/category-element.html">&lt;category&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/data-element.html">&lt;data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/grant-uri-permission-element.html">&lt;grant-uri-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/instrumentation-element.html">&lt;instrumentation&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/intent-filter-element.html">&lt;intent-filter&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/manifest-element.html">&lt;manifest&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/meta-data-element.html">&lt;meta-data&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/path-permission-element.html">&lt;path-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-element.html">&lt;permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-group-element.html">&lt;permission-group&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/permission-tree-element.html">&lt;permission-tree&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/supports-screens-element.html">&lt;supports-screens&gt;</a></li>  <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-configuration-element.html">&lt;uses-configuration&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-feature-element.html">&lt;uses-feature&gt;</a></li> <!-- ##api level 4## -->
+          <li><a href="../../guide/topics/manifest/uses-library-element.html">&lt;uses-library&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-permission-element.html">&lt;uses-permission&gt;</a></li>
+          <li><a href="../../guide/topics/manifest/uses-sdk-element.html">&lt;uses-sdk&gt;</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/graphics/index.html">
+               <span class="en">Graphics</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/graphics/2d-graphics.html">
+                <span class="en">2D Graphics</span>
+              </a></li>
+          <li><a href="../../guide/topics/graphics/opengl.html">
+                <span class="en">3D with OpenGL</span>
+              </a></li>
+        </ul>
+      </li>
+      <li><a href="../../guide/topics/media/index.html">
+            <span class="en">Audio and Video</span>
+          </a></li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Sensors</a></div>
+          <ul>
+            <li><a style="color:gray;">Camera</a></li>
+            <li><a style="color:gray;">Compass</a></li>
+            <li><a style="color:gray;">Accelerometer</a></li>
+          </ul>
+      </li> -->
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/location/index.html">
+               <span class="en">Location and Maps</span>
+             </a></div>
+        <ul>
+          <li><a href="../../guide/topics/location/obtaining-user-location.html">
+                <span class="en">Obtaining User Location</span>
+              </a></li>
+        </ul>
+      </li>
+  <!--<li class="toggle-list">
+        <div><a style="color:gray;">Wireless Controls</a></div>
+          <ul>
+            <li><a style="color:gray;">Wi-Fi</a></li>
+          </ul>
+      </li> -->
+  <!--<li><a style="color:gray;">Localization</a></li>  -->
+      <li><a href="../../guide/topics/appwidgets/index.html">
+            <span class="en">App Widgets</span>
+          </a></li>
+      <li><a href="../../guide/topics/wireless/bluetooth.html">
+            <span class="en">Bluetooth</span>
+          </a></li>
+      <li><a href="../../guide/topics/nfc/index.html">
+            <span class="en">Near Field Communication</span></a>
+            <span class="new">new!</span></li>
+       <li><a href="../../guide/topics/network/sip.html">
+            <span class="en">Session Initiation Protocol</span></a>
+            <span class="new">new!</span>
+          </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/topics/search/index.html">
+            <span class="en">Search</span>
+          </a></div>
+          <ul>
+            <li><a href="../../guide/topics/search/search-dialog.html">Using the Android Search Dialog</a></li>
+            <li><a href="../../guide/topics/search/adding-recent-query-suggestions.html">Adding Recent Query Suggestions</a></li>
+            <li><a href="../../guide/topics/search/adding-custom-suggestions.html">Adding Custom Suggestions</a></li>
+            <li><a href="../../guide/topics/search/searchable-config.html">Searchable Configuration</a></li>
+          </ul>
+      </li>
+      <li><a href="../../guide/topics/admin/device-admin.html">
+            <span class="en">Device Administration</span>
+         </a>
+      </li>
+      <li class="toggle-list">
+           <div>
+                <a href="../../guide/topics/testing/index.html">
+                   <span class="en">Testing</span>
+               </a>
+           </div>
+           <ul>
+              <li>
+                <a href="../../guide/topics/testing/testing_android.html">
+                <span class="en">Testing Fundamentals</span></a>
+                <span class="new">new!</span>
+              </li>
+              <li>
+                <a href="../../guide/topics/testing/activity_testing.html">
+                <span class="en">Activity Testing</span></a>
+                <span class="new">new!</span>
+              </li>
+              <li>
+                <a href="../../guide/topics/testing/contentprovider_testing.html">
+                <span class="en">Content Provider Testing</span></a>
+                <span class="new">new!</span>
+              </li>
+              <li>
+                <a href="../../guide/topics/testing/service_testing.html">
+                <span class="en">Service Testing</span></a>
+                <span class="new">new!</span>
+              </li>
+              <li>
+                <a href="../../guide/topics/testing/what_to_test.html">
+                <span class="en">What To Test</span></a>
+                <span class="new">new!</span>
+              </li>
+
+           </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <h2>
+      <span class="en">Android Market Topics</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/publishing/licensing.html">
+          <span class="en">Application Licensing</span></a>
+      </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/market/billing/index.html">
+            <span class="en">In-app Billing</span></a>
+          <span class="new">new!</span>
+        </div>
+        <ul>
+          <li><a href="../../guide/market/billing/billing_about.html">
+              <span class="en">About this Release</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_overview.html">
+              <span class="en">In-app Billing Overview</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_integrate.html">
+              <span class="en">Implementing In-app Billing</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_best_practices.html">
+              <span class="en">Security and Design</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_testing.html">
+              <span class="en">Testing In-app Billing</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_admin.html">
+              <span class="en">Administering In-app Billing</span></a>
+          </li>
+          <li><a href="../../guide/market/billing/billing_reference.html">
+              <span class="en">In-app Billing Reference</span></a>
+          </li>
+        </ul>
+      </li>
+      <li><a href="../../guide/appendix/market-filters.html">
+          <span class="en">Market Filters</span></a>
+      </li>
+    </ul>
+  </li>
+
+
+  <li>
+    <h2><span class="en">Developing</span>
+               <span class="de" style="display:none">Entwicklung</span>
+               <span class="es" style="display:none">Desarrollo</span>
+               <span class="fr" style="display:none">Développement</span>
+               <span class="it" style="display:none">Sviluppo</span>
+               <span class="ja" style="display:none">開発</span>
+               <span class="zh-CN" style="display:none">开发</span>
+               <span class="zh-TW" style="display:none">開發</span>
+    </h2>
+    <ul>
+  <!--<li><a href="">Developing for Android</a></li>
+      signing, upgrading, selecting a package name, select device profile, touch, trackball, dpad available, etc. -->
+      <li><a href="../../guide/developing/eclipse-adt.html">
+            <span class="en">In Eclipse, with ADT</span>
+            <span class="de" style="display:none">In Eclipse, mit ADT</span>
+            <span class="es" style="display:none">En Eclipse, con ADT</span>
+            <span class="fr" style="display:none">Sous Eclipse, à l'aide du plugin ADT</span>
+            <span class="it" style="display:none">In Eclipse, con ADT</span>
+            <span class="ja" style="display:none">Eclipse 内で ADT を使用</span>
+            <span class="zh-CN" style="display:none">利用 ADT 在 Eclipse 中开发</span>
+            <span class="zh-TW" style="display:none">在加裝 ADT 工具的 Eclipse 環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/other-ide.html">
+            <span class="en">In Other IDEs</span>
+            <span class="de" style="display:none">In anderen IDEs</span>
+            <span class="es" style="display:none">En otros entornos</span>
+            <span class="fr" style="display:none">Sous d'autres environnements</span>
+            <span class="it" style="display:none">In altri IDE</span>
+            <span class="ja" style="display:none">その他の統合開発環境</span>
+            <span class="zh-CN" style="display:none">在其他 IDE 中开发</span>
+            <span class="zh-TW" style="display:none">在其他開發環境中</span>
+          </a></li>
+      <li><a href="../../guide/developing/device.html">
+            <span class="en">On a Device</span>
+          </a></li>
+      <li><a href="../../guide/developing/debug-tasks.html">
+            <span class="en">Debugging Tasks</span>
+          </a></li>
+      <li class="toggle-list">
+           <div>
+                <a href="../../guide/developing/testing/index.html">
+                   <span class="en">Testing</span>
+               </a>
+           </div>
+           <ul>
+              <li>
+                <a href="../../guide/developing/testing/testing_eclipse.html">
+                  <span class="en">Testing in Eclipse, with ADT</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="../../guide/developing/testing/testing_otheride.html">
+                  <span class="en">Testing in Other IDEs</span>
+                </a>
+              </li>
+           </ul>
+         </li>
+      <li class="toggle-list">
+        <div><a href="../../guide/developing/tools/index.html">
+            <span class="en">Tools</span>
+          </a></div>
+        <ul>
+              <li><a href="../../guide/developing/tools/aapt.html">aapt</a></li>
+              <li><a href="../../guide/developing/tools/adb.html">adb</a></li>
+              <li><a href="../../guide/developing/tools/othertools.html#android">android</a></li>
+      <!--<li><a href="../../guide/developing/tools/adt.html">ADT Plugin</a></li>-->
+              <li><a href="../../guide/developing/tools/aidl.html">aidl</a></li>
+              <li><a href="../../guide/developing/tools/avd.html">AVDs</a></li>
+              <li><a href="../../guide/developing/tools/bmgr.html">bmgr</a></li>
+              <li><a href="../../guide/developing/tools/ddms.html">ddms</a></li>
+              <li><a href="../../guide/developing/tools/othertools.html#dx">dx</a></li>
+              <li><a href="../../guide/developing/tools/draw9patch.html">Draw 9-Patch</a></li>
+              <li><a href="../../guide/developing/tools/emulator.html">Emulator</a></li>
+              <li><a href="../../guide/developing/tools/hierarchy-viewer.html">Hierarchy Viewer</a></li>
+              <li><a href="../../guide/developing/tools/layoutopt.html">layoutopt</a></li>
+              <li><a href="../../guide/developing/tools/othertools.html#mksdcard">mksdcard</a></li>
+              <li><a href="../../guide/developing/tools/monkey.html">Monkey</a></li>
+              <li class="toggle-list">
+                 <div>
+                     <a href="../../guide/developing/tools/monkeyrunner_concepts.html">
+                     <span class="en">monkeyrunner</span>
+                  </a>
+                      <span class="new">new!</span>
+                  </div>
+                  <ul>
+                      <li>
+                          <a href="../../guide/developing/tools/MonkeyDevice.html">
+                                <span class="en">MonkeyDevice</span>
+                        </a>
+                        <span class="new">new!</span>
+                    </li>
+                    <li>
+                        <a href="../../guide/developing/tools/MonkeyImage.html">
+                            <span class="en">MonkeyImage</span>
+                        </a>
+                        <span class="new">new!</span>
+                    </li>
+                    <li>
+                        <a href="../../guide/developing/tools/MonkeyRunner.html">
+                            <span class="en">MonkeyRunner</span>
+                        </a>
+                        <span class="new">new!</span>
+                    </li>
+                  </ul>
+              </li>
+              <li><a href="../../guide/developing/tools/proguard.html">ProGuard</a> <span class="new">new!</span></li>
+              <li><a href="../../guide/developing/tools/adb.html#sqlite">sqlite3</a></li>
+              <li><a href="../../guide/developing/tools/traceview.html" >Traceview</a></li>
+              <li><a href="../../guide/developing/tools/zipalign.html" >zipalign</a></li>
+          </ul>
+        </li>
+    </ul>
+  </li>
+
+  <li>
+    <h2><span class="en">Publishing</span>
+        <span class="de" style="display:none">Veröffentlichung</span>
+        <span class="es" style="display:none">Publicación</span>
+        <span class="fr" style="display:none">Publication</span>
+        <span class="it" style="display:none">Pubblicazione</span>
+        <span class="ja" style="display:none">公開</span>
+        <span class="zh-CN" style="display:none">发布</span>
+        <span class="zh-TW" style="display:none">發佈</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/publishing/app-signing.html">
+            <span class="en">Signing Your Applications</span>
+            <span class="de" style="display:none">Signieren Ihrer Anwendungen</span>
+            <span class="es" style="display:none">Firma de aplicaciones</span>
+            <span class="fr" style="display:none">Attribution de votre signature <br />à vos applications</span>
+            <span class="it" style="display:none">Firma delle applicazioni</span>
+            <span class="ja" style="display:none">アプリケーションへの署名</span>
+            <span class="zh-CN" style="display:none">应用程序签名</span>
+            <span class="zh-TW" style="display:none">簽署應用程式</span>
+          </a></li>
+      <li><a href="../../guide/publishing/versioning.html">
+            <span class="en">Versioning Your Applications</span>
+            <span class="de" style="display:none">Versionsverwaltung für Ihre <br />Anwendungen</span>
+            <span class="es" style="display:none">Versiones de las aplicaciones</span>
+            <span class="fr" style="display:none">Attribution d'une version à vos applications</span>
+            <span class="it" style="display:none">Controllo versioni delle applicazioni</span>
+            <span class="ja" style="display:none">アプリケーションのバージョニング</span>
+            <span class="zh-CN" style="display:none">应用程序版本控制</span>
+            <span class="zh-TW" style="display:none">應用程式版本設定</span>
+          </a></li>
+      <li><a href="../../guide/publishing/preparing.html">
+            <span class="en">Preparing to Publish</span>
+            <span class="de" style="display:none">Vorbereitung auf die Veröffentlichung</span>
+            <span class="es" style="display:none">Publicación de aplicaciones</span>
+            <span class="fr" style="display:none">Préparation à la publication</span>
+            <span class="it" style="display:none">Preparativi per la pubblicazione</span>
+            <span class="ja" style="display:none">公開の準備</span>
+            <span class="zh-CN" style="display:none">准备发布</span>
+            <span class="zh-TW" style="display:none">準備發佈</span>
+          </a></li>
+      <li><a href="../../guide/publishing/publishing.html">
+            <span class="en">Publishing Your Applications</span>
+          </a></li>
+    </ul>
+  </li>
+
+  <li>
+    <h2><span class="en">Best Practices</span>
+               <span class="de" style="display:none">Bewährte Verfahren</span>
+               <span class="es" style="display:none">Prácticas recomendadas</span>
+               <span class="fr" style="display:none">Meilleures pratiques</span>
+               <span class="it" style="display:none">Best practice</span>
+               <span class="ja" style="display:none">ベスト プラクティス</span>
+               <span class="zh-CN" style="display:none">最佳实践</span>
+               <span class="zh-TW" style="display:none">最佳實務</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/practices/compatibility.html">
+            <span class="en">Compatibility</span>
+          </a></li>
+      <li><a href="../../guide/practices/screens_support.html">
+            <span class="en">Supporting Multiple Screens</span>
+          </a></li>
+      <li class="toggle-list">
+        <div><a href="../../guide/practices/ui_guidelines/index.html">
+               <span class="en">UI Guidelines</span>
+             </a></div>
+        <ul>
+          <li class="toggle-list">
+            <div><a href="../../guide/practices/ui_guidelines/icon_design.html">
+                   <span class="en">Icon Design</span>
+                 </a></div>
+            <ul>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_launcher.html">
+                    <span class="en">Launcher Icons</span>
+                  </a></li>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_menu.html">
+                    <span class="en">Menu Icons</span>
+                  </a></li>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_status_bar.html">
+                    <span class="en">Status Bar Icons</span>
+                  </a></li>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_tab.html">
+                    <span class="en">Tab Icons</span>
+                  </a></li>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_dialog.html">
+                    <span class="en">Dialog Icons</span>
+                  </a></li>
+              <li><a href="../../guide/practices/ui_guidelines/icon_design_list.html">
+                    <span class="en">List View Icons</span>
+                  </a></li>
+            </ul>
+          </li>
+          <li><a href="../../guide/practices/ui_guidelines/widget_design.html">
+                <span class="en">App Widget Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/activity_task_design.html">
+                <span class="en">Activity and Task Design</span>
+              </a></li>
+          <li><a href="../../guide/practices/ui_guidelines/menu_design.html">
+                <span class="en">Menu Design</span>
+              </a></li>
+        </ul>
+      </li>
+      </ul>
+      <ul>
+      <li><a href="../../guide/practices/design/performance.html">
+            <span class="en">Designing for Performance</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/responsiveness.html">
+            <span class="en">Designing for Responsiveness</span>
+          </a></li>
+      <li><a href="../../guide/practices/design/seamlessness.html">
+            <span class="en">Designing for Seamlessness</span>
+          </a></li>
+    </ul>
+  </li>
+
+  <li>
+    <h2><span class="en">Web Applications</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/webapps/index.html">
+            <span class="en">Web Apps Overview</span>
+          </a> <span class="new">new!</span><!-- 11/1/10 --></li>
+      <li><a href="../../guide/webapps/targeting.html">
+            <span class="en">Targeting Screens from Web Apps</span>
+          </a> <span class="new">new!</span><!-- 11/1/10 --></li>
+      <li><a href="../../guide/webapps/webview.html">
+            <span class="en">Building Web Apps in WebView</span>
+          </a> <span class="new">new!</span><!-- 11/1/10 --></li>
+      <li><a href="../../guide/webapps/debugging.html">
+            <span class="en">Debugging Web Apps</span>
+          </a> <span class="new">new!</span><!-- 11/1/10 --></li>
+      <li><a href="../../guide/webapps/best-practices.html">
+            <span class="en">Best Practices for Web Apps</span>
+          </a> <span class="new">new!</span><!-- 11/1/10 --></li>
+    </ul>
+  </li>
+
+  <li>
+    <h2><span class="en">Appendix</span>
+               <span class="de" style="display:none">Anhang</span>
+               <span class="es" style="display:none">Apéndice</span>
+               <span class="fr" style="display:none">Annexes</span>
+               <span class="it" style="display:none">Appendice</span>
+               <span class="ja" style="display:none">付録</span>
+               <span class="zh-CN" style="display:none">附录</span>
+               <span class="zh-TW" style="display:none">附錄</span>
+    </h2>
+    <ul>
+      <li><a href="../../guide/appendix/api-levels.html">
+            <span class="en">Android API Levels</span>
+          </a></li>
+      <li><a href="../../guide/appendix/install-location.html">
+            <span class="en">App Install Location</span>
+          </a></li>
+      <li><a href="../../guide/appendix/media-formats.html">
+            <span class="en">Supported Media Formats</span>
+          </a></li>
+      <li><a href="../../guide/appendix/g-app-intents.html">
+            <span class="en">Intents List: Google Apps</span>
+          </a></li>
+      <li><a href="../../guide/appendix/glossary.html">
+            <span class="en">Glossary</span>
+          </a></li>
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+      </div>
+    </div> <!-- end side-nav -->
+    <script>
+      addLoadEvent(function() {
+        scrollIntoView("devdoc-nav");
+        });
+    </script>
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>Application Fundamentals</h1>
+</div>
+
+  <div id="jd-content">
+
+    <div class="jd-descr">
+    <div id="qv-wrapper">
+<div id="qv">
+
+<h2>In this document</h2>
+<ol>
+<li><a href="#appcomp">Application Components</a>
+  <ol>
+    <li><a href="#actcomp">Activating components: intents</a></li>
+    <li><a href="#endcomp">Shutting down components</a></li>
+    <li><a href="#manfile">The manifest file</a></li>
+    <li><a href="#ifilters">Intent filters</a></li>
+  </ol></li>
+<li><a href="#acttask">Activities and Tasks</a>
+  <ol>
+    <li><a href="#afftask">Affinities and new tasks</a></li>
+    <li><a href="#lmodes">Launch modes</a></li>
+    <li><a href="#clearstack">Clearing the stack</a></li>
+    <li><a href="#starttask">Starting tasks</a></li>
+  </ol></li>
+<li><a href="#procthread">Processes and Threads</a>
+  <ol>
+    <li><a href="#procs">Processes</a></li>
+    <li><a href="#threads">Threads</a></li>
+    <li><a href="#rpc">Remote procedure calls</a></li>
+    <li><a href="#tsafe">Thread-safe methods</a></li>
+  </ol></li>
+<li><a href="#lcycles">Component Lifecycles</a>
+  <ol>
+    <li><a href="#actlife">Activity lifecycle</a></li>
+    <li><a href="#servlife">Service lifecycle</a></li>
+    <li><a href="#broadlife">Broadcast receiver lifecycle</a></li>
+    <li><a href="#proclife">Processes and lifecycles</a></li>
+  </ol></li>
+</ol>
+
+<h2>Key classes</h2>
+<ol>
+<li><code><a href="../../reference/android/app/Activity.html">Activity</a></code></li>
+<li><code><a href="../../reference/android/app/Service.html">Service</a></code></li>
+<li><code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code></li>
+<li><code><a href="../../reference/android/content/ContentProvider.html">ContentProvider</a></code></li>
+<li><code><a href="../../reference/android/content/Intent.html">Intent</a></code></li>
+</ol>
+
+</div>
+</div>
+
+<p>
+Android applications are written in the Java programming language. 
+The compiled Java code &mdash; along with any data and resource 
+files required by the application &mdash; is bundled by the 
+<a href="../../guide/developing/tools/aapt.html"><code>aapt</code> 
+tool</a> into an <i>Android package</i>, an archive file 
+marked by an <code>.apk</code> suffix.  This file is the vehicle 
+for distributing the application and installing it on mobile devices; 
+it's the file users download to their devices.  All the code in a 
+single <code>.apk</code> file is considered to be one <i>application</i>.
+</p>
+
+<p>
+In many ways, each Android application lives in its own world:
+</p>
+
+<ul>
+<li>By default, every application runs in its own Linux process.
+Android starts the process when any of the application's code needs to be 
+executed, and shuts down the process when it's no longer needed and system 
+resources are required by other applications.</li>
+
+<li>Each process has its own virtual machine (VM), so application code 
+runs in isolation from the code of all other applications.</li>
+
+<li>By default, each application is assigned a unique Linux user ID.  
+Permissions are set so that the application's files are visible only to
+that user and only to the application itself &mdash; although there are ways
+to export them to other applications as well.</li>
+</ul>
+
+<p>
+It's possible to arrange for two applications to share the same user ID, 
+in which case they will be able to see each other's files.  To conserve 
+system resources, applications with the same ID can also arrange to run 
+in the same Linux process, sharing the same VM.
+</p>
+
+
+<h2 id="appcomp">Application Components</h2>
+
+<p>
+A central feature of Android is that one application can make use of elements 
+of other applications (provided those applications permit it).  For example, 
+if your application needs to display a scrolling list of images and another 
+application has developed a suitable scroller and made it available to others, 
+you can call upon that scroller to do the work, rather than develop your own.  
+Your application doesn't incorporate the code of the other application or 
+link to it.  Rather, it simply starts up that piece of the other application 
+when the need arises.
+</p>
+
+<p>
+For this to work, the system must be able to start an application process 
+when any part of it is needed, and instantiate the Java objects for that part.  
+Therefore, unlike applications on most other systems, Android applications don't 
+have a single entry point for everything in the application (no <code>main()</code> 
+function, for example).  Rather, they have essential <i>components</i> that 
+the system can instantiate and run as needed.  There are four types of components:
+</p>
+
+<dl>
+
+<dt><b>Activities</b></dt>
+<dd>An <i>activity</i> presents a visual user interface for one focused endeavor 
+the user can undertake.  For example, an activity might present a list of 
+menu items users can choose from or it might display photographs along
+with their captions.  A text messaging application might have one activity 
+that shows a list of contacts to send messages to, a second activity to write 
+the message to the chosen contact, and other activities to review old messages 
+or change settings.  Though they work together to form a cohesive user interface, 
+each activity is independent of the others.  
+Each one is implemented as a subclass of the <code><a href="../../reference/android/app/Activity.html">Activity</a></code> base class.  
+
+<p>
+An application might consist of just one activity or, like the text messaging
+application just mentioned, it may contain several.  
+What the activities are, and how many there are depends, of course, on the 
+application and its design.  Typically, one of the activities is marked
+as the first one that should be presented to the user when the application is 
+launched.  Moving from one activity to another is accomplished by having the 
+current activity start the next one.  
+</p>
+
+<p>
+Each activity is given a default window to draw in.  Typically, the window 
+fills the screen, but it might be smaller than the screen and float on top 
+of other windows.  An activity can also make use of additional windows &mdash; 
+for example, a pop-up dialog that calls for a user response in the midst of 
+the activity, or a window that presents users with vital information when they 
+select a particular item on-screen.
+</p>
+
+<p>
+The visual content of the window is provided by a hierarchy of views &mdash; 
+objects derived from the base <code><a href="../../reference/android/view/View.html">View</a></code> class.  Each view 
+controls a particular rectangular space within the window.  Parent views 
+contain and organize the layout of their children.  Leaf views (those at the 
+bottom of the hierarchy) draw in the rectangles they control and respond to 
+user actions directed at that space.  Thus, views are where the activity's 
+interaction with the user takes place.  For example, a view might display 
+a small image and initiate an action when the user taps that image.  Android 
+has a number of ready-made views that you can use &mdash; including buttons, 
+text fields, scroll bars, menu items, check boxes, and more.
+</p>
+
+<p>
+A view hierarchy is placed within an activity's window by the 
+<code><code><a href="../../reference/android/app/Activity.html#setContentView(android.view.View)">Activity.setContentView()</a></code></code> 
+method.  The <i>content view</i> is the View object at the root of the hierarchy.  
+(See the separate <a href="../../guide/topics/ui/index.html">User Interface</a> 
+document for more information on views and the hierarchy.)
+</p>
+
+<p><dt><b>Services</b></dt>
+<dd>A <i>service</i> doesn't have a visual user interface, but rather runs in 
+the background for an indefinite period of time.  For example, a service might 
+play background music as the user attends to other matters, or it might fetch 
+data over the network or calculate something and provide the result to activities 
+that need it.  Each service extends the <code><a href="../../reference/android/app/Service.html">Service</a></code> base class.
+
+<p>
+A prime example is a media player playing songs from a play list.  The player 
+application would probably have one or more activities that allow the user to 
+choose songs and start playing them.  However, the music playback itself would 
+not be handled by an activity because users will expect the music to keep 
+playing even after they leave the player and begin something different.  
+To keep the music going, the media player activity could start a service to run 
+in the background.  The system would then keep the music playback service running 
+even after the activity that started it leaves the screen.
+</p>
+
+<p> 
+It's possible to connect to (bind to) an ongoing service (and start the service 
+if it's not already running).  While connected, you can communicate with the 
+service through an interface that the service exposes.  For the music service, 
+this interface might allow users to pause, rewind, stop, and restart the playback.
+</p>
+
+<p>
+Like activities and the other components, services run in the main thread of 
+the application process.  So that they won't block other components or the 
+user interface, they often spawn another thread for time-consuming tasks 
+(like music playback).  See <a href="#procthread">Processes and Threads</a>, later.
+</p></dd>
+
+<dt><b>Broadcast receivers</b></dt>
+<dd>A <i>broadcast receiver</i> is a component that does nothing but 
+receive and react to broadcast announcements.  Many broadcasts originate in 
+system code &mdash; for example, announcements that the timezone has changed, 
+that the battery is low, that a picture has been taken, or that the user 
+changed a language preference.  Applications can also initiate broadcasts
+&mdash; for example, to let other applications know that some data has been
+downloaded to the device and is available for them to use.
+
+<p>
+An application can have any number of broadcast receivers to respond to any 
+announcements it considers important.  All receivers extend the <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> base class.
+</p>
+
+<p>
+Broadcast receivers do not display a user interface.  However, they may start
+an activity in response to the information they receive, or they may use 
+the <code><a href="../../reference/android/app/NotificationManager.html">NotificationManager</a></code> to alert the user.  Notifications 
+can get the user's attention in various ways &mdash; flashing 
+the backlight, vibrating the device, playing a sound, and so on.  They 
+typically place a persistent icon in the status bar, which users can open to 
+get the message. 
+</p></dd>
+
+<dt><b>Content providers</b></dt>
+<dd>A <i>content provider</i> makes a specific set of the application's data 
+available to other applications. The data can be stored in the file system, 
+in an SQLite database, or in any other manner that makes sense.  
+The content provider extends the <code><a href="../../reference/android/content/ContentProvider.html">ContentProvider</a></code> base 
+class to implement a standard set of methods that enable other applications 
+to retrieve and store data of the type it controls.  However, applications 
+do not call these methods directly.  Rather they use a <code><a href="../../reference/android/content/ContentResolver.html">ContentResolver</a></code> object and call its methods instead.  
+A ContentResolver can talk to any content provider; it cooperates with the
+provider to manage any interprocess communication that's involved. 
+
+<p>
+See the separate 
+<a href="../../guide/topics/providers/content-providers.html">Content 
+Providers</a> document for more information on using content providers.
+</p></dd>
+
+</dl>
+
+<p>
+Whenever there's a request that should be handled by a particular component, 
+Android makes sure that the application process of the component is running, 
+starting it if necessary, and that an appropriate instance of the component 
+is available, creating the instance if necessary.  
+</p>
+
+
+<h3 id="actcomp">Activating components: intents</h3> 
+
+<p>
+Content providers are activated when they're targeted by a request from a 
+ContentResolver.  The other three components &mdash; activities, services, 
+and broadcast receivers &mdash; are activated by asynchronous messages 
+called <i>intents</i>.  An intent is an <code><a href="../../reference/android/content/Intent.html">Intent</a></code> 
+object that holds the content of the message.  For activities and services,
+it names the action being requested and specifies the URI of the data to 
+act on, among other things. For example, it might convey a request for 
+an activity to present an image to the user or let the user edit some
+text.  For broadcast receivers, the Intent object names the action being 
+announced.  For example, it might announce to interested parties that the 
+camera button has been pressed.
+</p>
+
+<p>
+There are separate methods for activating each type of component: 
+</p>
+
+<ul>
+
+<li>An activity is launched (or given something new to do) by passing an 
+Intent object to <code><code><a href="../../reference/android/content/Context.html#startActivity(android.content.Intent)">Context.startActivity()</a></code></code> or <code><code><a href="../../reference/android/app/Activity.html#startActivityForResult(android.content.Intent, int)">Activity.startActivityForResult()</a></code></code>.  The responding activity can 
+look at the initial intent that caused it to be launched by calling its 
+<code><code><a href="../../reference/android/app/Activity.html#getIntent()">getIntent()</a></code></code> method.  
+Android calls the activity's <code><code><a href="../../reference/android/app/Activity.html#onNewIntent(android.content.Intent)">onNewIntent()</a></code></code> method to pass 
+it any subsequent intents.
+
+<p>
+One activity often starts the next one.  If it expects a result back from 
+the activity it's starting, it calls <code>startActivityForResult()</code> 
+instead of <code>startActivity()</code>.  For example, if it starts an activity 
+that lets the user pick a photo, it might expect to be returned the chosen 
+photo.  The result is returned in an Intent object that's passed to the 
+calling activity's <code><code><a href="../../reference/android/app/Activity.html#onActivityResult(int, int, android.content.Intent)">onActivityResult()</a></code></code> method.
+</p>
+</li>
+
+<li><p>A service is started (or new instructions are given to an ongoing 
+service) by passing an Intent object to <code><code><a href="../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a></code></code>.  
+Android calls the service's <code><code><a href="../../reference/android/app/Service.html#onStart(android.content.Intent, int)">onStart()</a></code></code> method and passes it the Intent object.</p>
+
+<p>
+Similarly, an intent can be passed to <code><code><a href="../../reference/android/content/Context.html#bindService(android.content.Intent, android.content.ServiceConnection, int)">Context.bindService()</a></code></code> to 
+establish an ongoing connection between the calling component and a 
+target service.  The service receives the Intent object in
+an <code><code><a href="../../reference/android/app/Service.html#onBind(android.content.Intent)">onBind()</a></code></code> call.
+(If the service is not already running, <code>bindService()</code> can
+optionally start it.)  For example, an activity might establish a connection 
+with the music playback service mentioned earlier so that it can provide 
+the user with the means (a user interface) for controlling the playback.  
+The activity would call <code>bindService()</code> to set up that connection, 
+and then call methods defined by the service to affect the playback.
+</p>
+
+<p>
+A later section, <a href="#rpc">Remote procedure calls</a>, has more details 
+about binding to a service.
+</p>
+</li>
+
+<li><p>An application can initiate a broadcast by passing an Intent object to 
+methods like <code><code><a href="../../reference/android/content/Context.html#sendBroadcast(android.content.Intent)">Context.sendBroadcast()</a></code></code>, 
+<code><code><a href="../../reference/android/content/Context.html#sendOrderedBroadcast(android.content.Intent, java.lang.String)">Context.sendOrderedBroadcast()</a></code></code>, and <code><code><a href="../../reference/android/content/Context.html#sendStickyBroadcast(android.content.Intent)">Context.sendStickyBroadcast()</a></code></code>
+in any of their variations.  Android delivers the intent to all interested 
+broadcast receivers by calling their <code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive()</a></code></code> methods.</p></li>
+
+</ul>
+
+<p>
+For more on intent messages, see the separate article, 
+<a href="../../guide/topics/intents/intents-filters.html">Intents 
+and Intent Filters</a>.
+</p>
+
+
+<h3 id="endcomp">Shutting down components</h3>
+
+<p>
+A content provider is active only while it's responding to a request from 
+a ContentResolver.  And a broadcast receiver is active only while it's 
+responding to a broadcast message.  So there's no need to explicitly shut 
+down these components.
+</p>
+
+<p>
+Activities, on the other hand, provide the user interface.  They're 
+in a long-running conversation with the user and may remain active, 
+even when idle, as long as the conversation continues.  Similarly, services 
+may also remain running for a long time.  So Android has methods to shut 
+down activities and services in an orderly way:
+</p>
+
+<ul>
+<li>An activity can be shut down by calling its
+<code><code><a href="../../reference/android/app/Activity.html#finish()">finish()</a></code></code> method.  One activity can
+shut down another activity (one it started with <code>startActivityForResult()</code>) by 
+calling <code><code><a href="../../reference/android/app/Activity.html#finishActivity(int)">finishActivity()</a></code></code>.</li>
+
+<li>A service can be stopped by calling its
+<code><code><a href="../../reference/android/app/Service.html#stopSelf()">stopSelf()</a></code></code> method, or by calling 
+<code><code><a href="../../reference/android/content/Context.html#stopService(android.content.Intent)">Context.stopService()</a></code></code>.</li>
+</ul>
+
+<p>
+Components might also be shut down by the system when they are no longer being
+used or when Android must reclaim memory for more active components.  A later
+section, <a href="#lcycles">Component Lifecycles</a>, discusses this
+possibility and its ramifications in more detail.
+</p>
+
+
+<h3 id="manfile">The manifest file</h3>
+
+<p>
+Before Android can start an application component, it must learn that 
+the component exists.  Therefore, applications declare their components 
+in a manifest file that's bundled into the Android package, the <code>.apk</code> 
+file that also holds the application's code, files, and resources.  
+</p>
+
+<p>
+The manifest is a structured XML file and is always named AndroidManifest.xml 
+for all applications.  It does a number of things in addition to declaring the 
+application's components, such as naming any libraries the application needs 
+to be linked against (besides the default Android library) and identifying 
+any permissions the application expects to be granted.
+</p>
+
+<p>
+But the principal task of the manifest is to inform Android about the application's 
+components.  For example, an activity might be declared as follows:
+</p>
+
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest . . . &gt;
+    &lt;application . . . &gt;
+        &lt;activity android:name="com.example.project.FreneticActivity"
+                  android:icon="@drawable/small_pic.png"
+                  android:label="@string/freneticLabel" 
+                  . . .  &gt;
+        &lt;/activity&gt;
+        . . .
+    &lt;/application&gt;
+&lt;/manifest&gt;</pre>
+
+<p>
+The <code>name</code> attribute of the 
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>
+element names the <code><a href="../../reference/android/app/Activity.html">Activity</a></code> subclass that implements the 
+activity.  The <code>icon</code> and <code>label</code> attributes point to 
+resource files containing an icon and label that can be displayed 
+to users to represent the activity.
+</p>
+
+<p>
+The other components are declared in a similar way &mdash; 
+<code><a href="../../guide/topics/manifest/service-element.html">&lt;service&gt;</a></code>
+elements for services,
+<code><a href="../../guide/topics/manifest/receiver-element.html">&lt;receiver&gt;</a></code>
+elements for broadcast receivers, and 
+<code><a href="../../guide/topics/manifest/provider-element.html">&lt;provider&gt;</a></code>
+elements for content providers.  Activities, services, and content providers 
+that are not declared in the manifest are not visible to the system and are 
+consequently never run.  However, broadcast receivers can either be 
+declared in the manifest, or they can be created dynamically in code 
+(as <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> objects) 
+and registered with the system by calling 
+<code><code><a href="../../reference/android/content/Context.html#registerReceiver(android.content.BroadcastReceiver, android.content.IntentFilter)">Context.registerReceiver()</a></code></code>.
+</p>
+
+<p>
+For more on how to structure a manifest file for your application, see 
+<a href="../../guide/topics/manifest/manifest-intro.html">The 
+AndroidManifest.xml File</a>.
+</p>
+
+
+<h3 id="ifilters">Intent filters</h3>
+
+<p>
+An Intent object can explicitly name a target component.  If it does,
+Android finds that component (based on the declarations in the manifest 
+file) and activates it.  But if a target is not explicitly named, 
+Android must locate the best component to respond to the intent.  
+It does so by comparing the Intent object to the <i>intent filters</i> 
+of potential targets.  A component's intent filters inform Android of 
+the kinds of intents the component is able to handle.  Like other 
+essential information about the component, they're declared in the 
+manifest file.  Here's an extension of the previous example that adds 
+two intent filters to the activity:
+</p>
+
+<pre>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest . . . &gt;
+    &lt;application . . . &gt;
+        &lt;activity android:name="com.example.project.FreneticActivity"
+                  android:icon="@drawable/small_pic.png"
+                  android:label="@string/freneticLabel" 
+                  . . .  &gt;
+            &lt;intent-filter . . . &gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter . . . &gt;
+                &lt;action android:name="com.example.project.BOUNCE" /&gt;
+                &lt;data android:mimeType="image/jpeg" /&gt;
+                &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        . . .
+    &lt;/application&gt;
+&lt;/manifest&gt;</pre>
+
+<p>
+The first filter in the example &mdash; the combination of the action
+"<code>android.intent.action.MAIN</code>" and the category
+"<code>android.intent.category.LAUNCHER</code>" &mdash; is a common one.
+It marks the activity as one that should be represented in the
+application launcher, the screen listing applications users can launch 
+on the device.  In other words, the activity is the entry point for 
+the application, the initial one users would see when they choose 
+the application in the launcher.
+</p>
+
+<p>
+The second filter declares an action that the activity can perform on 
+a particular type of data.
+</p>
+
+<p>
+A component can have any number of intent filters, each one declaring a 
+different set of capabilities.  If it doesn't have any filters, it can 
+be activated only by intents that explicitly name the component as the 
+target.
+</p>
+
+<p>
+For a broadcast receiver that's created and registered in code, the
+intent filter is instantiated directly as an <code><a href="../../reference/android/content/IntentFilter.html">IntentFilter</a></code>
+object.  All other filters are set up in the manifest.
+</p>
+
+<p>
+For more on intent filters, see a separate document, 
+<a href="../../guide/topics/intents/intents-filters.html">Intents 
+and Intent Filters</a>.
+</p>
+
+
+<h2 id="acttask">Activities and Tasks</h2>
+
+<p>
+As noted earlier,  one activity can start another, including one defined 
+in a different application.  Suppose, for example, that you'd like 
+to let users display a street map of some location.  There's already an 
+activity that can do that, so all your activity needs to do is put together 
+an Intent object with the required information and pass it to 
+<code>startActivity()</code>.  The map viewer will display the map.  When the user 
+hits the BACK key, your activity will reappear on screen.
+</p>
+
+<p>
+To the user, it will seem as if the map viewer is part of the same application 
+as your activity, even though it's defined in another application and runs in 
+that application's process.  Android maintains this user experience by keeping 
+both activities in the same <i>task</i>.  Simply put, a task is what the user 
+experiences as an "application."  It's a group of related activities, arranged 
+in a stack.  The root activity in the stack is the one that began the task 
+&mdash; typically, it's an activity the user selected in the application launcher.  
+The activity at the top of the stack is one that's currently running &mdash; 
+the one that is the focus for user actions.  When one activity starts another, 
+the new activity is pushed on the stack; it becomes the running activity.  
+The previous activity remains in the stack.  When the user presses the BACK key, 
+the current activity is popped from the stack, and the previous one resumes as 
+the running activity.  
+</p>
+
+<p>
+The stack contains objects, so if a task has more than one instance of the same 
+Activity subclass open &mdash; multiple map viewers, for example &mdash; the 
+stack has a separate entry for each instance.  Activities in the stack are never 
+rearranged, only pushed and popped.
+</p>
+
+<p>
+A task is a stack of activities, not a class or an element in the manifest file. 
+So there's no way to set values for a task independently of its activities.  
+Values for the task as a whole are set in the root activity.  For example, the 
+next section will talk about the "affinity of a task"; that value is read from 
+the affinity set for the task's root activity.
+</p>
+
+<p>
+All the activities in a task move together as a unit.  The entire task (the entire 
+activity stack) can be brought to the foreground or sent to the background.  
+Suppose, for instance, that the current task has four activities in its stack 
+&mdash; three under the current activity.  The user presses the HOME key, goes 
+to the application launcher, and selects a new application (actually, a new <i>task</i>).  
+The current task goes into the background and the root activity for the new task is displayed.  
+Then, after a short period, the user goes back to the home screen and again selects 
+the previous application (the previous task).  That task, with all four 
+activities in the stack, comes forward.  When the user presses the BACK 
+key, the screen does not display the activity the user just left (the root
+activity of the previous task).  Rather, the activity on the top of the stack 
+is removed and the previous activity in the same task is displayed. 
+</p>
+
+<p>
+The behavior just described is the default behavior for activities and tasks.  
+But there are ways to modify almost all aspects of it.  The association of 
+activities with tasks, and the behavior of an activity within a task, is 
+controlled by the interaction between flags set in the Intent object that
+started the activity and attributes set in the activity's 
+<code><a href="../../guide/topics/manifest/activity-element.html">&lt;activity&gt;</a></code>
+element in the manifest.  Both requester and respondent have a say in what happens.
+</p>
+
+<p>
+In this regard, the principal Intent flags are:
+
+<p style="margin-left: 2em"><code>FLAG_ACTIVITY_NEW_TASK</code>
+<br/><code>FLAG_ACTIVITY_CLEAR_TOP</code>
+<br/><code>FLAG_ACTIVITY_RESET_TASK_IF_NEEDED</code>
+<br/><code>FLAG_ACTIVITY_SINGLE_TOP</code></p>
+
+<p>
+The principal <code>&lt;activity&gt;</code> attributes are:
+  
+<p style="margin-left: 2em"><code>taskAffinity</code>
+<br/><code>launchMode</code>
+<br/><code>allowTaskReparenting</code>
+<br/><code>clearTaskOnLaunch</code>
+<br/><code>alwaysRetainTaskState</code>
+<br/><code>finishOnTaskLaunch</code></p>
+
+<p>
+The following sections describe what some of these flags and attributes do,
+how they interact, and what considerations should govern their use.
+</p>
+
+
+<h3 id="afftask">Affinities and new tasks</h3>
+
+<p>
+By default, all the activities in an application have an <i>affinity</i> for each 
+other &mdash; that is, there's a preference for them all to belong to the 
+same task.  However, an individual affinity can be set for each activity 
+with the <code>taskAffinity</code> attribute of the <code>&lt;activity&gt;</code> element. 
+Activities defined in different applications can share an affinity, or activities 
+defined in the same application can be assigned different affinities.  
+The affinity comes into play in two circumstances:  When the Intent object 
+that launches an activity contains the <code>FLAG_ACTIVITY_NEW_TASK</code> flag, 
+and when an activity has its <code>allowTaskReparenting</code> attribute set 
+to "<code>true</code>". 
+</p>
+
+<dl>
+<dt>The <code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code></code> flag</dt>
+<dd>As described earlier, a new activity is, by default, launched into 
+the task of the activity that called <code>startActivity()</code>.  It's pushed
+ onto the same stack as the caller.  However, if the Intent object passed 
+to <code>startActivity()</code> contains the <code>FLAG_ACTIVITY_NEW_TASK</code> 
+flag, the system looks for a different task to house the new activity.  
+Often, as the name of the flag implies, it's a new task.  However, it 
+doesn't have to be.  If there's already an existing task with the same 
+affinity as the new activity, the activity is launched into that task.  If 
+not, it begins a new task.</dd>
+
+<dt>The <code><a 
+href="../../guide/topics/manifest/activity-element.html#reparent">allowTaskReparenting</a></code>
+attribute</dt>
+<dd>If an activity has its <code>allowTaskReparenting</code> attribute set 
+to "<code>true</code>", it can move from the task it starts in to the task 
+it has an affinity for when that task comes to the fore.  For example, 
+suppose that an activity that reports weather conditions in selected 
+cities is defined as part of a travel application.  It has the same
+affinity as other activities in the same application (the default 
+affinity) and it allows reparenting.  One of your activities 
+starts the weather reporter, so it initially belongs to the same task as 
+your activity.  However, when the travel application next comes forward, 
+the weather reporter will be reassigned to and displayed with that task.</dd>
+</dl>
+
+<p>
+If an <code>.apk</code> file contains more than one "application"
+from the user's point of view, you will probably want to assign different 
+affinities to the activities associated with each of them.
+</p>
+
+
+<h3 id="lmodes">Launch modes</h3>
+
+<p>
+There are four different launch modes that can be assigned to an <code>&lt;activity&gt;</code> element's 
+<code><a href="../../guide/topics/manifest/activity-element.html#lmode">launchMode</a></code> 
+attribute:
+</p>
+
+<p style="margin-left: 2em">"<code>standard</code>" (the default mode)
+<br>"<code>singleTop</code>"
+<br>"<code>singleTask</code>"
+<br>"<code>singleInstance</code>"</p>
+
+<p>
+The modes differ from each other on these four points:
+</p>
+
+<ul>
+
+<li><b>Which task will hold the activity that responds to the intent</b>.  
+For the "<code>standard</code>" and "<code>singleTop</code>" modes, it's the task that 
+originated the intent (and called 
+<code><code><a href="../../reference/android/content/Context.html#startActivity(android.content.Intent)">startActivity()</a></code></code>) 
+&mdash; unless the Intent object contains the 
+<code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_NEW_TASK">FLAG_ACTIVITY_NEW_TASK</a></code></code> flag.  
+In that case, a different task is chosen as described in the previous 
+section, <a href="#afftask">Affinities and new tasks</a>.  
+
+<p>
+In contrast, the "<code>singleTask</code>" and "<code>singleInstance</code>" modes mark 
+activities that are always at the root of a task.  They define a task; they're
+never launched into another task.
+</p>  
+
+<li><p><b>Whether there can be multiple instances of the activity</b>.  
+A "<code>standard</code>" or "<code>singleTop</code>" activity can be instantiated
+many times.  They can belong to multiple tasks, and a given task can have 
+multiple instances of the same activity.
+</p> 
+
+<p>
+In contrast, "<code>singleTask</code>" and "<code>singleInstance</code>" activities 
+are limited to just one instance.  Since these activities are at the root
+of a task, this limitation means that there is never more than a single
+instance of the task on the device at one time.
+</p>    
+
+<li><p><b>Whether the instance can have other activities in its task</b>.  
+A "<code>singleInstance</code>" activity stands alone as the only activity in its 
+task.  If it starts another activity, that activity will be launched into a 
+different task regardless of its launch mode &mdash; as if <code>FLAG_ACTIVITY_NEW_TASK</code> was in the intent.  In all other respects, the 
+"<code>singleInstance</code>" mode is identical to "<code>singleTask</code>".</p>
+
+<p>
+The other three modes permit multiple activities to belong to the task.
+A "<code>singleTask</code>" activity will always be the root activity of the task, 
+but it can start other activities that will be assigned to its
+task.  Instances of "<code>standard</code>" and "<code>singleTop</code>"
+activities can appear anywhere in a stack.  
+</p></li>
+
+<li><b>Whether a new instance of the class will be launched 
+to handle a new intent</b>.  For the default "<code>standard</code>" mode, a 
+new instance is created to respond to every new intent.  Each instance 
+handles just one intent.  For the "<code>singleTop</code>" mode, an existing 
+instance of the class is re-used to handle a new intent if it resides 
+at the top of the activity stack of the target task.  If it does not 
+reside at the top, it is not re-used.  Instead, a new instance 
+is created for the new intent and pushed on the stack.
+
+<p>
+For example, suppose a task's activity stack consists of root activity A with 
+activities B, C, and D on top in that order, so the stack is A-B-C-D.  An intent 
+arrives for an activity of type D.  If D has the default "<code>standard</code>" launch 
+mode, a new instance of the class is launched and the stack becomes A-B-C-D-D.  
+However, if D's launch mode is "<code>singleTop</code>", the existing instance is 
+expected to handle the new intent (since it's at the top of the stack) and the 
+stack remains A-B-C-D.  
+</p>
+
+<p>
+If, on the other hand, the arriving intent is for an activity of type B, a new 
+instance of B would be launched no matter whether B's mode is "<code>standard</code>" 
+or "<code>singleTop</code>" (since B is not at the top of the stack), so the resulting 
+stack would be A-B-C-D-B.
+</p>
+
+<p>
+As noted above, there's never more than one instance of a "<code>singleTask</code>" 
+or "<code>singleInstance</code>" activity, so that instance is expected to handle
+all new intents.  A "<code>singleInstance</code>" activity is always at the top of 
+the stack (since it is the only activity in the task), so it is always in 
+position to handle the intent.  However, a "<code>singleTask</code>" activity may 
+or may not have other activities above it in the stack.  If it does, it is not 
+in position to handle the intent, and the intent is dropped.  (Even though the 
+intent is dropped, its arrival would have caused the task to come to the 
+foreground, where it would remain.)
+</p>
+</li>
+
+</ul>
+
+<p>
+When an existing activity is asked to handle a new intent, the Intent
+object is passed to the activity in an 
+<code><code><a href="../../reference/android/app/Activity.html#onNewIntent(android.content.Intent)">onNewIntent()</a></code></code> call.  
+(The intent object that originally started the activity can be retrieved by 
+calling <code><code><a href="../../reference/android/app/Activity.html#getIntent()">getIntent()</a></code></code>.)
+</p>
+
+<p>
+Note that when a new instance of an Activity is created to handle a new
+intent, the user can always press the BACK key to return to the previous state
+(to the previous activity).  But when an existing instance of an 
+Activity handles a new intent, the user cannot press the BACK key to 
+return to what that instance was doing before the new intent arrived.
+</p>
+
+<p>
+For more on launch modes, see the description of the <code><a 
+href="../../guide/topics/manifest/activity-element.html#lmode">&lt;activity&gt;</a></code>
+element.
+</p>
+
+
+<h3 id="clearstack">Clearing the stack</h3>
+
+<p>
+If the user leaves a task for a long time, the system clears the task of all
+activities except the root activity.  When the user returns to the task again, 
+it's as the user left it, except that only the initial activity is present. 
+The idea is that, after
+a time, users will likely have abandoned what they were doing before and are
+returning to the task to begin something new.
+</p>
+
+<p>
+That's the default.  There are some activity attributes that can be used to 
+control this behavior and modify it:
+</p>
+
+<dl>
+<dt>The <code><a 
+href="../../guide/topics/manifest/activity-element.html#always">alwaysRetainTaskState</a></code>
+attribute</dt>
+<dd>If this attribute is set to "<code>true</code>" in the root activity of a task, 
+the default behavior just described does not happen.  
+The task retains all activities in its stack even after a long period.</dd>
+
+<dt>The <code><a 
+href="../../guide/topics/manifest/activity-element.html#clear">clearTaskOnLaunch</a></code>
+attribute</dt>
+<dd>If this attribute is set to "<code>true</code>" in the root activity of a task, 
+the stack is cleared down to the root activity whenever the user leaves the task 
+and returns to it.  In other words, it's the polar opposite of 
+<code>alwaysRetainTaskState</code>.  The user always returns to the task in its
+initial state, even after a momentary absence.</dd>
+
+<dt>The <code><a 
+href="../../guide/topics/manifest/activity-element.html#finish">finishOnTaskLaunch</a></code>
+attribute</dt>
+<dd>This attribute is like <code>clearTaskOnLaunch</code>, but it operates on a 
+single activity, not an entire task.  And it can cause any activity to go
+away, including the root activity.  When it's set to "<code>true</code>", the 
+activity remains part of the task only for the current session.  If the user 
+leaves and then returns to the task, it no longer is present.</dd>
+</dl>
+
+<p>
+There's another way to force activities to be removed from the stack.  
+If an Intent object includes the <code><code><a href="../../reference/android/content/Intent.html#FLAG_ACTIVITY_CLEAR_TOP">FLAG_ACTIVITY_CLEAR_TOP</a></code></code> 
+flag, and the target task already has an instance of the type of activity that 
+should handle the intent in its stack, all activities above that instance 
+are cleared away so that it stands at the top of the stack and can respond 
+to the intent. 
+If the launch mode of the designated activity is "<code>standard</code>", it too 
+will be removed from the stack, and a new instance will be launched to handle 
+the incoming intent.  That's because a new instance is always created for 
+a new intent when the launch mode is "<code>standard</code>".
+</p>
+
+<p>
+<code>FLAG_ACTIVITY_CLEAR_TOP</code> is most often used in conjunction
+with <code>FLAG_ACTIVITY_NEW_TASK</code>.  When used together, these flags are
+a way of locating an existing activity in another task and putting it in
+a position where it can respond to the intent.  
+</p>
+
+
+<h3 id="starttask">Starting tasks</h3>
+
+<p>
+An activity is set up as the entry point for a task by giving it 
+an intent filter with "<code>android.intent.action.MAIN</code>" as the 
+specified action and "<code>android.intent.category.LAUNCHER</code>" as 
+the specified category.  (There's an example of this type of filter 
+in the earlier <a href="#ifilters">Intent Filters</a> section.)  
+A filter of this kind causes an icon and label for the activity to be 
+displayed in the application launcher, giving users a way both to 
+launch the task and to return to it at any time after it has been 
+launched.
+</p>
+
+<p>
+This second ability is important:  Users must be able to leave a task
+and then come back to it later.  For this reason, the two launch modes
+that mark activities as always initiating a task, "<code>singleTask</code>" 
+and "<code>singleInstance</code>", should be used only when the activity has 
+a <code>MAIN</code> and <code>LAUNCHER</code> filter.  
+Imagine, for example, what could happen if the filter is missing:
+An intent launches a "<code>singleTask</code>" activity, initiating a new task, 
+and the user spends some time working in that task.  The user then presses 
+the HOME key.  The task is now ordered behind and obscured by the home 
+screen.  And, because it is not represented in the application launcher, 
+the user has no way to return to it.
+</p>
+
+<p>
+A similar difficulty attends the <code>FLAG_ACTIVITY_NEW_TASK</code> flag.
+If this flag causes an activity to
+begin a new task and the user presses the HOME key to leave it, there
+must be some way for the user to navigate back to it again.  Some 
+entities (such as the notification manager) always start activities 
+in an external task, never as part of their own, so they always put 
+<code>FLAG_ACTIVITY_NEW_TASK</code> in the intents they pass to 
+<code>startActivity()</code>.  If you have an activity that can be invoked 
+by an external entity that might use this flag, take care that the user 
+has a independent way to get back to the task that's started.
+</p> 
+
+<p>
+For those cases where you don't want the user to be able to return
+to an activity, set the <code>&lt;activity&gt;</code> element's <code>finishOnTaskLaunch</code> to "<code>true</code>".  
+See <a href="#clearstack">Clearing the stack</a>, earlier.
+</p>
+
+
+<h2 id="procthread">Processes and Threads</h2>
+
+<p>
+When the first of an application's components needs to be run, Android 
+starts a Linux process for it with a single thread of execution.  By default, 
+all components of the application run in that process and thread.
+</p>
+
+<p>
+However, you can arrange for components to run in other processes, and you 
+can spawn additional threads for any process.
+</p>
+
+
+<h3 id="procs">Processes</h3>
+
+<p>
+The process where a component runs is controlled by the manifest file.  
+The component elements &mdash; <code>&lt;activity&gt;</code>, 
+<code>&lt;service&gt;</code>, <code>&lt;receiver&gt;</code>, and <code>&lt;provider&gt;</code> 
+&mdash; each have a <code>process</code> attribute that can specify a process
+where that component should run.  These attributes can be set so that each 
+component runs in its own process, or so that some components share a process 
+while others do not.  They can also be set so that components of 
+different applications run in the same process &mdash; provided that the 
+applications share the same Linux user ID and are signed by the same authorities.
+The <code>&lt;application&gt;</code> element also has a <code>process</code> attribute,
+for setting a default value that applies to all components.
+</p>
+
+<p>
+All components are instantiated in the main thread of the specified
+process, and system calls to the component are dispatched from that
+thread.  Separate threads are not created for each instance.  Consequently,
+methods that respond to those calls &mdash; methods like 
+<code><code><a href="../../reference/android/view/View.html#onKeyDown(int, android.view.KeyEvent)">View.onKeyDown()</a></code></code> that report
+user actions and the lifecycle notifications discussed later in the 
+<a href="#lcycles">Component Lifecycles</a> section &mdash; always run in the
+main thread of the process.  This means
+that no component should perform long or blocking operations (such as networking 
+operations or computation loops) when called by the system, since this will block
+any other components also in the process.  You can spawn separate threads for 
+long operations, as discussed under <a href="#threads">Threads</a>, next.
+</p>
+
+<p>
+Android may decide to shut down a process at some point, when memory is 
+low and required by other processes that are more immediately serving 
+the user.  Application components running in the process are consequently 
+destroyed.  A process is restarted for those components when there's again
+work for them to do.
+</p>  
+
+<p>
+When deciding which processes to terminate, Android weighs their relative
+importance to the user.  For example, it more readily shuts down a process 
+with activities that are no longer visible on screen than a process with
+visible activities.
+The decision whether to terminate a process, therefore, depends on the state 
+of the components running in that process.  Those states are the subject of
+a later section, <a href="#lcycles">Component Lifecycles</a>.
+</p>
+
+
+<h3 id="threads">Threads</h3>
+
+<p>
+Even though you may confine your application to a single process, there will
+likely be times when you will need to spawn a thread to do some background 
+work.  Since the user interface must always be quick to respond to user actions, 
+the thread that hosts an activity should not also host time-consuming operations 
+like network downloads.  Anything that may not be completed quickly should be
+assigned to a different thread. 
+</p>
+
+<p>
+Threads are created in code using standard Java <code><a href="../../reference/java/lang/Thread.html">Thread</a></code>
+objects.  Android provides a number of convenience classes for managing 
+threads &mdash; <code><a href="../../reference/android/os/Looper.html">Looper</a></code> for running a message loop within 
+a thread, <code><a href="../../reference/android/os/Handler.html">Handler</a></code> for processing messages, and 
+<code><a href="../../reference/android/os/HandlerThread.html">HandlerThread</a></code> for setting up a thread with a message loop.
+</p>
+
+
+<h3 id="rpc">Remote procedure calls</h3>
+
+<p>
+Android has a lightweight mechanism for remote procedure calls (RPCs) 
+&mdash; where a method is called locally, but executed remotely (in another
+process), with any result returned back to the caller.
+This entails decomposing the method call and all its attendant data to a 
+level the operating system can understand, transmitting it from the local 
+process and address space to the remote process and address space, and 
+reassembling and reenacting the call there.  Return values have to be 
+transmitted in the opposite direction.  Android provides all the code 
+to do that work, so that you can concentrate on defining and implementing 
+the RPC interface itself.
+</p>
+
+<p>
+An RPC interface can include only methods. By default,
+all methods are executed synchronously (the local method blocks until the
+remote method finishes), even if there is no return value.
+</p>
+
+<p>
+In brief, the mechanism works as follows:  You'd begin by declaring the
+RPC interface you want to implement using a simple IDL (interface definition 
+language).  From that declaration, the 
+<code><a href="../../guide/developing/tools/aidl.html">aidl</a></code> 
+tool generates a Java interface definition that must be made available to 
+both the local and the remote process.  It contains two inner class, as shown 
+in the following diagram:
+</p>
+
+<p style="margin-left: 2em">
+<img src="../../images/binder_rpc.png" alt="RPC mechanism." />
+</p>
+
+<p>
+The inner classes have all the code needed to administer remote procedure
+calls for the interface you declared with the IDL. 
+Both inner classes implement the <code><a href="../../reference/android/os/IBinder.html">IBinder</a></code>
+interface.  One of them is used locally and internally by the system;
+the code you write can ignore it.
+The other, called Stub, extends the <code><a href="../../reference/android/os/Binder.html">Binder</a></code>
+class.  In addition to internal code for effectuating the IPC calls, it 
+contains declarations for the methods in the RPC interface you declared.
+You would subclass Stub to implement those methods, as indicated in the 
+diagram.  
+</p>
+
+<p>
+Typically, the remote process would be managed by a service (because a 
+service can inform the system about the process and its connections to 
+other processes).  It would have both the interface file generated by 
+the <code>aidl</code> tool and the Stub subclass implementing the 
+RPC methods.  Clients of the service would have only the interface file
+generated by the <code>aidl</code> tool.
+</p>
+
+<p>
+Here's how a connection between a service and its clients is set up:
+</p>
+
+<ul>
+<li>Clients of the service (on the local side) would implement 
+<code><code><a href="../../reference/android/content/ServiceConnection.html#onServiceConnected(android.content.ComponentName, android.os.IBinder)">onServiceConnected()</a></code></code> and 
+<code><code><a href="../../reference/android/content/ServiceConnection.html#onServiceDisconnected(android.content.ComponentName)">onServiceDisconnected()</a></code></code> methods so they can be notified 
+when a successful connection to the remote service is established, and 
+when it goes away.  They would then call
+<code><code><a href="../../reference/android/content/Context.html#bindService(android.content.Intent, android.content.ServiceConnection, int)">bindService()</a></code></code>
+to set up the connection.
+</li>  
+
+<li> 
+The service's <code><code><a href="../../reference/android/app/Service.html#onBind(android.content.Intent)">onBind()</a></code></code> 
+method would be implemented to either accept or reject the connection, 
+depending on the intent it receives (the intent passed to
+<code>bindService()</code>).  If the connection is accepted, it returns 
+an instance of the Stub subclass.
+</li>
+
+<li>If the service accepts the connection, Android calls the 
+client's <code>onServiceConnected()</code> method and passes it an IBinder 
+object, a proxy for the Stub subclass managed by the service.  Through
+the proxy, the client can make calls on the remote service.  
+</li>
+</ul>
+
+<p>
+This brief description omits some details of the RPC mechanism.  For more 
+information, see 
+<a href="../../guide/developing/tools/aidl.html">Designing a Remote 
+Interface Using AIDL</a> and the <code><a href="../../reference/android/os/IBinder.html">IBinder</a></code> class 
+description.
+</p>  
+
+
+<h3 id="tsafe">Thread-safe methods</h3>
+
+<p>
+In a few contexts, the methods you implement may be called from more 
+than one thread, and therefore must be written to be thread-safe.
+</p>
+
+<p>
+This is primarily true for methods that can be called remotely &mdash;
+as in the RPC mechanism discussed in the previous section.
+When a call on a method implemented in an IBinder object originates
+in the same process as the IBinder, the method is executed in the
+caller's thread.  However, when the call originates in another process, 
+the method is executed in a thread chosen from a pool of threads that 
+Android maintains in the same process as the IBinder; it's not executed 
+in the main thread of the process.  For example, whereas a service's 
+<code>onBind()</code> method would be called from the main thread of the 
+service's process, methods implemented in the object that <code>onBind()</code> 
+returns (for example, a Stub subclass that implements RPC methods) would 
+be called from threads in the pool. 
+Since services can have more than one client, more than one pool thread
+can engage the same IBinder method at the same time.  IBinder methods
+must, therefore, be implemented to be thread-safe.
+</p>  
+
+<p>
+Similarly, a content provider can receive data requests that originate in 
+other processes.  Although the ContentResolver and ContentProvider classes 
+hide the details of how the interprocess communication is managed, 
+ContentProvider methods that respond to those requests &mdash; the methods
+<code><code><a href="../../reference/android/content/ContentProvider.html#query(android.net.Uri, java.lang.String[], java.lang.String, java.lang.String[], java.lang.String)">query()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#insert(android.net.Uri, android.content.ContentValues)">insert()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#delete(android.net.Uri, java.lang.String, java.lang.String[])">delete()</a></code></code>, 
+<code><code><a href="../../reference/android/content/ContentProvider.html#update(android.net.Uri, android.content.ContentValues, java.lang.String, java.lang.String[])">update()</a></code></code>, and
+<code><code><a href="../../reference/android/content/ContentProvider.html#getType(android.net.Uri)">getType()</a></code></code>
+&mdash; are called from a pool of threads in the content provider's
+process, not the main thread of the process.  Since these methods
+may be called from any number of threads at the same time, they too must
+be implemented to be thread-safe.
+</p> 
+
+
+<h2 id="lcycles">Component Lifecycles</h2>
+
+<p>
+Application components have a lifecycle &mdash; a beginning when 
+Android instantiates them to respond to intents through to an end when 
+the instances are destroyed.  In between, they may sometimes be active 
+or inactive,or, in the case of activities, visible to the user or
+invisible.  This section discusses the lifecycles of activities,
+services, and broadcast receivers &mdash; including the states that they 
+can be in during their lifetimes, the methods that notify you of transitions
+between states, and the effect of those states on the possibility that
+the process hosting them might be terminated and the instances destroyed.
+</p> 
+
+
+<h3 id="actlife">Activity lifecycle</h3>
+
+<p>An activity has essentially three states:</p>
+
+<ul>
+<li> It is <em>active</em> or <em>running</em> when it is in the foreground of the 
+screen (at the top of the activity stack for the current task).  This is the
+activity that is the focus for the user's actions.</li>
+
+<li><p>It is <em>paused</em> if it has lost focus but is still visible to the user.
+That is, another activity lies on top of it and that activity either is transparent
+or doesn't cover the full screen, so some of the paused activity can show through. 
+A paused activity is completely alive (it maintains all state and member information 
+and remains attached to the window manager), but can be killed by the system in 
+extreme low memory situations.</p></li>
+
+<li><p>It is <em>stopped</em> if it is completely obscured by another activity.
+It still retains all state and member information.  However, it is no longer 
+visible to the user so its window is hidden and it will often be killed by the 
+system when memory is needed elsewhere.</p></li>
+</ul>
+
+<p>
+If an activity is paused or stopped, the system can drop it from memory either 
+by asking it to finish (calling its <code><a href="../../reference/android/app/Activity.html#finish()">finish()</a></code>
+method), or simply killing its process.  When it is displayed again 
+to the user, it must be completely restarted and restored to its previous state.
+</p>
+
+<p>
+As an activity transitions from state to state, it is notified of the change 
+by calls to the following protected methods:
+</p>
+
+<p style="margin-left: 2em"><code>void onCreate(Bundle <i>savedInstanceState</i>)</code>
+<br/><code>void onStart()</code>
+<br/><code>void onRestart()</code>
+<br/><code>void onResume()</code>
+<br/><code>void onPause()</code>
+<br/><code>void onStop()</code>
+<br/><code>void onDestroy()</code></p>
+
+<p>
+All of these methods are hooks that you can override to do appropriate work 
+when the state changes.  All activities must implement 
+<code><code><a href="../../reference/android/app/Activity.html#onCreate(android.os.Bundle)">onCreate()</a></code></code> to do the 
+initial setup when the object is first instantiated.  
+Many will also implement <code><code><a href="../../reference/android/app/Activity.html#onPause()">onPause()</a></code></code> 
+to commit data changes and otherwise prepare to stop interacting with the user.
+</p>
+
+<div class="sidebox-wrapper">
+<div class="sidebox">
+<h2>Calling into the superclass</h2>
+<p>
+An implementation of any activity lifecycle method should always first 
+call the superclass version.  For example:
+</p>
+
+<pre>protected void onPause() {
+    super.onPause();
+    . . .
+}</pre>
+</div>
+</div> 
+
+
+<p>
+Taken together, these seven methods define the entire lifecycle of an 
+activity.  There are three nested loops that you can monitor by
+implementing them: 
+</p> 
+
+<ul>
+<li>The <b>entire lifetime</b> of an activity happens between the first call
+to <code><code><a href="../../reference/android/app/Activity.html#onCreate(android.os.Bundle)">onCreate()</a></code></code> through to a 
+single final call to <code><code><a href="../../reference/android/app/Activity.html#onDestroy()">onDestroy()</a></code></code>.  
+An activity does all its initial setup of "global" state in <code>onCreate()</code>, 
+and releases all remaining resources in <code>onDestroy()</code>.  For example, 
+if it has a thread running in the background to download data from the network, 
+it may create that thread in <code>onCreate()</code> and then stop the thread in 
+<code>onDestroy()</code>.</li>
+
+<li><p>The <b>visible lifetime</b> of an activity happens between a call to
+<code><code><a href="../../reference/android/app/Activity.html#onStart()">onStart()</a></code></code> until a 
+corresponding call to <code><code><a href="../../reference/android/app/Activity.html#onStop()">onStop()</a></code></code>.  
+During this time, the user can see the activity on-screen, though it may not 
+be in the foreground and interacting with the user.  Between these two methods, 
+you can maintain resources that are needed to show the activity to the user.  
+For example, you can register a <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> in 
+<code>onStart()</code> to monitor for changes that impact your UI, and unregister 
+it in <code>onStop()</code> when the user can no longer see what you are displaying.  
+The <code>onStart()</code> and <code>onStop()</code> methods can be called multiple times, 
+as the activity alternates between being visible and hidden to the user.</p></li>
+
+<li><p>The <b>foreground lifetime</b> of an activity happens between a call 
+to <code><code><a href="../../reference/android/app/Activity.html#onResume()">onResume()</a></code></code> until a 
+corresponding call to <code><code><a href="../../reference/android/app/Activity.html#onPause()">onPause()</a></code></code>.  
+During this time, the activity is in front of all other activities on screen and 
+is interacting with the user.  An activity can frequently transition between the 
+resumed and paused states &mdash; for example, <code>onPause()</code> is called when 
+the device goes to sleep or when a new activity is started, <code>onResume()</code> 
+is called when an activity result or a new intent is delivered.  Therefore, the 
+code in these two methods should be fairly lightweight.</p></li>
+</ul>
+
+<p>
+The following diagram illustrates these loops and the paths an activity
+may take between states.  The colored ovals are major states the activity 
+can be in.  The square rectangles represent the callback methods you can implement 
+to perform operations when the activity transitions between states.
+<p>
+
+<p style="margin-left: 2em"><img src="../../images/activity_lifecycle.png"
+alt="State diagram for an Android activity lifecycle." /></p>  
+  
+<p>
+The following table describes each of these methods in more detail and 
+locates it within the activity's overall lifecycle:
+</p>
+
+<table border="2" width="85%" frame="hsides" rules="rows">
+<colgroup align="left" span="3"></colgroup>
+<colgroup align="left"></colgroup>
+<colgroup align="center"></colgroup>
+<colgroup align="center"></colgroup>
+
+<thead>
+<tr><th colspan="3">Method</th> <th>Description</th> <th>Killable?</th> <th>Next</th></tr>
+</thead>
+
+<tbody>
+<tr>
+  <td colspan="3" align="left"><code><code><a href="../../reference/android/app/Activity.html#onCreate(android.os.Bundle)">onCreate()</a></code></code></td>
+  <td>Called when the activity is first created.
+      This is where you should do all of your normal static set up &mdash;
+      create views, bind data to lists, and so on.  This method is passed
+      a Bundle object containing the activity's previous state, if that 
+      state was captured (see <a href="#actstate">Saving Activity State</a>, 
+      later).
+      <p>Always followed by <code>onStart()</code>.</p></td>
+  <td align="center">No</td>
+      <td align="center"><code>onStart()</code></td>
+</tr>
+
+<tr>
+   <td rowspan="5" style="border-left: none; border-right: none;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onRestart()">onRestart()</a></code></code></td>
+   <td>Called after the activity has been stopped, just prior to it being
+       started again.
+       <p>Always followed by <code>onStart()</code></p></td>
+   <td align="center">No</td>
+   <td align="center"><code>onStart()</code></td>
+</tr>
+
+<tr>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onStart()">onStart()</a></code></code></td>
+   <td>Called just before the activity becomes visible to the user.
+       <p>Followed by <code>onResume()</code> if the activity comes
+       to the foreground, or <code>onStop()</code> if it becomes hidden.</p></td>
+    <td align="center">No</td>
+    <td align="center"><code>onResume()</code> <br/>or<br/> <code>onStop()</code></td>
+</tr>
+
+<tr>
+   <td rowspan="2" style="border-left: none;">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+   <td align="left"><code><code><a href="../../reference/android/app/Activity.html#onResume()">onResume()</a></code></code></td>
+   <td>Called just before the activity starts
+       interacting with the user.  At this point the activity is at
+       the top of the activity stack, with user input going to it.
+       <p>Always followed by <code>onPause()</code>.</p></td>
+   <td align="center">No</td>
+   <td align="center"><code>onPause()</code></td>
+</tr>
+
+<tr>
+   <td align="left"><code><code><a href="../../reference/android/app/Activity.html#onPause()">onPause()</a></code></code></td>
+   <td>Called when the system is about to start resuming another
+       activity.  This method is typically used to commit unsaved changes to
+       persistent data, stop animations and other things that may be consuming
+       CPU, and so on.  It should do whatever it does very quickly, because
+       the next activity will not be resumed until it returns.
+       <p>Followed either by <code>onResume()</code> if the activity
+       returns back to the front, or by <code>onStop()</code> if it becomes
+       invisible to the user.</td>
+   <td align="center"><strong style="color:#800000">Yes</strong></td>
+   <td align="center"><code>onResume()</code> <br/>or<br/> <code>onStop()</code></td>
+</tr>
+
+<tr>
+   <td colspan="2" align="left"><code><code><a href="../../reference/android/app/Activity.html#onStop()">onStop()</a></code></code></td>
+   <td>Called when the activity is no longer visible to the user.  This
+       may happen because it is being destroyed, or because another activity 
+       (either an existing one or a new one) has been resumed and is covering it. 
+       <p>Followed either by <code>onRestart()</code> if
+       the activity is coming back to interact with the user, or by
+       <code>onDestroy()</code> if this activity is going away.</p></td>
+   <td align="center"><strong style="color:#800000">Yes</strong></td>
+   <td align="center"><code>onRestart()</code> <br/>or<br/> <code>onDestroy()</code></td>
+</tr>
+
+<tr>
+   <td colspan="3" align="left"><code><code><a href="../../reference/android/app/Activity.html#onDestroy()">onDestroy()</a></code></code></td>
+   <td>Called before the activity is destroyed.  This is the final call 
+       that the activity will receive.  It could be called either because the
+       activity is finishing (someone called <code><code><a href="../../reference/android/app/Activity.html#finish()">finish()</a></code></code> on it), or because the system is temporarily destroying this
+       instance of the activity to save space.  You can distinguish
+       between these two scenarios with the <code><code><a href="../../reference/android/app/Activity.html#isFinishing()">isFinishing()</a></code></code> method.</td>
+   <td align="center"><strong style="color:#800000">Yes</strong></td>
+   <td align="center"><em>nothing</em></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Note the <b>Killable</b> column in the table above.  It indicates
+whether or not the system can kill the process hosting the activity 
+<em>at any time after the method returns, without executing another
+line of the activity's code</em>.  Three methods (<code>onPause()</code>,
+<code>onStop()</code>, and <code>onDestroy()</code>) are marked "Yes."  Because
+<code>onPause()</code> is the first of the three, it's the only one that's
+guaranteed to be called before the process is killed &mdash; 
+<code>onStop()</code> and <code>onDestroy()</code> may not be.  Therefore, you 
+should use <code>onPause()</code> to write any persistent data (such as user 
+edits) to storage.
+</p>
+
+<p>
+Methods that are marked "No" in the <b>Killable</b> column protect the
+process hosting the activity from being killed from the moment they are 
+called.  Thus an activity is in a killable state, for example, from the 
+time <code>onPause()</code> returns to the time <code>onResume()</code> is called.
+It will not again be killable until <code>onPause()</code> again returns.
+</p>
+
+<p>
+As noted in a later section, <a href="#proclife">Processes and lifecycle</a>,
+an activity that's not technically "killable" by this definition might
+still be killed by the system &mdash; but that would happen only in
+extreme and dire circumstances when there is no other recourse.
+</p>
+
+
+<h4 id="actstate">Saving activity state</h4>
+
+<p>
+When the system, rather than the user, shuts down an activity to conserve 
+memory, the user may expect to return to the activity and find it in its 
+previous state.
+</p>
+
+<p>
+To capture that state before the activity is killed, you can implement
+an <code><code><a href="../../reference/android/app/Activity.html#onSaveInstanceState(android.os.Bundle)">onSaveInstanceState()</a></code></code> method for the activity.  Android calls this 
+method before making the activity vulnerable to being destroyed &mdash;
+that is, before <code>onPause()</code> is called.  It
+passes the method a <code><a href="../../reference/android/os/Bundle.html">Bundle</a></code> object where you can record 
+the dynamic state of the activity as name-value pairs.  When the activity is 
+again started, the Bundle is passed both to <code>onCreate()</code> and to a
+method that's called after <code>onStart()</code>, <code><code><a href="../../reference/android/app/Activity.html#onRestoreInstanceState(android.os.Bundle)">onRestoreInstanceState()</a></code></code>, 
+so that either or both of them can recreate the captured state.
+</p>
+
+<p>
+Unlike <code>onPause()</code> and the other methods discussed earlier,
+<code>onSaveInstanceState()</code> and <code>onRestoreInstanceState()</code> are
+not lifecycle methods.  They are not always called.  For example, Android
+calls <code>onSaveInstanceState()</code> before the activity becomes 
+vulnerable to being destroyed by the system, but does not bother
+calling it when the instance is actually being destroyed by a user action
+(such as pressing the BACK key).  In that case, the user won't expect to
+return to the activity, so there's no reason to save its state.
+</p>
+
+<p>
+Because <code>onSaveInstanceState()</code> is not always called, you should 
+use it only to record the transient state of the activity, not to store 
+persistent data.  Use <code>onPause()</code> for that purpose instead.
+</p>
+
+
+<h4 id="coordact">Coordinating activities</h4>
+
+<p>
+When one activity starts another, they both experience lifecycle
+transitions.  One pauses and may stop, while the other starts up.
+On occasion, you may need to coordinate these activities, one with
+the other.
+</p>
+
+<p>
+The order of lifecycle callbacks is well defined,
+particularly when the two activities are in the same process:
+</p>
+
+<ol>
+<li>The current activity's <code>onPause()</code> method is called.</li>
+
+<li>Next, the starting activity's <code>onCreate()</code>, <code>onStart()</code>,
+and <code>onResume()</code> methods are called in sequence.</li>
+
+<li>Then, if the starting activity is no longer visible
+on screen, its <code>onStop()</code> method is called.</li>
+</ol>
+
+
+<h3 id="servlife">Service lifecycle</h3>
+
+<p>
+A service can be used in two ways:
+</p>
+
+<ul>
+<li>It can be started and allowed to run until someone stops it or
+it stops itself.  In this mode, it's started by calling 
+<code><code><a href="../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a></code></code>
+and stopped by calling 
+<code><code><a href="../../reference/android/content/Context.html#stopService(android.content.Intent)">Context.stopService()</a></code></code>.
+It can stop itself by calling 
+<code><code><a href="../../reference/android/app/Service.html#stopSelf()">Service.stopSelf()</a></code></code> or
+<code><code><a href="../../reference/android/app/Service.html#stopSelfResult(int)">Service.stopSelfResult()</a></code></code>.  
+Only one <code>stopService()</code> call is needed to stop the service, no matter how 
+many times <code>startService()</code> was called.</li>
+
+<li><p>It can be operated programmatically using an interface that
+it defines and exports.  Clients establish a connection to the Service 
+object and use that connection to call into the service.  The connection is 
+established by calling  
+<code><code><a href="../../reference/android/content/Context.html#bindService(android.content.Intent, android.content.ServiceConnection, int)">Context.bindService()</a></code></code>,
+and is closed by calling
+<code><code><a href="../../reference/android/content/Context.html#unbindService(android.content.ServiceConnection)">Context.unbindService()</a></code></code>.
+Multiple clients can bind to the same service.
+If the service has not already been launched, <code>bindService()</code> can optionally
+launch it.
+</p></li>
+</ul>
+
+<p>
+The two modes are not entirely separate.  You can bind to a service that 
+was started with <code>startService()</code>.  For example, a background music
+service could be started by calling <code>startService()</code> with an Intent
+object that identifies the music to play.  Only later, possibly when the 
+user wants to exercise some control over the player or get information 
+about the current song, would an activity
+establish a connection to the service by calling <code>bindService()</code>.  
+In cases like this, <code>stopService()</code> 
+will not actually stop the service until the last binding is closed.
+</p>
+
+<p>
+Like an activity, a service has lifecycle methods that you can implement
+to monitor changes in its state.  But they are fewer than the activity 
+methods &mdash; only three &mdash; and they are public, not protected:
+</p>
+
+<p style="margin-left: 2em"><code>void onCreate()</code>
+<br/><code>void onStart(Intent <i>intent</i>)</code>
+<br/><code>void onDestroy()</code></p>
+
+<p>
+By implementing these methods, you can monitor two nested loops of the
+service's lifecycle:
+</p>
+
+<ul>
+<li>The <b>entire lifetime</b> of a service happens between the time
+<code><code><a href="../../reference/android/app/Service.html#onCreate()">onCreate()</a></code></code> is called and
+the time <code><code><a href="../../reference/android/app/Service.html#onDestroy()">onDestroy()</a></code></code> returns.  
+Like an activity, a service does its initial setup in <code>onCreate()</code>, 
+and releases all remaining resources in <code>onDestroy()</code>.  For example, 
+a music playback service could create the thread where the music will be played  
+in <code>onCreate()</code>, and then stop the thread in <code>onDestroy()</code>.</li>
+
+<li><p>The <b>active lifetime</b> of a service begins with a call to 
+<code><code><a href="../../reference/android/app/Service.html#onStart(android.content.Intent, int)">onStart()</a></code></code>.  This method 
+is handed the Intent object that was passed to <code>startService()</code>.
+The music service would open the Intent to discover which music to 
+play, and begin the playback.</p>
+
+<p>
+There's no equivalent callback for when the service stops &mdash; no
+<code>onStop()</code> method.
+</p></li>
+</ul>
+
+<p>
+The <code>onCreate()</code> and <code>onDestroy()</code> methods are called for all
+services, whether they're started by 
+<code><code><a href="../../reference/android/content/Context.html#startService(android.content.Intent)">Context.startService()</a></code></code>
+or 
+<code><code><a href="../../reference/android/content/Context.html#bindService(android.content.Intent, android.content.ServiceConnection, int)">Context.bindService()</a></code></code>.
+However, <code>onStart()</code> is called only for services started by <code>startService()</code>.
+</p>
+
+<p>
+If a service permits others to
+bind to it, there are additional callback methods for it to implement:
+</p>
+
+<p style="margin-left: 2em"><code>IBinder onBind(Intent <i>intent</i>)</code>
+<br/><code>boolean onUnbind(Intent <i>intent</i>)</code>
+<br/><code>void onRebind(Intent <i>intent</i>)</code></p>
+
+<p>
+The <code><code><a href="../../reference/android/app/Service.html#onBind(android.content.Intent)">onBind()</a></code></code> callback is passed 
+the Intent object that was passed to <code>bindService</code> and 
+<code><code><a href="../../reference/android/app/Service.html#onUnbind(android.content.Intent)">onUnbind()</a></code></code> is handed
+the intent that was passed to <code>unbindService()</code>.   
+If the service permits the binding, <code>onBind()</code> 
+returns the communications channel that clients use to interact with the service. 
+The <code>onUnbind()</code> method can ask for 
+<code><code><a href="../../reference/android/app/Service.html#onRebind(android.content.Intent)">onRebind()</a></code></code>
+to be called if a new client connects to the service.
+</p>
+
+<p>
+The following diagram illustrates the callback methods for a service.  
+Although, it separates services that are created via <code>startService</code>
+from those created by <code>bindService()</code>, keep in mind that any service,
+no matter how it's started, can potentially allow clients to bind to it,
+so any service may receive <code>onBind()</code> and <code>onUnbind()</code> calls.
+</p>
+
+<p style="margin-left: 2em"><img src="../../images/service_lifecycle.png"
+alt="State diagram for Service callbacks." /></p>
+
+
+<h3 id="broadlife">Broadcast receiver lifecycle</h3>
+
+<p>
+A broadcast receiver has single callback method:
+</p>
+
+<p style="margin-left: 2em"><code>void onReceive(Context <i>curContext</i>, Intent <i>broadcastMsg</i>)</code></p>
+
+<p>
+When a broadcast message arrives for the receiver, Android calls its 
+<code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive()</a></code></code> 
+method and passes it the Intent object containing the message.  The broadcast 
+receiver is considered to be active only while it is executing this method.  
+When <code>onReceive()</code> returns, it is inactive.
+</p>
+
+<p>
+A process with an active broadcast receiver is protected from being killed. 
+But a process with only inactive components can be killed by the system at 
+any time, when the memory it consumes is needed by other processes.
+</p>
+
+<p>
+This presents a problem when the response to a broadcast message is time 
+consuming and, therefore, something that should be done in a separate thread, 
+away from the main thread where other components of the user interface run.
+If <code>onReceive()</code> spawns the thread and then returns, the entire process,
+including the new thread, is judged to be inactive (unless other application 
+components are active in the process), putting it in jeopardy of being killed.  
+The solution to this problem is for <code>onReceive()</code> to start a service 
+and let the service do the job, so the
+system knows that there is still active work being done in the process.
+</p>
+
+<p>
+The next section has more on the vulnerability of processes to being killed.
+</p>
+
+
+<h3 id="proclife">Processes and lifecycles</h3>
+
+<p>The Android system tries to maintain an application process for as
+long as possible, but eventually it will need to remove old processes when
+memory runs low.  To determine which processes to keep and which to kill, 
+Android places each process into an "importance hierarchy" based on the 
+components running in it and the state of those components.  Processes 
+with the lowest importance are eliminated first, then those with the next
+lowest, and so on.  There are five levels in the hierarchy.  The following 
+list presents them in order of importance:
+</p>
+
+<ol>
+
+<li>A <b>foreground process</b> is one that is required for
+what the user is currently doing.  A process is considered to be 
+in the foreground if any of the following conditions hold:
+
+<ul>
+<li>It is running an activity that the user is interacting with 
+(the Activity object's <code><code><a href="../../reference/android/app/Activity.html#onResume()">onResume()</a></code></code> method has been called).</li>
+
+<li><p>It hosts a service that's bound 
+to the activity that the user is interacting with.</p></li>
+
+<li><p>It has a <code><a href="../../reference/android/app/Service.html">Service</a></code> object that's executing
+one of its lifecycle callbacks (<code><code><a href="../../reference/android/app/Service.html#onCreate()">onCreate()</a></code></code>, <code><code><a href="../../reference/android/app/Service.html#onStart(android.content.Intent, int)">onStart()</a></code></code>, 
+or <code><code><a href="../../reference/android/app/Service.html#onDestroy()">onDestroy()</a></code></code>).</p></li>
+
+<li><p>It has a <code><a href="../../reference/android/content/BroadcastReceiver.html">BroadcastReceiver</a></code> object that's 
+executing its <code><code><a href="../../reference/android/content/BroadcastReceiver.html#onReceive(android.content.Context, android.content.Intent)">onReceive()</a></code></code> method.</p></li>
+</ul>
+
+<p>
+Only a few foreground processes will exist at any given time.  They 
+are killed only as a last resort &mdash; if memory is so low that 
+they cannot all continue to run.  Generally, at that point, the device has
+reached a memory paging state, so killing some foreground processes is 
+required to keep the user interface responsive.
+</p></li>
+
+<li><p>A <b>visible process</b> is one that doesn't have any foreground
+components, but still can affect what the user sees on screen.  
+A process is considered to be visible if either of the following conditions 
+holds:</p>
+
+<ul>
+<li>It hosts an activity that is not in the foreground, but is still visible 
+to the user (its <code><code><a href="../../reference/android/app/Activity.html#onPause()">onPause()</a></code></code> 
+method has been called).  This may occur, for example, if the foreground 
+activity is a dialog that allows the previous activity to be seen behind it.</li>
+
+<li><p>It hosts a service that's bound to a visible activity.</p></li>
+</ul>
+
+<p>
+A visible process is considered extremely important and will not be killed 
+unless doing so is required to keep all foreground processes running.
+</p></li>
+
+<li><p>A <b>service process</b> is one that is running a service that 
+has been started with the 
+<code><code><a href="../../reference/android/content/Context.html#startService(android.content.Intent)">startService()</a></code></code>
+method and that does not fall into either of the two higher categories.  
+Although service processes are not directly tied to anything the 
+user sees, they are generally doing things that the user cares about (such 
+as playing an mp3 in the background or downloading  data on the network), 
+so the system keeps them running unless there's not enough 
+memory to retain them along with all foreground and visible processes.  
+</p></li>
+
+<li><p>A <b>background process</b> is one holding an activity
+that's not currently visible to the user  (the Activity object's
+<code><code><a href="../../reference/android/app/Activity.html#onStop()">onStop()</a></code></code> method has been called).  
+These processes have no direct impact on the user experience, and can be killed 
+at any time to reclaim memory for a foreground, visible, or service process.  
+Usually there are many background processes running, so they are kept in an 
+LRU (least recently used) list to ensure that the process with the activity that 
+was most recently seen by the user is the last to be killed.
+If an activity implements its lifecycle methods correctly, and captures its current 
+state, killing its process will not have a deleterious effect on the user experience. 
+</p></li>
+
+<li><p>An <b>empty process</b> is one that doesn't hold any active application
+components.  The only reason to keep such a process around is as a cache to
+improve startup time the next time a component needs to run in it.  The system 
+often kills these processes in order to balance overall system resources between 
+process caches and the underlying kernel caches.</p></li>
+
+</ol>
+
+<p>
+Android ranks a process at the highest level it can, based upon the
+importance of the components currently active in the process.  For example, 
+if a process hosts a service and a visible activity, the process will be 
+ranked as a visible process, not a service process.
+</p>
+
+<p>
+In addition, a process's ranking may be increased because other processes are
+dependent on it.  A process that is serving another process can never be 
+ranked lower than the process it is serving.  For example, if a content 
+provider in process A is serving a client in process B, or if a service in 
+process A is bound to a component in process B, process A will always be 
+considered at least as important as process B.
+</p> 
+
+<p>
+Because a process running a service is ranked higher than one with background
+activities, an activity that initiates a long-running operation might do
+well to start a service for that operation, rather than simply spawn a thread
+&mdash; particularly if the operation will likely outlast the activity.  
+Examples of this are playing music in the background 
+and uploading a picture taken by the camera to a web site.  Using a service
+guarantees that the operation will have at least "service process" priority,
+regardless of what happens to the activity.  As noted in the 
+<a href="#broadlife">Broadcast receiver lifecycle</a> section earlier, this
+is the same reason that broadcast receivers should employ services rather
+than simply put time-consuming operations in a thread.
+</p>
+
+    </div>
+
+  <a href="#top" style="float:right">&uarr; Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a
+  href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.3&nbsp;r1 - 11 Feb 2012 19:35
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+
+

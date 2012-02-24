@@ -1,0 +1,1 @@
+cmd_drivers/net/lte/lte.o := /home/kanaida/android-ms910/android/system/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin/arm-eabi-ld -EL    -r -o drivers/net/lte/lte.o drivers/net/lte/lte_sdio_module.o drivers/net/lte/lte_sdio.o drivers/net/lte/lte_him.o drivers/net/lte/lte_boot.o drivers/net/lte/lte_tty_lldm.o 

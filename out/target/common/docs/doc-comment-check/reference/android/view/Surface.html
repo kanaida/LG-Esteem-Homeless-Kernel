@@ -1,0 +1,3390 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../../favicon.ico" />
+<title>Surface | Android Developers</title>
+<link href="../../../assets/android-developer-docs.css" rel="stylesheet" type="text/css" />
+<script src="../../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="../../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../../");
+</script>
+<script src="../../../assets/android-developer-reference.js" type="text/javascript"></script>
+<script src="../../../navtree_data.js" type="text/javascript"></script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="1">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../../index.html" tabindex="-1"><img
+              src="../../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="reference">
+    
+	<li id="home-link"><a href="../../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+		<span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+		<span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li id="resources-link"><a href="../../../resources/index.html" onClick="return loadLast('resources')">
+	
+		<span class="en">Resources</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    		<span style="display:none" class="ja"></span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+
+
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../../')"
+                      onkeyup="return search_changed(event, false, '../../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+    			  <div id="api-level-toggle">
+    			    <input type="checkbox" id="apiLevelCheckbox" onclick="toggleApiLevelSelector(this)" />
+    			    <label for="apiLevelCheckbox" class="disabled">Filter by API Level: </label>
+    			    <select id="apiLevelSelector">
+    			      <!-- option elements added by buildApiLevelSelector() -->
+    			    </select>
+    			  </div>
+    	 	    <script>
+              var SINCE_DATA = [ '1', '2', '3', '4', '5', '6', '7', '8', '9', '10' ];
+              buildApiLevelSelector();
+            </script>
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first" id="side-nav">
+      <div id="swapper">
+        <div id="nav-panels">
+          <div id="resize-packages-nav">
+            <div id="packages-nav">
+              <div id="index-links"><nobr>
+                <a href="../../../reference/packages.html"  >Package Index</a> | 
+                <a href="../../../reference/classes.html" >Class Index</a></nobr>
+              </div>
+              <ul>
+              	
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/package-summary.html">android</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/accessibilityservice/package-summary.html">android.accessibilityservice</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/accounts/package-summary.html">android.accounts</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/app/package-summary.html">android.app</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/android/app/admin/package-summary.html">android.app.admin</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/android/app/backup/package-summary.html">android.app.backup</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/appwidget/package-summary.html">android.appwidget</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/bluetooth/package-summary.html">android.bluetooth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/content/package-summary.html">android.content</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/content/pm/package-summary.html">android.content.pm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/content/res/package-summary.html">android.content.res</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/database/package-summary.html">android.database</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/database/sqlite/package-summary.html">android.database.sqlite</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/gesture/package-summary.html">android.gesture</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/package-summary.html">android.graphics</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/drawable/package-summary.html">android.graphics.drawable</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/graphics/drawable/shapes/package-summary.html">android.graphics.drawable.shapes</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/hardware/package-summary.html">android.hardware</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/inputmethodservice/package-summary.html">android.inputmethodservice</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/location/package-summary.html">android.location</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/media/package-summary.html">android.media</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/media/audiofx/package-summary.html">android.media.audiofx</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/package-summary.html">android.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/http/package-summary.html">android.net.http</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/net/sip/package-summary.html">android.net.sip</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/net/wifi/package-summary.html">android.net.wifi</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/nfc/package-summary.html">android.nfc</a></li>
+    <li class="api apilevel-10">
+  <a href="../../../reference/android/nfc/tech/package-summary.html">android.nfc.tech</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/opengl/package-summary.html">android.opengl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/os/package-summary.html">android.os</a></li>
+    <li class="api apilevel-9">
+  <a href="../../../reference/android/os/storage/package-summary.html">android.os.storage</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/preference/package-summary.html">android.preference</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/provider/package-summary.html">android.provider</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/sax/package-summary.html">android.sax</a></li>
+    <li class="api apilevel-7">
+  <a href="../../../reference/android/service/wallpaper/package-summary.html">android.service.wallpaper</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/speech/package-summary.html">android.speech</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/speech/tts/package-summary.html">android.speech.tts</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/telephony/package-summary.html">android.telephony</a></li>
+    <li class="api apilevel-5">
+  <a href="../../../reference/android/telephony/cdma/package-summary.html">android.telephony.cdma</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/telephony/gsm/package-summary.html">android.telephony.gsm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/package-summary.html">android.test</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/mock/package-summary.html">android.test.mock</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/test/suitebuilder/package-summary.html">android.test.suitebuilder</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/package-summary.html">android.text</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/text/format/package-summary.html">android.text.format</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/method/package-summary.html">android.text.method</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/style/package-summary.html">android.text.style</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/text/util/package-summary.html">android.text.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/util/package-summary.html">android.util</a></li>
+    <li class="selected api apilevel-1">
+  <a href="../../../reference/android/view/package-summary.html">android.view</a></li>
+    <li class="api apilevel-4">
+  <a href="../../../reference/android/view/accessibility/package-summary.html">android.view.accessibility</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/view/animation/package-summary.html">android.view.animation</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/android/view/inputmethod/package-summary.html">android.view.inputmethod</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/webkit/package-summary.html">android.webkit</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/android/widget/package-summary.html">android.widget</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/dalvik/bytecode/package-summary.html">dalvik.bytecode</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/dalvik/system/package-summary.html">dalvik.system</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/awt/font/package-summary.html">java.awt.font</a></li>
+    <li class="api apilevel-3">
+  <a href="../../../reference/java/beans/package-summary.html">java.beans</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/io/package-summary.html">java.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/package-summary.html">java.lang</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/annotation/package-summary.html">java.lang.annotation</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/ref/package-summary.html">java.lang.ref</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/lang/reflect/package-summary.html">java.lang.reflect</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/math/package-summary.html">java.math</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/net/package-summary.html">java.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/package-summary.html">java.nio</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/channels/package-summary.html">java.nio.channels</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/channels/spi/package-summary.html">java.nio.channels.spi</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/charset/package-summary.html">java.nio.charset</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/nio/charset/spi/package-summary.html">java.nio.charset.spi</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/package-summary.html">java.security</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/acl/package-summary.html">java.security.acl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/cert/package-summary.html">java.security.cert</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/interfaces/package-summary.html">java.security.interfaces</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/security/spec/package-summary.html">java.security.spec</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/sql/package-summary.html">java.sql</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/text/package-summary.html">java.text</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/package-summary.html">java.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/package-summary.html">java.util.concurrent</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/atomic/package-summary.html">java.util.concurrent.atomic</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/concurrent/locks/package-summary.html">java.util.concurrent.locks</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/jar/package-summary.html">java.util.jar</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/logging/package-summary.html">java.util.logging</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/prefs/package-summary.html">java.util.prefs</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/regex/package-summary.html">java.util.regex</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/java/util/zip/package-summary.html">java.util.zip</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/package-summary.html">javax.crypto</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/interfaces/package-summary.html">javax.crypto.interfaces</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/crypto/spec/package-summary.html">javax.crypto.spec</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/microedition/khronos/egl/package-summary.html">javax.microedition.khronos.egl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/microedition/khronos/opengles/package-summary.html">javax.microedition.khronos.opengles</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/net/package-summary.html">javax.net</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/net/ssl/package-summary.html">javax.net.ssl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/package-summary.html">javax.security.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/callback/package-summary.html">javax.security.auth.callback</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/login/package-summary.html">javax.security.auth.login</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/auth/x500/package-summary.html">javax.security.auth.x500</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/security/cert/package-summary.html">javax.security.cert</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/sql/package-summary.html">javax.sql</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/xml/package-summary.html">javax.xml</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/datatype/package-summary.html">javax.xml.datatype</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/namespace/package-summary.html">javax.xml.namespace</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/javax/xml/parsers/package-summary.html">javax.xml.parsers</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/package-summary.html">javax.xml.transform</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/dom/package-summary.html">javax.xml.transform.dom</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/sax/package-summary.html">javax.xml.transform.sax</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/transform/stream/package-summary.html">javax.xml.transform.stream</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/validation/package-summary.html">javax.xml.validation</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/javax/xml/xpath/package-summary.html">javax.xml.xpath</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/junit/framework/package-summary.html">junit.framework</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/junit/runner/package-summary.html">junit.runner</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/package-summary.html">org.apache.http</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/auth/package-summary.html">org.apache.http.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/auth/params/package-summary.html">org.apache.http.auth.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/package-summary.html">org.apache.http.client</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/entity/package-summary.html">org.apache.http.client.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/methods/package-summary.html">org.apache.http.client.methods</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/params/package-summary.html">org.apache.http.client.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/protocol/package-summary.html">org.apache.http.client.protocol</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/client/utils/package-summary.html">org.apache.http.client.utils</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/package-summary.html">org.apache.http.conn</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/params/package-summary.html">org.apache.http.conn.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/routing/package-summary.html">org.apache.http.conn.routing</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/scheme/package-summary.html">org.apache.http.conn.scheme</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/ssl/package-summary.html">org.apache.http.conn.ssl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/conn/util/package-summary.html">org.apache.http.conn.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/cookie/package-summary.html">org.apache.http.cookie</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/cookie/params/package-summary.html">org.apache.http.cookie.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/entity/package-summary.html">org.apache.http.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/package-summary.html">org.apache.http.impl</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/auth/package-summary.html">org.apache.http.impl.auth</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/client/package-summary.html">org.apache.http.impl.client</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/conn/package-summary.html">org.apache.http.impl.conn</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/conn/tsccm/package-summary.html">org.apache.http.impl.conn.tsccm</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/cookie/package-summary.html">org.apache.http.impl.cookie</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/entity/package-summary.html">org.apache.http.impl.entity</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/impl/io/package-summary.html">org.apache.http.impl.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/io/package-summary.html">org.apache.http.io</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/message/package-summary.html">org.apache.http.message</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/params/package-summary.html">org.apache.http.params</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/protocol/package-summary.html">org.apache.http.protocol</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/apache/http/util/package-summary.html">org.apache.http.util</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/json/package-summary.html">org.json</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/w3c/dom/package-summary.html">org.w3c.dom</a></li>
+    <li class="api apilevel-8">
+  <a href="../../../reference/org/w3c/dom/ls/package-summary.html">org.w3c.dom.ls</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/package-summary.html">org.xml.sax</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/ext/package-summary.html">org.xml.sax.ext</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xml/sax/helpers/package-summary.html">org.xml.sax.helpers</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xmlpull/v1/package-summary.html">org.xmlpull.v1</a></li>
+    <li class="api apilevel-1">
+  <a href="../../../reference/org/xmlpull/v1/sax2/package-summary.html">org.xmlpull.v1.sax2</a></li>
+              </ul><br/>
+            </div> <!-- end packages -->
+          </div> <!-- end resize-packages -->
+          <div id="classes-nav">
+            <ul>
+              
+    <li><h2>Interfaces</h2>
+      <ul>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ContextMenu.html">ContextMenu</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ContextMenu.ContextMenuInfo.html">ContextMenu.ContextMenuInfo</a></li>
+          <li class="api apilevel-3"><a href="../../../reference/android/view/GestureDetector.OnDoubleTapListener.html">GestureDetector.OnDoubleTapListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/GestureDetector.OnGestureListener.html">GestureDetector.OnGestureListener</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/InputQueue.Callback.html">InputQueue.Callback</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/KeyEvent.Callback.html">KeyEvent.Callback</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/LayoutInflater.Factory.html">LayoutInflater.Factory</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/LayoutInflater.Filter.html">LayoutInflater.Filter</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Menu.html">Menu</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/MenuItem.html">MenuItem</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/MenuItem.OnMenuItemClickListener.html">MenuItem.OnMenuItemClickListener</a></li>
+          <li class="api apilevel-8"><a href="../../../reference/android/view/ScaleGestureDetector.OnScaleGestureListener.html">ScaleGestureDetector.OnScaleGestureListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SubMenu.html">SubMenu</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SurfaceHolder.html">SurfaceHolder</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SurfaceHolder.Callback.html">SurfaceHolder.Callback</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/SurfaceHolder.Callback2.html">SurfaceHolder.Callback2</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnClickListener.html">View.OnClickListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnCreateContextMenuListener.html">View.OnCreateContextMenuListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnFocusChangeListener.html">View.OnFocusChangeListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnKeyListener.html">View.OnKeyListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnLongClickListener.html">View.OnLongClickListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.OnTouchListener.html">View.OnTouchListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewGroup.OnHierarchyChangeListener.html">ViewGroup.OnHierarchyChangeListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewManager.html">ViewManager</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewParent.html">ViewParent</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewStub.OnInflateListener.html">ViewStub.OnInflateListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewTreeObserver.OnGlobalFocusChangeListener.html">ViewTreeObserver.OnGlobalFocusChangeListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewTreeObserver.OnGlobalLayoutListener.html">ViewTreeObserver.OnGlobalLayoutListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewTreeObserver.OnPreDrawListener.html">ViewTreeObserver.OnPreDrawListener</a></li>
+          <li class="api apilevel-3"><a href="../../../reference/android/view/ViewTreeObserver.OnScrollChangedListener.html">ViewTreeObserver.OnScrollChangedListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewTreeObserver.OnTouchModeChangeListener.html">ViewTreeObserver.OnTouchModeChangeListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Window.Callback.html">Window.Callback</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/WindowManager.html">WindowManager</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Classes</h2>
+      <ul>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/AbsSavedState.html">AbsSavedState</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ContextThemeWrapper.html">ContextThemeWrapper</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Display.html">Display</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/FocusFinder.html">FocusFinder</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/GestureDetector.html">GestureDetector</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/GestureDetector.SimpleOnGestureListener.html">GestureDetector.SimpleOnGestureListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Gravity.html">Gravity</a></li>
+          <li class="api apilevel-3"><a href="../../../reference/android/view/HapticFeedbackConstants.html">HapticFeedbackConstants</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/InputDevice.html">InputDevice</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/InputDevice.MotionRange.html">InputDevice.MotionRange</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/InputEvent.html">InputEvent</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/InputQueue.html">InputQueue</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/KeyCharacterMap.html">KeyCharacterMap</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/KeyCharacterMap.KeyData.html">KeyCharacterMap.KeyData</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/KeyEvent.html">KeyEvent</a></li>
+          <li class="api apilevel-5"><a href="../../../reference/android/view/KeyEvent.DispatcherState.html">KeyEvent.DispatcherState</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/LayoutInflater.html">LayoutInflater</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/MenuInflater.html">MenuInflater</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/MotionEvent.html">MotionEvent</a></li>
+          <li class="api apilevel-9"><a href="../../../reference/android/view/MotionEvent.PointerCoords.html">MotionEvent.PointerCoords</a></li>
+          <li class="api apilevel-3"><a href="../../../reference/android/view/OrientationEventListener.html">OrientationEventListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/OrientationListener.html">OrientationListener</a></li>
+          <li class="api apilevel-8"><a href="../../../reference/android/view/ScaleGestureDetector.html">ScaleGestureDetector</a></li>
+          <li class="api apilevel-8"><a href="../../../reference/android/view/ScaleGestureDetector.SimpleOnScaleGestureListener.html">ScaleGestureDetector.SimpleOnScaleGestureListener</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SoundEffectConstants.html">SoundEffectConstants</a></li>
+          <li class="selected api apilevel-1"><a href="../../../reference/android/view/Surface.html">Surface</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SurfaceView.html">SurfaceView</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/TouchDelegate.html">TouchDelegate</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/VelocityTracker.html">VelocityTracker</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.html">View</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.BaseSavedState.html">View.BaseSavedState</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/View.MeasureSpec.html">View.MeasureSpec</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewConfiguration.html">ViewConfiguration</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewDebug.html">ViewDebug</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewGroup.html">ViewGroup</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewGroup.LayoutParams.html">ViewGroup.LayoutParams</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewGroup.MarginLayoutParams.html">ViewGroup.MarginLayoutParams</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewStub.html">ViewStub</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewTreeObserver.html">ViewTreeObserver</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Window.html">Window</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/WindowManager.LayoutParams.html">WindowManager.LayoutParams</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Enums</h2>
+      <ul>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewDebug.HierarchyTraceType.html">ViewDebug.HierarchyTraceType</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/ViewDebug.RecyclerTraceType.html">ViewDebug.RecyclerTraceType</a></li>
+      </ul>
+    </li>
+              
+    <li><h2>Exceptions</h2>
+      <ul>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/InflateException.html">InflateException</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/Surface.OutOfResourcesException.html">Surface.OutOfResourcesException</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/SurfaceHolder.BadSurfaceTypeException.html">SurfaceHolder.BadSurfaceTypeException</a></li>
+          <li class="api apilevel-1"><a href="../../../reference/android/view/WindowManager.BadTokenException.html">WindowManager.BadTokenException</a></li>
+      </ul>
+    </li>
+              
+            </ul><br/>
+          </div><!-- end classes -->
+        </div><!-- end nav-panels -->
+        <div id="nav-tree" style="display:none">
+          <div id="index-links"><nobr>
+            <a href="../../../reference/packages.html"  >Package Index</a> | 
+            <a href="../../../reference/classes.html" >Class Index</a></nobr>
+          </div>
+        </div><!-- end nav-tree -->
+      </div><!-- end swapper -->
+    </div> <!-- end side-nav -->
+    <script>
+      if (!isMobile) {
+        $("<a href='#' id='nav-swap' onclick='swapNav();return false;' style='font-size:10px;line-height:9px;margin-left:1em;text-decoration:none;'><span id='tree-link'>Use Tree Navigation</span><span id='panel-link' style='display:none'>Use Panel Navigation</span></a>").appendTo("#side-nav");
+        chooseDefaultNav();
+        if ($("#nav-tree").is(':visible')) {
+          init_default_navtree("../../../");
+        } else {
+          addLoadEvent(function() {
+            scrollIntoView("packages-nav");
+            scrollIntoView("classes-nav");
+          });
+        }
+        $("#swapper").css({borderBottom:"2px solid #aaa"});
+      } else {
+        swapNav(); // tree view should be used on mobile
+      }
+    </script>
+
+
+
+<div class="g-unit" id="doc-content">
+
+<div id="api-info-block">
+
+
+
+  
+   
+  
+  
+  
+  
+
+  
+   
+  
+  
+   
+  
+  
+  
+
+
+<div class="sum-details-links">
+Summary:
+
+  <a href="#nestedclasses">Nested Classes</a>
+  
+
+
+
+
+
+  &#124; <a href="#constants">Constants</a>
+  
+
+
+  &#124; <a href="#inhconstants">Inherited Constants</a>
+  
+
+
+
+
+
+
+  &#124; <a href="#pubmethods">Methods</a>
+  
+
+
+  &#124; <a href="#promethods">Protected Methods</a>
+  
+
+
+  &#124; <a href="#inhmethods">Inherited Methods</a>
+
+
+&#124; <a href="#" onclick="return toggleAllClassInherited()" id="toggleAllClassInherited">[Expand All]</a>
+
+</div><!-- end sum-details-links -->
+<div class="api-level">
+  
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+</div>
+</div><!-- end api-info-block -->
+
+
+<!-- ======== START OF CLASS DATA ======== -->
+
+<div id="jd-header">
+    public
+     
+     
+    
+    class
+<h1>Surface</h1>
+
+
+
+  
+    extends <a href="../../../reference/java/lang/Object.html">Object</a><br/>
+  
+  
+  
+
+  
+  
+      implements 
+      
+        <a href="../../../reference/android/os/Parcelable.html">Parcelable</a> 
+      
+  
+  
+
+
+</div><!-- end header -->
+
+<div id="naMessage"></div>
+
+<div id="jd-content" class="api apilevel-1">
+<table class="jd-inheritance-table">
+
+
+    <tr>
+         	
+        <td colspan="2" class="jd-inheritance-class-cell"><a href="../../../reference/java/lang/Object.html">java.lang.Object</a></td>
+    </tr>
+    
+
+    <tr>
+        
+            <td class="jd-inheritance-space">&nbsp;&nbsp;&nbsp;&#x21b3;</td>
+         	
+        <td colspan="1" class="jd-inheritance-class-cell">android.view.Surface</td>
+    </tr>
+    
+
+</table>
+
+
+
+
+
+
+
+<div class="jd-descr">
+
+
+<h2>Class Overview</h2>
+<p>Handle on to a raw buffer that is being managed by the screen compositor.
+</p>
+
+
+
+
+
+</div><!-- jd-descr -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jd-descr">
+<h2>Summary</h2>
+
+
+
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<table id="nestedclasses" class="jd-sumtable"><tr><th colspan="12">Nested Classes</th></tr>
+
+
+  
+    <tr class="alt-color api apilevel-1" >
+      <td class="jd-typecol"><nobr>
+        
+         
+         
+        
+        class</nobr></td>
+      <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.OutOfResourcesException.html">Surface.OutOfResourcesException</a></td>
+      <td class="jd-descrcol" width="100%">Exception thrown when a surface couldn't be created or resized
+&nbsp;</td>
+    </tr>
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="constants" class="jd-sumtable"><tr><th colspan="12">Constants</th></tr>
+
+
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/view/Surface.html">Surface</a>&gt;</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#CREATOR">CREATOR</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#FX_SURFACE_BLUR">FX_SURFACE_BLUR</a></td>
+        <td class="jd-descrcol" width="100%">Creates a Blur surface.</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#FX_SURFACE_DIM">FX_SURFACE_DIM</a></td>
+        <td class="jd-descrcol" width="100%">Creates a Dim surface.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#FX_SURFACE_MASK">FX_SURFACE_MASK</a></td>
+        <td class="jd-descrcol" width="100%">Mask used for FX values above </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#FX_SURFACE_NORMAL">FX_SURFACE_NORMAL</a></td>
+        <td class="jd-descrcol" width="100%">Creates a normal surface.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#GPU">GPU</a></td>
+        <td class="jd-descrcol" width="100%">
+      <em>
+  This constant is deprecated.
+      this is ignored, this value is set automatically when needed.
+</em></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#HARDWARE">HARDWARE</a></td>
+        <td class="jd-descrcol" width="100%">
+      <em>
+  This constant is deprecated.
+      this is ignored, this value is set automatically when needed.
+</em></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#HIDDEN">HIDDEN</a></td>
+        <td class="jd-descrcol" width="100%">Surface is created hidden </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#NON_PREMULTIPLIED">NON_PREMULTIPLIED</a></td>
+        <td class="jd-descrcol" width="100%">Creates a surface where color components are interpreted as 
+  "non pre-multiplied" by their alpha channel.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#PUSH_BUFFERS">PUSH_BUFFERS</a></td>
+        <td class="jd-descrcol" width="100%">Creates a surface without a rendering buffer.</td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#ROTATION_0">ROTATION_0</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#ROTATION_180">ROTATION_180</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#ROTATION_270">ROTATION_270</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#ROTATION_90">ROTATION_90</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SECURE">SECURE</a></td>
+        <td class="jd-descrcol" width="100%">The surface contains secure content, special measures will
+ be taken to disallow the surface's content to be copied from
+ another process.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SURACE_FROZEN">SURACE_FROZEN</a></td>
+        <td class="jd-descrcol" width="100%">
+      <em>
+  This constant is deprecated.
+      use <code><a href="../../../reference/android/view/Surface.html#SURFACE_FROZEN">SURFACE_FROZEN</a></code> instead.
+</em></td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SURFACE_BLUR_FREEZE">SURFACE_BLUR_FREEZE</a></td>
+        <td class="jd-descrcol" width="100%"></td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SURFACE_DITHER">SURFACE_DITHER</a></td>
+        <td class="jd-descrcol" width="100%">Enable dithering when compositing this surface </td>
+    </tr>
+    
+    
+    <tr class="alt-color api apilevel-4" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SURFACE_FROZEN">SURFACE_FROZEN</a></td>
+        <td class="jd-descrcol" width="100%">Freeze the surface.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/view/Surface.html#SURFACE_HIDDEN">SURFACE_HIDDEN</a></td>
+        <td class="jd-descrcol" width="100%">Hide the surface.</td>
+    </tr>
+    
+    
+
+</table>
+
+
+
+
+
+<!-- =========== ENUM CONSTANT SUMMARY =========== -->
+<table id="inhconstants" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Constants</div></th></tr>
+
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-constants-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-constants-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>From interface
+<a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+<div id="inherited-constants-android.os.Parcelable">
+  <div id="inherited-constants-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-constants-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+    
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#CONTENTS_FILE_DESCRIPTOR">CONTENTS_FILE_DESCRIPTOR</a></td>
+        <td class="jd-descrcol" width="100%">Bit masks for use with <code><a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents()</a></code>: each bit represents a
+ kind of object considered to have potential special significance when
+ marshalled.</td>
+    </tr>
+    
+    
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol">int</td>
+        <td class="jd-linkcol"><a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a></td>
+        <td class="jd-descrcol" width="100%">Flag for use with <code><a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel(Parcel, int)</a></code>: the object being written
+ is a return value, that is the result of a function such as
+ "<code>Parcelable someFunction()</code>",
+ "<code>void someFunction(out Parcelable)</code>", or
+ "<code>void someFunction(inout Parcelable)</code>".</td>
+    </tr>
+    
+    
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="pubmethods" class="jd-sumtable"><tr><th colspan="12">Public Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#describeContents()">describeContents</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#freeze()">freeze</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#hide()">hide</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#isValid()">isValid</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Does this object hold a valid surface?  Returns true if it holds
+ a physical surface, so lockCanvas() will succeed.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/android/graphics/Canvas.html">Canvas</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#lockCanvas(android.graphics.Rect)">lockCanvas</a></span>(<a href="../../../reference/android/graphics/Rect.html">Rect</a> dirty)</nobr>
+        
+        <div class="jd-descrdiv">draw into a surface </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#readFromParcel(android.os.Parcel)">readFromParcel</a></span>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> source)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setAlpha(float)">setAlpha</a></span>(float alpha)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setFlags(int, int)">setFlags</a></span>(int flags, int mask)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setFreezeTint(int)">setFreezeTint</a></span>(int tint)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setLayer(int)">setLayer</a></span>(int zorder)</nobr>
+        
+        <div class="jd-descrdiv">set surface parameters.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setMatrix(float, float, float, float)">setMatrix</a></span>(float dsdx, float dtdx, float dsdy, float dtdy)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            static
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setOrientation(int, int)">setOrientation</a></span>(int display, int orientation)</nobr>
+        
+        <div class="jd-descrdiv">set the orientation of the given display.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setPosition(int, int)">setPosition</a></span>(int x, int y)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setSize(int, int)">setSize</a></span>(int w, int h)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#setTransparentRegionHint(android.graphics.Region)">setTransparentRegionHint</a></span>(<a href="../../../reference/android/graphics/Region.html">Region</a> region)</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#show()">show</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/java/lang/String.html">String</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#toString()">toString</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns a string containing a concise, human-readable description of this
+ object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#unfreeze()">unfreeze</a></span>()</nobr>
+        
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#unlockCanvas(android.graphics.Canvas)">unlockCanvas</a></span>(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)</nobr>
+        
+        <div class="jd-descrdiv">unlock the surface.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#unlockCanvasAndPost(android.graphics.Canvas)">unlockCanvasAndPost</a></span>(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)</nobr>
+        
+        <div class="jd-descrdiv">unlock the surface and asks a page flip </div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> dest, int flags)</nobr>
+        
+        <div class="jd-descrdiv">Flatten this object in to a Parcel.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="promethods" class="jd-sumtable"><tr><th colspan="12">Protected Methods</th></tr>
+
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/view/Surface.html#finalize()">finalize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Called before the object's memory is reclaimed by the VM.</div>
+  
+  </td></tr>
+
+
+
+</table>
+
+
+
+
+
+<!-- ========== METHOD SUMMARY =========== -->
+<table id="inhmethods" class="jd-sumtable"><tr><th>
+  <a href="#" class="toggle-all" onclick="return toggleAllInherited(this, null)">[Expand]</a>
+  <div style="clear:left;">Inherited Methods</div></th></tr>
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-java.lang.Object" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-java.lang.Object-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From class <a href="../../../reference/java/lang/Object.html">java.lang.Object</a>
+<div id="inherited-methods-java.lang.Object">
+  <div id="inherited-methods-java.lang.Object-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-java.lang.Object-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/java/lang/Object.html">Object</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#clone()">clone</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Creates and returns a copy of this <code>Object</code>.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            boolean</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#equals(java.lang.Object)">equals</a></span>(<a href="../../../reference/java/lang/Object.html">Object</a> o)</nobr>
+        
+        <div class="jd-descrdiv">Compares this instance with the specified object and indicates if they
+ are equal.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#finalize()">finalize</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Called before the object's memory is reclaimed by the VM.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            <a href="../../../reference/java/lang/Class.html">Class</a>&lt;?&nbsp;extends&nbsp;<a href="../../../reference/java/lang/Object.html">Object</a>&gt;</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#getClass()">getClass</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns the unique instance of <code><a href="../../../reference/java/lang/Class.html">Class</a></code> that represents this
+ object's class.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#hashCode()">hashCode</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns an integer hash code for this object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#notify()">notify</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Causes a thread which is waiting on this object's monitor (by means of
+ calling one of the <code>wait()</code> methods) to be woken up.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#notifyAll()">notifyAll</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Causes all threads which are waiting on this object's monitor (by means
+ of calling one of the <code>wait()</code> methods) to be woken up.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            
+            
+            
+            <a href="../../../reference/java/lang/String.html">String</a></nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#toString()">toString</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Returns a string containing a concise, human-readable description of this
+ object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#wait()">wait</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Causes the calling thread to wait until another thread calls the <code>notify()</code> or <code>notifyAll()</code> method of this object.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#wait(long, int)">wait</a></span>(long millis, int nanos)</nobr>
+        
+        <div class="jd-descrdiv">Causes the calling thread to wait until another thread calls the <code>notify()</code> or <code>notifyAll()</code> method of this object or until the
+ specified timeout expires.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            
+            
+            final
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/java/lang/Object.html#wait(long)">wait</a></span>(long millis)</nobr>
+        
+        <div class="jd-descrdiv">Causes the calling thread to wait until another thread calls the <code>notify()</code> or <code>notifyAll()</code> method of this object or until the
+ specified timeout expires.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+
+<tr class="api apilevel-" >
+<td colspan="12">
+  <a href="#" onclick="return toggleInherited(this, null)" id="inherited-methods-android.os.Parcelable" class="jd-expando-trigger closed"
+          ><img id="inherited-methods-android.os.Parcelable-trigger"
+          src="../../../assets/images/triangle-closed.png"
+          class="jd-expando-trigger-img" /></a>
+From interface <a href="../../../reference/android/os/Parcelable.html">android.os.Parcelable</a>
+<div id="inherited-methods-android.os.Parcelable">
+  <div id="inherited-methods-android.os.Parcelable-list"
+        class="jd-inheritedlinks">
+  </div>
+  <div id="inherited-methods-android.os.Parcelable-summary" style="display: none;">
+    <table class="jd-sumtable-expando">
+    
+
+
+	 
+    <tr class="alt-color api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            int</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/os/Parcelable.html#describeContents()">describeContents</a></span>()</nobr>
+        
+        <div class="jd-descrdiv">Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</div>
+  
+  </td></tr>
+
+
+	 
+    <tr class=" api apilevel-1" >
+        <td class="jd-typecol"><nobr>
+            abstract
+            
+            
+            
+            
+            void</nobr>
+        </td>
+        <td class="jd-linkcol" width="100%"><nobr>
+        <span class="sympad"><a href="../../../reference/android/os/Parcelable.html#writeToParcel(android.os.Parcel, int)">writeToParcel</a></span>(<a href="../../../reference/android/os/Parcel.html">Parcel</a> dest, int flags)</nobr>
+        
+        <div class="jd-descrdiv">Flatten this object in to a Parcel.</div>
+  
+  </td></tr>
+
+
+</table>
+  </div>
+</div>
+</td></tr>
+
+
+</table>
+
+
+</div><!-- jd-descr (summary) -->
+
+<!-- Details -->
+
+
+
+
+
+
+
+
+<!-- XML Attributes -->
+
+
+<!-- Enum Values -->
+
+
+<!-- Constants -->
+
+
+<!-- ========= ENUM CONSTANTS DETAIL ======== -->
+<h2>Constants</h2>
+
+
+
+
+<A NAME="CREATOR"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        <a href="../../../reference/android/os/Parcelable.Creator.html">Creator</a>&lt;<a href="../../../reference/android/view/Surface.html">Surface</a>&gt;
+      </span>
+        CREATOR
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+    </div>
+</div>
+
+
+
+<A NAME="FX_SURFACE_BLUR"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FX_SURFACE_BLUR
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a Blur surface. Everything behind this surface is blurred
+ by some amount. The quality and refresh speed of the blur effect
+ is not settable or guaranteed.
+ It is an error to lock a Blur surface, since it doesn't have
+ a backing store.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                65536
+                (0x00010000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FX_SURFACE_DIM"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FX_SURFACE_DIM
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a Dim surface. Everything behind this surface is dimmed
+ by the amount specified in setAlpha(). 
+ It is an error to lock a Dim surface, since it doesn't have
+ a backing store.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                131072
+                (0x00020000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FX_SURFACE_MASK"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FX_SURFACE_MASK
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Mask used for FX values above </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                983040
+                (0x000f0000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="FX_SURFACE_NORMAL"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        FX_SURFACE_NORMAL
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a normal surface. This is the default </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="GPU"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        GPU
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      <p>
+  <p class="caution">
+      <strong>
+  This constant is deprecated.</strong><br/> this is ignored, this value is set automatically when needed.
+
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p>Implies "HARDWARE", the surface is to be used by the GPU
+ additionally the backbuffer is never preserved for these
+ surfaces. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                40
+                (0x00000028)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="HARDWARE"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        HARDWARE
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      <p>
+  <p class="caution">
+      <strong>
+  This constant is deprecated.</strong><br/> this is ignored, this value is set automatically when needed.
+
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p>The surface is to be used by hardware accelerators or DMA engines </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="HIDDEN"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        HIDDEN
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Surface is created hidden </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="NON_PREMULTIPLIED"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        NON_PREMULTIPLIED
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a surface where color components are interpreted as 
+  "non pre-multiplied" by their alpha channel. Of course this flag is
+  meaningless for surfaces without an alpha channel. By default
+  surfaces are pre-multiplied, which means that each color component is
+  already multiplied by its alpha value. In this case the blending
+  equation used is:
+  
+    DEST = SRC + DEST * (1-SRC_ALPHA)
+    
+  By contrast, non pre-multiplied surfaces use the following equation:
+  
+    DEST = SRC * SRC_ALPHA * DEST * (1-SRC_ALPHA)
+    
+  pre-multiplied surfaces must always be used if transparent pixels are
+  composited on top of each-other into the surface. A pre-multiplied
+  surface can never lower the value of the alpha component of a given
+  pixel.
+  
+  In some rare situations, a non pre-multiplied surface is preferable.
+  
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                256
+                (0x00000100)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="PUSH_BUFFERS"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        PUSH_BUFFERS
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Creates a surface without a rendering buffer. Instead, the content
+ of the surface must be pushed by an external entity. This is type
+ of surface can be used for efficient camera preview or movie
+ play back.
+</p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                512
+                (0x00000200)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ROTATION_0"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        ROTATION_0
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                0
+                (0x00000000)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ROTATION_180"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        ROTATION_180
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ROTATION_270"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        ROTATION_270
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                3
+                (0x00000003)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="ROTATION_90"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        ROTATION_90
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SECURE"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SECURE
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>The surface contains secure content, special measures will
+ be taken to disallow the surface's content to be copied from
+ another process. In particular, screenshots and VNC servers will
+ be disabled, but other measures can take place, for instance the
+ surface might not be hardware accelerated. </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                128
+                (0x00000080)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SURACE_FROZEN"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SURACE_FROZEN
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      <p>
+  <p class="caution">
+      <strong>
+  This constant is deprecated.</strong><br/> use <code><a href="../../../reference/android/view/Surface.html#SURFACE_FROZEN">SURFACE_FROZEN</a></code> instead.
+
+  </p>
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SURFACE_BLUR_FREEZE"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SURFACE_BLUR_FREEZE
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                16
+                (0x00000010)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SURFACE_DITHER"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SURFACE_DITHER
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Enable dithering when compositing this surface </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                4
+                (0x00000004)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SURFACE_FROZEN"></A>
+
+<div class="jd-details api apilevel-4"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SURFACE_FROZEN
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level4">API Level 4</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Freeze the surface. Equivalent to calling freeze() </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                2
+                (0x00000002)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+<A NAME="SURFACE_HIDDEN"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+        final 
+        int
+      </span>
+        SURFACE_HIDDEN
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Hide the surface. Equivalent to calling hide() </p></div>
+
+    
+        <div class="jd-tagdata">
+        <span class="jd-tagtitle">Constant Value: </span>
+        <span>
+            
+                1
+                (0x00000001)
+            
+        </span>
+        </div>
+    
+    </div>
+</div>
+
+
+
+
+<!-- Fields -->
+
+
+<!-- Public ctors -->
+
+
+
+<!-- ========= CONSTRUCTOR DETAIL ======== -->
+<!-- Protected ctors -->
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+<!-- Public methdos -->
+
+<h2>Public Methods</h2>
+
+
+
+<A NAME="describeContents()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        int
+      </span>
+      <span class="sympad">describeContents</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Describe the kinds of special objects contained in this Parcelable's
+ marshalled representation.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a bitmask indicating the set of special object types marshalled
+ by the Parcelable.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="freeze()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">freeze</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="hide()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">hide</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="isValid()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        boolean
+      </span>
+      <span class="sympad">isValid</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Does this object hold a valid surface?  Returns true if it holds
+ a physical surface, so lockCanvas() will succeed.  Otherwise
+ returns false.
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="lockCanvas(android.graphics.Rect)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/android/graphics/Canvas.html">Canvas</a>
+      </span>
+      <span class="sympad">lockCanvas</span>
+      <span class="normal">(<a href="../../../reference/android/graphics/Rect.html">Rect</a> dirty)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>draw into a surface </p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../reference/android/view/Surface.OutOfResourcesException.html">Surface.OutOfResourcesException</a></td>
+            <td></td>
+        </tr>  
+        <tr>
+            <th><a href="../../../reference/java/lang/IllegalArgumentException.html">IllegalArgumentException</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="readFromParcel(android.os.Parcel)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">readFromParcel</span>
+      <span class="normal">(<a href="../../../reference/android/os/Parcel.html">Parcel</a> source)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setAlpha(float)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setAlpha</span>
+      <span class="normal">(float alpha)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setFlags(int, int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setFlags</span>
+      <span class="normal">(int flags, int mask)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setFreezeTint(int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setFreezeTint</span>
+      <span class="normal">(int tint)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setLayer(int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setLayer</span>
+      <span class="normal">(int zorder)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>set surface parameters.
+ needs to be inside open/closeTransaction block
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setMatrix(float, float, float, float)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setMatrix</span>
+      <span class="normal">(float dsdx, float dtdx, float dsdy, float dtdy)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setOrientation(int, int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+        static 
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setOrientation</span>
+      <span class="normal">(int display, int orientation)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>set the orientation of the given display.</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setPosition(int, int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setPosition</span>
+      <span class="normal">(int x, int y)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setSize(int, int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setSize</span>
+      <span class="normal">(int w, int h)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="setTransparentRegionHint(android.graphics.Region)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">setTransparentRegionHint</span>
+      <span class="normal">(<a href="../../../reference/android/graphics/Region.html">Region</a> region)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="show()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">show</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="toString()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        <a href="../../../reference/java/lang/String.html">String</a>
+      </span>
+      <span class="sympad">toString</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Returns a string containing a concise, human-readable description of this
+ object. Subclasses are encouraged to override this method and provide an
+ implementation that takes into account the object's type and data. The
+ default implementation is equivalent to the following expression:
+ <pre>
+   getClass().getName() + '@' + Integer.toHexString(hashCode())</pre>
+ <p>See <a href="../../..//reference/java/lang/Object.html#writing_toString">Writing a useful <code>toString</code> method</a>
+ if you intend implementing your own <code>toString</code> method.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Returns</h5>
+      <ul class="nolist"><li>a printable representation of this object.
+</li></ul>
+  </div>
+
+    </div>
+</div>
+
+
+<A NAME="unfreeze()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">unfreeze</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p></p></div>
+
+    </div>
+</div>
+
+
+<A NAME="unlockCanvas(android.graphics.Canvas)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">unlockCanvas</span>
+      <span class="normal">(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>unlock the surface. the screen won't be updated until
+ post() or postAll() is called
+</p></div>
+
+    </div>
+</div>
+
+
+<A NAME="unlockCanvasAndPost(android.graphics.Canvas)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">unlockCanvasAndPost</span>
+      <span class="normal">(<a href="../../../reference/android/graphics/Canvas.html">Canvas</a> canvas)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>unlock the surface and asks a page flip </p></div>
+
+    </div>
+</div>
+
+
+<A NAME="writeToParcel(android.os.Parcel, int)"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        public 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">writeToParcel</span>
+      <span class="normal">(<a href="../../../reference/android/os/Parcel.html">Parcel</a> dest, int flags)</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Flatten this object in to a Parcel.</p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Parameters</h5>
+      <table class="jd-tagtable">
+        <tr>
+          <th>dest</td>
+          <td>The Parcel in which the object should be written.</td>
+        </tr>
+        <tr>
+          <th>flags</td>
+          <td>Additional flags about how the object should be written.
+ May be 0 or <code><a href="../../../reference/android/os/Parcelable.html#PARCELABLE_WRITE_RETURN_VALUE">PARCELABLE_WRITE_RETURN_VALUE</a></code>.
+</td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= METHOD DETAIL ======== -->
+
+<h2>Protected Methods</h2>
+
+
+
+<A NAME="finalize()"></A>
+
+<div class="jd-details api apilevel-1"> 
+    <h4 class="jd-details-title">
+      <span class="normal">
+        protected 
+         
+         
+         
+         
+        void
+      </span>
+      <span class="sympad">finalize</span>
+      <span class="normal">()</span>
+    </h4>
+      <div class="api-level">
+        
+  Since: <a href="../../../guide/appendix/api-levels.html#level1">API Level 1</a>
+
+      </div>
+    <div class="jd-details-descr">
+      
+  <div class="jd-tagdata jd-tagdescr"><p>Called before the object's memory is reclaimed by the VM. This
+ can only happen once the garbage collector has detected that the
+ object is no longer reachable by any thread of the
+ running application.
+ <p>
+ The method can be used to free system resources or perform other cleanup
+ before the object is garbage collected. The default implementation of the
+ method is empty, which is also expected by the VM, but subclasses can
+ override <code>finalize()</code> as required. Uncaught exceptions which are
+ thrown during the execution of this method cause it to terminate
+ immediately but are otherwise ignored.
+ <p>
+ Note that the VM does guarantee that <code>finalize()</code> is called at most
+ once for any object, but it doesn't guarantee when (if at all) <code>finalize()</code> will be called. For example, object B's <code>finalize()</code>
+ can delay the execution of object A's <code>finalize()</code> method and
+ therefore it can delay the reclamation of A's memory. To be safe, use a
+ <code><a href="../../../reference/java/lang/ref/ReferenceQueue.html">ReferenceQueue</a></code>, because it provides more control
+ over the way the VM deals with references during garbage collection.
+ </p></p></div>
+  <div class="jd-tagdata">
+      <h5 class="jd-tagtitle">Throws</h5>
+      <table class="jd-tagtable">  
+        <tr>
+            <th><a href="../../../reference/java/lang/Throwable.html">Throwable</a></td>
+            <td></td>
+        </tr>
+      </table>
+  </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ========= END OF CLASS DATA ========= -->
+<A NAME="navbar_top"></A>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is licensed under <a
+  href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
+  For details and restrictions, see the <a href="../../../license.html">
+  Content License</a>.
+  </div>
+  <div id="build_info">
+    
+  Android 2.3&nbsp;r1 - 11 Feb 2012 19:35
+
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div> <!-- jd-content -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>

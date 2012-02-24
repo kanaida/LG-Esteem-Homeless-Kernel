@@ -1,0 +1,3 @@
+kernel/drivers/input/sensor/kr3dh.ko
+kernel/drivers/input/sensor/akm8973.ko
+kernel/drivers/input/sensor/apds9900.ko

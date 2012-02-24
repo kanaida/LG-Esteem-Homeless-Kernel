@@ -1,0 +1,17 @@
+kernel/drivers/input/input-core.ko
+kernel/drivers/input/evdev.ko
+kernel/drivers/input/misc/gpio_event.ko
+kernel/drivers/input/misc/gpio_matrix.ko
+kernel/drivers/input/misc/gpio_input.ko
+kernel/drivers/input/misc/gpio_output.ko
+kernel/drivers/input/misc/gpio_axis.ko
+kernel/drivers/input/misc/keychord.ko
+kernel/drivers/input/misc/uinput.ko
+kernel/drivers/input/misc/pmic8058-pwrkey.ko
+kernel/drivers/input/misc/bma150.ko
+kernel/drivers/input/misc/hallic_carkit.ko
+kernel/drivers/input/sensor/kr3dh.ko
+kernel/drivers/input/sensor/akm8973.ko
+kernel/drivers/input/sensor/apds9900.ko
+kernel/drivers/input/touchscreen/t1310.ko
+kernel/drivers/input/touchscreen/RMI4Funcs.ko

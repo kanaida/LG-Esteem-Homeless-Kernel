@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../favicon.ico" />
+<title>Android 3.0 Preview SDK | Android Developers</title>
+<link href="../../assets/android-developer-docs-devguide.css" rel="stylesheet" type="text/css" />
+<script src="../../assets/search_autocomplete.js" type="text/javascript"></script>
+<script src="../../assets/jquery-resizable.min.js" type="text/javascript"></script>
+<script src="../../assets/android-developer-docs.js" type="text/javascript"></script>
+<script src="../../assets/prettify.js" type="text/javascript"></script>
+<script type="text/javascript">
+  setToRoot("../../");
+</script>
+<noscript>
+  <style type="text/css">
+    html,body{overflow:auto;}
+    #body-content{position:relative; top:0;}
+    #doc-content{overflow:visible;border-left:3px solid #666;}
+    #side-nav{padding:0;}
+    #side-nav .toggle-list ul {display:block;}
+    #resize-packages-nav{border-bottom:3px solid #666;}
+  </style>
+</noscript>
+</head>
+
+<body class="gc-documentation">
+
+  <div id="header">
+      <div id="headerLeft">
+          <a href="../../index.html" tabindex="-1"><img
+              src="../../assets/images/bg_logo.png" alt="Android Developers" /></a>
+          <ul id="header-tabs" class="sdk">
+    
+	<li id="home-link"><a href="../../offline.html">
+	
+		<span class="en">Home</span>
+		<span style="display:none" class="de">Startseite</span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ホーム</span>
+		<span style="display:none" class="zh-CN">主页</span>
+		<span style="display:none" class="zh-TW">首頁</span>
+	
+	</a></li>
+	<li id="sdk-link"><a href="../../sdk/index.html">
+		<span class="en">SDK</span>
+	</a></li>
+	<li id="guide-link"><a href="../../guide/index.html" onClick="return loadLast('guide')">
+	
+		<span class="en">Dev Guide</span>
+		<span style="display:none" class="de">Handbuch</span>
+		<span style="display:none" class="es">Guía</span>
+		<span style="display:none" class="fr">Guide</span>
+		<span style="display:none" class="it">Guida</span>
+		<span style="display:none" class="ja">開発ガイド</span>
+		<span style="display:none" class="zh-CN">开发人员指南</span>
+		<span style="display:none" class="zh-TW">開發指南</span>
+	
+	</a></li>
+	<li id="reference-link"><a href="../../reference/packages.html" onClick="return loadLast('reference')">
+	
+		<span class="en">Reference</span>
+		<span style="display:none" class="de">Referenz</span>
+		<span style="display:none" class="es">Referencia</span>
+		<span style="display:none" class="fr">Référence</span>
+		<span style="display:none" class="it">Riferimento</span>
+		<span style="display:none" class="ja">リファレンス</span>
+		<span style="display:none" class="zh-CN">参考</span>
+		<span style="display:none" class="zh-TW">參考資料</span>
+	
+	</a></li>
+	<li id="resources-link"><a href="../../resources/index.html" onClick="return loadLast('resources')">
+	
+		<span class="en">Resources</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+    		<span style="display:none" class="ja"></span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li id="videos-link"><a href="../../videos/index.html" onClick="return loadLast('videos')">
+	
+		<span class="en">Videos</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ビデオ</span>
+		<span style="display:none" class="zh-CN"></span>
+		<span style="display:none" class="zh-TW"></span>
+	
+	</a></li>
+	<li><a href="http://android-developers.blogspot.com" onClick="return requestAppendHL(this.href)">
+	
+		<span class="en">Blog</span>
+		<span style="display:none" class="de"></span>
+		<span style="display:none" class="es"></span>
+		<span style="display:none" class="fr"></span>
+		<span style="display:none" class="it"></span>
+		<span style="display:none" class="ja">ブログ</span>
+		<span style="display:none" class="zh-CN">博客</span>
+		<span style="display:none" class="zh-TW">網誌</span>
+	
+	</a></li>
+
+
+     
+</ul>
+     
+      </div>
+      <div id="headerRight">
+          <div id="headerLinks">
+          
+          <a href="http://www.android.com">Android.com</a>
+          </div>
+  <div id="search" >
+      <div id="searchForm">
+          <form accept-charset="utf-8" class="gsc-search-box" 
+                onsubmit="return submit_search()">
+            <table class="gsc-search-box" cellpadding="0" cellspacing="0"><tbody>
+                <tr>
+                  <td class="gsc-input">
+                    <input id="search_autocomplete" class="gsc-input" type="text" size="33" autocomplete="off"
+                      title="search developer docs" name="q"
+                      value="search developer docs"
+                      onFocus="search_focus_changed(this, true)"
+                      onBlur="search_focus_changed(this, false)"
+                      onkeydown="return search_changed(event, true, '../../')"
+                      onkeyup="return search_changed(event, false, '../../')" />
+                  <div id="search_filtered_div" class="no-display">
+                      <table id="search_filtered" cellspacing=0>
+                      </table>
+                  </div>
+                  </td>
+                  <td class="gsc-search-button">
+                    <input type="submit" value="Search" title="search" id="search-button" class="gsc-search-button" />
+                  </td>
+                  <td class="gsc-clear-button">
+                    <div title="clear results" class="gsc-clear-button">&nbsp;</div>
+                  </td>
+                </tr></tbody>
+              </table>
+          </form>
+      </div><!-- searchForm -->
+  </div><!-- search -->
+      </div><!-- headerRight -->
+      <script type="text/javascript">
+        <!--  
+        changeTabLang(getLangPref());
+        //-->
+      </script>
+  </div><!-- header -->
+
+  <div class="g-section g-tpl-240" id="body-content">
+    <div class="g-unit g-first" id="side-nav">
+      <div id="devdoc-nav">
+<ul>
+  
+  <li>
+    <h2>
+      <span class="en">Downloadable SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/adding-components.html">
+      <span class="en">Adding SDK Components</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      </li>
+    </ul>
+    <ul>
+      <li class="toggle-list">
+      <div><a href="../../sdk/android-2.3.3.html">
+      <span class="en">Android 2.3.3 Platform</span></a>  <span class="new">new!</span></div>
+        <ul>
+          <li><a href="../../sdk/api_diff/10/changes.html">API Differences Report &raquo;</a></li> 
+        </ul>
+      </li>
+      <li class="toggle-list">
+      <div><a href="../../sdk/android-2.3.html">
+      <span class="en">Android 2.3 Platform</span></a></div>
+        <ul>
+          <li><a href="../../sdk/android-2.3-highlights.html">Platform Highlights</a></li> 
+          <li><a href="../../sdk/api_diff/9/changes.html">API Differences Report &raquo;</a></li> 
+        </ul>
+      </li>
+      <li><a href="../../sdk/android-2.2.html">Android 2.2 Platform</a></li>
+      <li><a href="../../sdk/android-2.1.html">Android 2.1 Platform</a></li>
+      <li><a href="../../sdk/android-1.6.html">Android 1.6 Platform</a></li>
+      <li><a href="../../sdk/android-1.5.html">Android 1.5 Platform</a></li>
+      <li class="toggle-list">
+        <div><a href="#" onclick="toggle(this.parentNode.parentNode,true); return false;">Older Platforms</a></div>
+        <ul>
+          <li><a href="../../sdk/android-2.0.1.html">Android 2.0.1 Platform</a></li>
+          <li><a href="../../sdk/android-2.0.html">Android 2.0 Platform</a></li>
+          <li><a href="../../sdk/android-1.1.html">Android 1.1 Platform</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li><a href="../../sdk/tools-notes.html">SDK Tools, r9</a> <span class="new">new!</span></li>
+      <li><a href="../../sdk/win-usb.html">Google USB Driver, r4</a></li>
+    </ul>
+  </li>
+  <li>
+      <h2>
+      <span class="en">ADT Plugin for Eclipse</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+      </h2>
+    <ul>
+      <li><a href="../../sdk/eclipse-adt.html">ADT 9.0.0
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span></a>
+      <span class="new">new!</span></li>
+    </ul>
+  </li>
+  <li>
+    <h2><span class="en">Native Development Tools</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/ndk/index.html">Android NDK, r5b</a>
+        <span class="new">new!</span></li>
+      <li><a href="../../sdk/ndk/overview.html">What is the NDK?</a></li>
+    </ul>
+  </li>
+
+  <li>
+    <h2>
+      <span class="en">More Information</span>
+      <span style="display:none" class="de"></span>
+      <span style="display:none" class="es"></span>
+      <span style="display:none" class="fr"></span>
+      <span style="display:none" class="it"></span>
+      <span style="display:none" class="ja"></span>
+      <span style="display:none" class="zh-CN"></span>
+      <span style="display:none" class="zh-TW"></span>
+    </h2>
+    <ul>
+      <li><a href="../../sdk/oem-usb.html">
+        <span class="en">OEM USB Drivers</span>
+      </a></li>
+      <li><a href="../../sdk/requirements.html">SDK System Requirements</a></li>
+      <li><a href="../../sdk/older_releases.html">SDK Archives</a></li>
+
+    </ul>
+  </li>
+
+</ul>
+
+<script type="text/javascript">
+<!--
+    buildToggleLists();
+    changeNavLang(getLangPref());
+//-->
+</script>
+
+
+      </div>
+    </div> <!-- end side-nav -->
+
+
+
+
+<div class="g-unit" id="doc-content"><a name="top"></a>
+
+<div id="jd-header" class="guide-header">
+  <span class="crumb">
+    &nbsp;
+    
+  </span>
+<h1>Android 3.0 Preview SDK</h1>
+</div>
+
+  <div id="jd-content">
+
+    <div class="jd-descr">
+    <p>Android 3.0 is the next major release of the Android platform and is optimized for tablet
+devices. We're offering a Preview SDK so you can get a head-start developing
+applications for it or simply optimize your existing application for upcoming
+tablets.</p>
+
+
+<h3>What is the Preview SDK?</h3>
+
+<p>The Android 3.0 Preview SDK is an early look at the upcoming version of Android 3.0, for
+developers only. </p>
+
+<p>The Preview SDK includes:</p>
+<ul>
+  <li>An early Android 3.0 system image for use in the Android emulator</li>
+  <li>An Android 3.0 library with non-final APIs</li>
+  <li>A new WXGA emulator skin for an extra large Android Virtual Device</li>
+  <li>New documentation for Android 3.0, including a complete API reference, new developer guides,
+and an API differences report between Android 3.0 and 2.3.</li>
+</ul>
+
+<div class="note">
+<p><strong>Be aware that:</strong></p>
+<ul>
+  <li>The APIs in the Preview SDK are <strong>not final</strong>. Some APIs may change in behavior
+or availability when the final SDK is made available.</li>
+  <li>You <strong>cannot</strong> publish an application that's built against the Preview
+SDK&mdash;you can only run an application built against the Preview SDK on the Android
+emulator.</li>
+  <li>The documentation on <a href="http://developer.android.com">developer.android.com</a>
+does <strong>not</strong> include the Android 3.0 documentation&mdash;to read the API reference and
+developer guides for Android 3.0, you must install the Android 3.0 Preview documentation from
+the AVD and SDK Manager.</li>
+</ul>
+</div>
+
+
+<p><b>About emulator performance</b></p>
+
+<p>Because the Android emulator must simulate the ARM instruction set architecture on your
+computer and the WXGA screen is significantly larger than what the emulator
+normally handles, emulator performance is much slower than usual. </p>
+
+<p>In particular, initializing the emulator can be slow and can take several
+minutes, depending on your hardware. When the emulator is booting there is
+limited user feedback, so please be patient and continue waiting until you see
+the home screen appear. </p>
+
+<p>We're working hard to resolve the performance issues in the emulator and it will improve in
+future releases. In the meantime, we wanted to give developers access to new APIs and an basic test
+environment as early as possible. </p>
+
+<p>Keeping in mind that performance on the emulator does not reflect the speed or performance of
+apps on actual devices running Android 3.0, developing and testing on the emulator is still an
+important tool in evaluating your application's appearance and functionality on the new platform. 
+</p>
+
+
+
+
+
+<h3>What can I do with the preview?</h3>
+
+<p>The Preview SDK is intended for testing existing applications on the new platform and
+developing new applications with new Android 3.0 APIs.</p>
+
+<p>If you have an existing Android application, you don't <em>have to</em> do anything. Android
+applications are always forward-compatible. If your application is a good citizen of the Android
+APIs, your app should work fine on devices running Android 3.0 without any additional work. However,
+in order to ensure proper performance and provide users a better experience when running your
+application on an Android 3.0 tablet, we recommend that you perform the following:</p>
+
+<ol>
+  <li><b>Test your application on Android 3.0</b>
+    <p>Simply install the Android 3.0 preview in your Android SDK, create an AVD using the
+Android 3.0 system image, install your application, and run some tests.</p>
+    <p>As mentioned above, your application should perform as expected. You might, however,
+discover that your activity layouts are less than ideal on a large screen or some other aspects
+of your application don't behave the way you expect.</p>
+  </li>
+  <li><b>Inherit the new "Holographic" theme</b>
+    <p>Android 3.0 offers an updated set of UI widgets that are redesigned for use on larger screens
+such as tablets and incorporate the new holographic theme. Your existing application can inherit
+the new design simply by setting the <a
+href="../../guide/topics/manifest/uses-sdk-element.html"><code>&lt;uses-sdk&gt;</code></a>
+element's <code>android:targetSdkVersion</code> attribute to <code>"Honeycomb"</code>.</p>
+    <p>If you do not update the <code>android:targetSdkVersion</code> attribute and the <code>android:minSdkVersion</code> is set to "9" or lower, then your application uses the widget designs
+from Android 2.3 and does <em>not</em> inherit the holographic theme.</p>
+    <p>In order for your application to match the rest of the system UI, we highly recommend you
+make this change to inherit the new widget styles and system theme. However, beware that doing so
+might conflict with color or text designs you applied to your application based on the previous
+system theme, so you should be sure to inspect your application UI when using the holographic
+theme.</p>
+  </li>
+  <li><b>Provide alternative layouts for extra large screens</b>
+    <p>As discussed in the guide to <a
+href="../../guide/practices/screens_support.html">Supporting Multiple Screens</a>, Android
+2.3 and above support the <code>xlarge</code> resource qualifier, which you should use to supply
+alternative layouts for extra large screens.</p>
+    <p>By providing alternative layouts for some of your activities when running on extra large
+screens, you can improve the user experience of your application on a tablet without using any
+new APIs.</p>
+    <p>For example, here are some things to consider when creating a new layout for tables:</p>
+    <ul>
+      <li>Landscape layout: The "normal" orientation for tablets is usually landscape (wide), so
+you should be sure that your activities offer an appropriate layout for such a wide viewing
+area.</li>
+      <li>Button position: Consider whether the position of the most common buttons in your UI are
+easily accessible while holding a tablet with two hands.</li>
+    </ul>
+    <p class="note"><strong>Note:</strong> You can add alternative resources for <em>xlarge</em>
+screens without changing your <code>minSdkVersion</code>. For example, if you add alternative layouts in
+<code>res/layout-xlarge/</code> and your application is compatible with older versions, such
+as Android 1.5&mdash;which doesn't support <em>xlarge</em> screens&mdash;this layout directory is
+simply ignored by those devices.</p>
+  </li>
+</ol>
+
+
+<p>Otherwise, if you want to develop a new application or upgrade your existing application to
+use APIs added in Android 3.0, we encourage you to get started by developing against the Android
+3.0 preview platform. You can get started the same way as you would for any other version of
+Android.</p>
+
+
+<p>To get started&mdash;whether testing an existing application or creating a new one&mdash;follow
+the procedure in the following section to install the Preview SDK.</p>
+
+
+
+<h3 id="Setup">How do I get it?</h3>
+
+<p>To get the Preview SDK, you can download it using the Android SDK and AVD Manager.</p>
+
+<p>If you're new to Android development, start by <a href="../../sdk/index.html">downloading the
+Android SDK starter package</a>.</p>
+
+<p><a href="../../sdk/adding-components.html#launching">Launch the Android SDK and AVD
+Manager</a> and install the following:</p>
+<ul>
+  <li>SDK Platform Android Honeycomb Preview</li>
+  <li>Android SDK Tools, revision 9</li>
+  <li>Android SDK Platform-tools, revision 2</li>
+  <li>Documentation for Android 'Honeycomb' Preview</li>
+  <li>Samples for SDK API Honeycomb Preview</li>
+</ul>
+
+<p class="note"><strong>Note:</strong> Be sure to install the documentation component for the
+Honeycomb Preview SDK. The API reference for the Android 3.0 API is <strong>not</strong> available
+online.</p>
+
+<p>Once you have installed these components, open your SDK directory and navigate to <code>docs/sdk/</code> and open <code>index.html</code> in your browser. </p>
+
+
+
+<h3 id="Issues">Known issues</h3>
+
+<p>The following known issues occur for Android 3.0 AVDs that are loaded in the emulator:</p>
+
+<ul>
+  <li>The emulator displays a rotated portrait screen while in landscape
+orientation. To view the screen correctly in landscape orientation, turn off the auto-rotate setting
+in <strong>Settings > Screen > Auto-rotate screen</strong>. Then use Ctrl-F11 to rotate the
+emulator.</li>
+  <li>You cannot take screenshots of an emulator screen. The Device Screen Capture window displays
+<strong>Screen not available</strong>.</li>
+  <li>GPS emulation is currently not supported.</li>
+  <li>When rotating the emulator screen by pressing Ctrl-F11, the screen turns green momentarily,
+then displays the normal interface.</li>
+  <li>The Dev Tools application sometimes crashes when trying to use the Package Browser
+feature.</li>
+</ul>
+
+
+<div class="special">
+ <p>For an overview of new features in Android 3.0, read the <a
+href="../../sdk/android-3.0-highlights.html">Platform Highlights</a>.</p>
+</div>
+
+
+    </div>
+
+  <a href="#top" style="float:right">&uarr; Go to top</a>
+  
+  </div>
+
+<div id="footer">
+
+
+  <div id="copyright">
+    
+  Except as noted, this content is 
+  licensed under <a href="http://creativecommons.org/licenses/by/2.5/">
+  Creative Commons Attribution 2.5</a>. For details and 
+  restrictions, see the <a href="../../license.html">Content 
+  License</a>.
+  </div>
+
+  <div id="footerlinks">
+    
+  <p>
+    <a href="http://www.android.com/terms.html">Site Terms of Service</a> -
+    <a href="http://www.android.com/privacy.html">Privacy Policy</a> -
+    <a href="http://www.android.com/branding.html">Brand Guidelines</a>
+  </p>
+  </div>
+
+</div> <!-- end footer -->
+
+</div><!-- end doc-content -->
+
+</div> <!-- end body-content --> 
+
+<script type="text/javascript">
+init(); /* initialize android-developer-docs.js */
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5831155-1");
+pageTracker._trackPageview();
+</script>
+
+</body>
+</html>
+
+
+

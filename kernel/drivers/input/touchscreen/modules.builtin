@@ -1,0 +1,2 @@
+kernel/drivers/input/touchscreen/t1310.ko
+kernel/drivers/input/touchscreen/RMI4Funcs.ko
