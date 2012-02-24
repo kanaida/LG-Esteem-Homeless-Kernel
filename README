@@ -1,6 +1,31 @@
 LG Esteem - Homeless Kernel
 By: Kanaida
 
+A Kernel that greatly extends battery life on the LG Esteem.
+It's based on the LG's ver B firmware.
+
+Scripts:
+build_kernel.sh
+	Sets up build environment, 
+	Runs kernel configuration, 
+	then builds after changes are made.
+
+build_kernel_default.sh
+	Sets up build environment, 
+	resets kernel config to LG's B firmware defaults, 
+	then builds after changes are made.
+
+clean_kernel.sh
+	Sets up build environment
+	Does a Make clean on the kernel
+
+Compiled Output lands here:
+LG-Esteem-Homeless-Kernel/kernel/arch/arm/boot
+
+Stuff included:
+android SDK tools + LG Source code + My modded configs
+GNU GPL something other other, there's the source :) lol
+
 ChangeLog:
 
 Ver 1.0
